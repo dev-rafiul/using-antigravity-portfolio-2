@@ -1,13 +1,15 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Moon, Sun, Menu, X, ChevronDown } from 'lucide-react';
-import { NavLink, Link, useNavigate } from 'react-router-dom';
+import { Moon, Sun, Menu, X } from 'lucide-react';
+import { useLocation, useNavigate, Link } from 'react-router-dom';
 
-const Header = ({ darkMode, toggleDarkMode, isLoggedIn, setIsLoggedIn }) => {
+const Header = ({ darkMode, toggleDarkMode }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isProfileOpen, setIsProfileOpen] = useState(false);
+  
+  const location = useLocation();
   const navigate = useNavigate();
+  const isHome = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,26 +19,34 @@ const Header = ({ darkMode, toggleDarkMode, isLoggedIn, setIsLoggedIn }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const loggedOutItems = [
-    { name: 'Home', path: '/' },
-    { name: 'Explore', path: '/explore' },
-    { name: 'About', path: '/about' },
-    { name: 'Login', path: '/login' },
+  const navItems = [
+    { name: 'Home', href: '#home' },
+    { name: 'About', href: '#about' },
+    { name: 'Skills', href: '#skills' },
+    { name: 'Education', href: '#education' },
+    { name: 'Experience', href: '#experience' },
+    { name: 'Projects', href: '#projects' },
+    { name: 'Contact', href: '#contact' },
   ];
 
-  const loggedInItems = [
-    { name: 'Home', path: '/' },
-    { name: 'Explore', path: '/explore' },
-    { name: 'Dashboard', path: '/dashboard' },
-    { name: 'Blog', path: '/blog' },
-  ];
+  const handleNavClick = (e, href) => {
+    e.preventDefault();
+    setIsMobileMenuOpen(false);
 
-  const currentNavItems = isLoggedIn ? loggedInItems : loggedOutItems;
-
-  const handleLogout = () => {
-    setIsLoggedIn(false);
-    setIsProfileOpen(false);
-    navigate('/');
+    if (isHome) {
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      navigate('/' + href);
+      setTimeout(() => {
+        const element = document.querySelector(href);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    }
   };
 
   return (
@@ -64,61 +74,25 @@ const Header = ({ darkMode, toggleDarkMode, isLoggedIn, setIsLoggedIn }) => {
           </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-2 lg:space-x-4 relative">
-            {currentNavItems.map((item, index) => {
+          <div className="hidden md:flex items-center space-x-1 lg:space-x-2 relative">
+            {navItems.map((item, index) => {
+              // Highlight based on current hash mostly if possible, or just let them be clickable
               return (
                 <div key={item.name} className="relative">
-                  <NavLink
-                    to={item.path}
-                    className={({ isActive }) => `relative px-4 py-2 rounded-full text-sm lg:text-base font-semibold transition-colors duration-300 z-10 block ${
-                      isActive
-                        ? 'text-white'
-                        : 'text-light-navbar dark:text-dark-navbar hover:text-light-action dark:hover:text-dark-action'
-                    }`}
+                  <motion.a
+                    href={item.href}
+                    onClick={(e) => handleNavClick(e, item.href)}
+                    custom={index}
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.1, duration: 0.5 }}
+                    className={`relative px-3 py-2 rounded-full text-sm lg:text-base font-semibold transition-colors duration-300 z-10 block text-light-navbar dark:text-dark-navbar hover:text-light-action dark:hover:text-dark-action`}
                   >
-                    {({ isActive }) => (
-                      <>
-                        {item.name}
-                        {isActive && (
-                          <motion.div
-                            layoutId="nav-pill"
-                            className="absolute inset-0 bg-light-action dark:bg-dark-action rounded-full z-[-1] shadow-glow"
-                            transition={{ type: 'spring', stiffness: 350, damping: 30 }}
-                          />
-                        )}
-                      </>
-                    )}
-                  </NavLink>
+                    {item.name}
+                  </motion.a>
                 </div>
               );
             })}
-
-            {/* Profile Dropdown (Logged In Only) */}
-            {isLoggedIn && (
-              <div className="relative">
-                <button 
-                  onClick={() => setIsProfileOpen(!isProfileOpen)}
-                  className="flex items-center space-x-1 px-4 py-2 text-sm lg:text-base font-semibold text-light-navbar dark:text-dark-navbar hover:text-light-action dark:hover:text-dark-action transition-colors"
-                >
-                  <span>Profile</span>
-                  <ChevronDown size={16} className={`transition-transform ${isProfileOpen ? 'rotate-180' : ''}`} />
-                </button>
-                
-                <AnimatePresence>
-                  {isProfileOpen && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 10 }}
-                      className="absolute right-0 mt-2 w-48 bg-white dark:bg-dark-bg border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg overflow-hidden flex flex-col z-50"
-                    >
-                      <Link to="/profile" className="px-4 py-3 text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" onClick={() => setIsProfileOpen(false)}>My Profile</Link>
-                      <button onClick={handleLogout} className="px-4 py-3 text-sm font-medium text-left hover:bg-gray-100 dark:hover:bg-gray-800 text-red-500 transition-colors">Logout</button>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            )}
 
             {/* Dark Mode Toggle */}
             <motion.button
@@ -128,7 +102,7 @@ const Header = ({ darkMode, toggleDarkMode, isLoggedIn, setIsLoggedIn }) => {
               whileHover={{ scale: 1.1, rotate: 15 }}
               whileTap={{ scale: 0.9 }}
               onClick={toggleDarkMode}
-              className="ml-4 p-2.5 rounded-full bg-light-action/10 dark:bg-dark-action/10 text-light-action dark:text-dark-action hover:bg-light-action dark:hover:bg-dark-action hover:text-white dark:hover:text-white transition-all duration-300 flex items-center justify-center relative overflow-hidden group shadow-sm hover:shadow-glow"
+              className="ml-2 p-2.5 rounded-full bg-light-action/10 dark:bg-dark-action/10 text-light-action dark:text-dark-action hover:bg-light-action dark:hover:bg-dark-action hover:text-white dark:hover:text-white transition-all duration-300 flex items-center justify-center relative overflow-hidden group shadow-sm hover:shadow-glow"
               aria-label="Toggle dark mode"
             >
               <AnimatePresence mode="wait" initial={false}>
@@ -200,44 +174,22 @@ const Header = ({ darkMode, toggleDarkMode, isLoggedIn, setIsLoggedIn }) => {
             className="md:hidden overflow-hidden bg-light-bg/95 dark:bg-dark-bg/95 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 shadow-xl"
           >
             <div className="px-4 py-6 space-y-3 flex flex-col items-center">
-              {currentNavItems.map((item, index) => {
+              {navItems.map((item, index) => {
                 return (
-                  <NavLink
+                  <motion.a
                     key={item.name}
-                    to={item.path}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className={({ isActive }) => `block w-[90%] text-center px-4 py-3 rounded-2xl text-lg font-bold transition-all duration-300 ${
-                      isActive
-                        ? 'bg-light-action dark:bg-dark-action text-white shadow-glow'
-                        : 'text-light-navbar dark:text-dark-navbar hover:bg-gray-200/50 dark:hover:bg-gray-800/50'
-                    }`}
+                    initial={{ x: -20, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    exit={{ x: -20, opacity: 0 }}
+                    transition={{ delay: index * 0.05 }}
+                    href={item.href}
+                    onClick={(e) => handleNavClick(e, item.href)}
+                    className={`block w-[90%] text-center px-4 py-3 rounded-2xl text-lg font-bold transition-all duration-300 text-light-navbar dark:text-dark-navbar hover:bg-gray-200/50 dark:hover:bg-gray-800/50 hover:text-light-action dark:hover:text-dark-action`}
                   >
                     {item.name}
-                  </NavLink>
+                  </motion.a>
                 );
               })}
-              
-              {isLoggedIn && (
-                <>
-                  <NavLink
-                    to="/profile"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className={({ isActive }) => `block w-[90%] text-center px-4 py-3 rounded-2xl text-lg font-bold transition-all duration-300 ${
-                      isActive
-                        ? 'bg-light-action dark:bg-dark-action text-white shadow-glow'
-                        : 'text-light-navbar dark:text-dark-navbar hover:bg-gray-200/50 dark:hover:bg-gray-800/50'
-                    }`}
-                  >
-                    Profile
-                  </NavLink>
-                  <button
-                    onClick={handleLogout}
-                    className="block w-[90%] text-center px-4 py-3 rounded-2xl text-lg font-bold transition-all duration-300 text-red-500 hover:bg-gray-200/50 dark:hover:bg-gray-800/50"
-                  >
-                    Logout
-                  </button>
-                </>
-              )}
             </div>
           </motion.div>
         )}
