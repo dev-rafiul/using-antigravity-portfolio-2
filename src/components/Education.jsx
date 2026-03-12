@@ -1,20 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const educationData = [
-  {
-    institution: "University of Technology",
-    degree: "B.Sc. in Computer Science & Engineering",
-    duration: "2019 - 2023",
-    description: "Graduated with honors. Key coursework included Data Structures, Algorithms, Web Engineering, and Database Systems."
-  },
-  {
-    institution: "City College",
-    degree: "Higher Secondary Certificate (HSC)",
-    duration: "2017 - 2019",
-    description: "Science major. Awarded merit scholarship for outstanding performance in physics and mathematics."
-  }
-];
 
 const Education = () => {
   return (
