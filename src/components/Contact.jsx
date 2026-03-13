@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Mail, Phone, MessageCircle, Send } from 'lucide-react';
-
+.
 const Contact = () => {
   return (
     <section id="contact" className="py-20 bg-light-bg dark:bg-gray-900 transition-colors duration-300">
@@ -8,7 +8,7 @@ const Contact = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewp.once: true }}
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
@@ -22,7 +22,7 @@ const Contact = () => {
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Information */}
+        
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
