@@ -246,11 +246,11 @@ export default function HumanizedHero() {
           >
             {/* Line 1 */}
             <span ref={line1Ref} className="reveal-line" style={{ transitionDelay:"0s" }}>
-              <span className="reveal-inner" style={{ color: txt }}>Humanized</span>
+              <span className="reveal-inner" style={{ color: txt }}>RAFIUL</span>
             </span>
             {/* Line 2 — gradient */}
             <span ref={line2Ref} className="reveal-line" style={{ transitionDelay:"0.1s" }}>
-              <span className="reveal-inner grad-text">Design.</span>
+              <span className="reveal-inner grad-text">ISLAM</span>
             </span>
           </div>
 
