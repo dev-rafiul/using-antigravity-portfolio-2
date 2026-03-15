@@ -1,169 +1,342 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
-const blobs = [
-  { cls: "w-[480px] h-[480px] -top-[10%] -left-[8%]", g: "#3b5bdb,#1c3faa", delay: "0s", td: "0.2s" },
-  { cls: "w-[520px] h-[520px] top-[5%] -right-[5%]",  g: "#7048e8,#4c2dbf", delay: "-3s", td: "0.35s" },
-  { cls: "w-[380px] h-[380px] -top-[5%] right-[5%]",  g: "#e07b39,#c45e20", delay: "-5s", td: "0.5s" },
-  { cls: "w-[300px] h-[300px] bottom-[5%] left-[10%]", g: "#228be6,#1971c2", delay: "-2s", td: "0.6s" },
-  { cls: "w-[200px] h-[200px] bottom-[15%] right-[20%]", g: "#9775fa,#7048e8", delay: "-4s", td: "0.7s" },
-];
+export default function HumanizedHero() {
+  const curtainRef   = useRef(null);
+  const heroRef      = useRef(null);
+  const line1Ref     = useRef(null);
+  const line2Ref     = useRef(null);
+  const subtitleRef  = useRef(null);
+  const bottomRef    = useRef(null);
+  const sidesRef     = useRef(null);
+  const playRef      = useRef(null);
+  const [theme, setTheme] = useState("light");
 
-export default function DigitalDesignerHero() {
-  const curtainRef  = useRef(null);
-  const heroRef     = useRef(null);
-  const badgeRef    = useRef(null);
-  const word1Ref    = useRef(null);
-  const word2Ref    = useRef(null);
-  const subtitleRef = useRef(null);
-  const scanRef     = useRef(null);
+  const isDark = theme === "dark";
 
   useEffect(() => {
     const timers = [];
     const t = (ms, fn) => timers.push(setTimeout(fn, ms));
 
-    t(80,   () => curtainRef.current?.classList.add("open"));
-    t(400,  () => heroRef.current?.classList.add("blobs-visible"));
-    t(900,  () => badgeRef.current && (badgeRef.current.style.animationPlayState = "running"));
-    t(1050, () => {
-      word1Ref.current?.classList.add("heading-visible");
-      word2Ref.current?.classList.add("heading-visible");
-    });
-    t(1100, () => scanRef.current && (scanRef.current.style.animationPlayState = "running"));
-    t(1400, () => subtitleRef.current?.classList.add("visible"));
+    t(100,  () => curtainRef.current?.classList.add("open"));
+    t(700,  () => heroRef.current?.classList.add("orb-in"));
+    t(900,  () => line1Ref.current?.classList.add("in"));
+    t(1100, () => line2Ref.current?.classList.add("in"));
+    t(1350, () => subtitleRef.current?.classList.add("in"));
+    t(1550, () => bottomRef.current?.classList.add("in"));
+    t(1700, () => sidesRef.current?.classList.add("in"));
+    t(1900, () => playRef.current?.classList.add("in"));
 
     return () => timers.forEach(clearTimeout);
   }, []);
 
+  const bg   = isDark ? "#0f0d0b" : "#faf8f5";
+  const txt  = isDark ? "#f0ede8" : "#1a1714";
+  const muted = isDark ? "rgba(240,237,232,0.35)" : "rgba(26,23,20,0.38)";
+  const curtBg = isDark ? "#0f0d0b" : "#faf8f5";
+
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@900&family=DM+Sans:wght@400;500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;0,700;1,300;1,600&family=DM+Sans:wght@300;400;500&display=swap');
 
-        @keyframes floatBlob {
-          0%,100% { transform: translate(0,0) scale(1); }
-          33%  { transform: translate(20px,-25px) scale(1.05); }
-          66%  { transform: translate(-15px,15px) scale(0.97); }
-        }
-        @keyframes pulseDot {
-          0%,100% { box-shadow: 0 0 8px #37b24d; }
-          50%      { box-shadow: 0 0 18px #37b24d; }
-        }
-        @keyframes badgeDrop {
-          0%   { opacity:0; transform: translateY(-40px) scale(0.8); }
-          60%  { transform: translateY(6px) scale(1.04); }
-          80%  { transform: translateY(-3px) scale(0.98); }
-          100% { opacity:1; transform: translateY(0) scale(1); }
-        }
-        @keyframes scanLine {
-          0%   { left:-5%; opacity:1; }
-          100% { left:105%; opacity:0; }
-        }
+        /* ── CURTAIN ── */
+        @keyframes curtL { to { transform: translateX(-100%); } }
+        @keyframes curtR { to { transform: translateX( 100%); } }
+        .curtain { position:fixed;inset:0;z-index:300;display:flex;pointer-events:none; }
+        .c-l { width:50%;height:100%;background:${curtBg};animation:curtL 1s cubic-bezier(0.76,0,0.24,1) 0.2s forwards; }
+        .c-r { width:50%;height:100%;background:${curtBg};animation:curtR 1s cubic-bezier(0.76,0,0.24,1) 0.2s forwards; }
 
-        /* Curtain */
-        .curtain { position:fixed;inset:0;z-index:100;display:flex;pointer-events:none; }
-        .curtain-half {
-          width:50%;height:100%;background:#06060f;
-          transition: transform 0.9s cubic-bezier(0.76,0,0.24,1) 0.3s;
+        /* ── ORB ── */
+        @keyframes orbFloat {
+          0%,100% { transform:translate(-50%,-48%) scale(1); }
+          50%      { transform:translate(-50%,-52%) scale(1.06); }
         }
-        .curtain.open .curtain-left  { transform: translateX(-100%); }
-        .curtain.open .curtain-right { transform: translateX(100%); }
+        .orb-wrap { opacity:0; transition:opacity 1.2s ease; }
+        .orb-in .orb-wrap { opacity:1; }
 
-        /* Blobs */
-        .blob-el {
-          position:absolute;border-radius:50%;filter:blur(80px);
-          animation: floatBlob 8s ease-in-out infinite;
-          transform:scale(0);opacity:0;
-          transition: transform 1.4s cubic-bezier(0.34,1.56,0.64,1),
-                      opacity 1.2s ease;
+        /* ── TEXT reveals ── */
+        .reveal-line {
+          overflow:hidden; display:block;
         }
-        .blobs-visible .blob-el { transform:scale(1) !important; opacity:1 !important; }
-
-        /* Badge */
-        .badge-anim { opacity:0; animation:badgeDrop 0.7s cubic-bezier(0.34,1.56,0.64,1) forwards; animation-play-state:paused; }
-
-        /* Heading slam */
-        .heading-word  { display:block;overflow:hidden;line-height:0.88; }
-        .heading-inner {
-          display:block;transform:translateY(110%);opacity:0;
-          transition: transform 0.8s cubic-bezier(0.16,1,0.3,1),
-                      opacity 0.5s ease;
+        .reveal-inner {
+          display:block;
+          transform:translateY(108%);
+          transition:transform 0.9s cubic-bezier(0.16,1,0.3,1), opacity 0.6s ease;
+          opacity:0;
         }
-        .heading-visible .heading-inner { transform:translateY(0);opacity:1; }
+        .reveal-line.in .reveal-inner { transform:translateY(0); opacity:1; }
 
-        /* Scan line */
-        .scan-line {
-          position:absolute;top:0;bottom:0;width:4px;
-          background:linear-gradient(to bottom,transparent,rgba(255,255,255,0.6),transparent);
-          pointer-events:none;
-          animation:scanLine 0.6s ease forwards;
-          animation-play-state:paused;
-        }
-
-        /* Subtitle */
-        .subtitle-el {
-          opacity:0;transform:translateY(20px);
+        .fade-up {
+          opacity:0;transform:translateY(18px);
           transition:opacity 0.8s ease,transform 0.8s cubic-bezier(0.16,1,0.3,1);
         }
-        .subtitle-el.visible { opacity:0.6;transform:translateY(0); }
+        .fade-up.in { opacity:1;transform:translateY(0); }
+
+        .fade-sides {
+          opacity:0;
+          transition:opacity 0.8s ease;
+        }
+        .fade-sides.in { opacity:1; }
+
+        /* ── PLAY BUTTON ── */
+        @keyframes playPop {
+          0%   { opacity:0;transform:scale(0.7) translateY(14px); }
+          65%  { transform:scale(1.06) translateY(-3px); }
+          100% { opacity:1;transform:scale(1) translateY(0); }
+        }
+        .play-wrap {
+          opacity:0;
+          animation-fill-mode:forwards;
+        }
+        .play-wrap.in {
+          animation:playPop 0.65s cubic-bezier(0.34,1.56,0.64,1) forwards;
+        }
+
+        /* ── GRADIENT text ── */
+        .grad-text {
+          background: linear-gradient(120deg, #f97316 0%, #ec4899 55%, #a855f7 100%);
+          -webkit-background-clip:text;
+          -webkit-text-fill-color:transparent;
+          background-clip:text;
+        }
+
+        /* ── THEME toggle ── */
+        .theme-pill {
+          display:inline-flex;align-items:center;gap:0;
+          border-radius:999px;overflow:hidden;
+          border:1px solid ${isDark ? "rgba(255,255,255,0.15)" : "rgba(0,0,0,0.12)"};
+        }
+        .theme-btn {
+          padding:3px 10px;font-size:10px;letter-spacing:0.06em;
+          font-family:'DM Sans',sans-serif;font-weight:500;
+          background:transparent;cursor:pointer;border:none;
+          transition:all 0.2s ease;
+        }
+        .theme-btn.active {
+          background:${isDark ? "rgba(255,255,255,0.12)" : "rgba(0,0,0,0.08)"};
+        }
+
+        /* ── PLAY BUTTON hover ── */
+        .play-btn { transition:transform 0.25s ease; }
+        .play-btn:hover { transform:scale(1.04); }
+
+        /* ── KNOW MORE hover ── */
+        .know-link {
+          display:inline-flex;align-items:center;gap:6px;
+          font-size:13px;font-weight:500;letter-spacing:0.04em;
+          border-bottom:1px solid ${isDark ? "rgba(255,255,255,0.3)" : "rgba(0,0,0,0.25)"};
+          padding-bottom:2px;cursor:pointer;
+          transition:gap 0.2s ease;
+        }
+        .know-link:hover { gap:10px; }
+
+        /* ── VERTICAL TEXT ── */
+        .vert-l { writing-mode:vertical-rl; transform:rotate(180deg); }
+        .vert-r { writing-mode:vertical-rl; }
       `}</style>
 
       {/* Curtain */}
-      <div className="curtain" ref={curtainRef}>
-        <div className="curtain-half curtain-left" />
-        <div className="curtain-half curtain-right" />
+      <div className="curtain">
+        <div className="c-l" />
+        <div className="c-r" />
       </div>
 
       {/* Hero */}
       <div
         ref={heroRef}
-        style={{ background:"#06060f", fontFamily:"'DM Sans',sans-serif" }}
-        className="relative w-full h-screen overflow-hidden flex items-center justify-center"
+        style={{
+          position:"relative", width:"100vw", height:"100vh",
+          background: bg,
+          overflow:"hidden",
+          fontFamily:"'DM Sans',sans-serif",
+          transition:"background 0.4s ease",
+        }}
       >
-        {blobs.map((b, i) => (
-          <div
-            key={i}
-            className={`blob-el ${b.cls}`}
-            style={{
-              background: `radial-gradient(circle,${b.g.split(",")[0]} 0%,${b.g.split(",")[1]} 60%,transparent 100%)`,
-              animationDelay: b.delay,
-              transitionDelay: b.td,
-            }}
-          />
-        ))}
+        {/* ── ORB behind heading ── */}
+        <div
+          className="orb-wrap"
+          style={{
+            position:"absolute",
+            left:"50%", top:"46%",
+            transform:"translate(-50%,-48%)",
+            width:"520px", height:"520px",
+            borderRadius:"50%",
+            background: isDark
+              ? "radial-gradient(circle, rgba(249,115,22,0.12) 0%, rgba(236,72,153,0.10) 45%, transparent 72%)"
+              : "radial-gradient(circle, rgba(249,115,22,0.13) 0%, rgba(236,72,153,0.11) 45%, transparent 72%)",
+            filter:"blur(50px)",
+            animation:"orbFloat 7s ease-in-out infinite",
+            pointerEvents:"none",
+            zIndex:0,
+          }}
+        />
 
-        {/* SVG sweeps */}
-        <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
-          <path d="M-100 300 Q400 100 800 400 T1600 200" stroke="rgba(100,130,255,0.15)" strokeWidth="1.5" fill="none"/>
-          <path d="M-100 500 Q500 200 900 500 T1600 350" stroke="rgba(150,100,255,0.12)" strokeWidth="1" fill="none"/>
-          <path d="M800 -50 Q1100 200 1000 500 T1200 950" stroke="rgba(200,140,100,0.12)" strokeWidth="1.5" fill="none"/>
-        </svg>
-
-        <div className="relative z-10 flex flex-col items-center">
-          {/* Badge */}
-          <div
-            ref={badgeRef}
-            className="badge-anim inline-flex items-center gap-2 mb-7 px-4 py-1.5 rounded-full"
-            style={{ background:"rgba(255,255,255,0.08)", backdropFilter:"blur(12px)", border:"1px solid rgba(255,255,255,0.12)", color:"rgba(255,255,255,0.85)", fontSize:13, fontWeight:500 }}
-          >
-            <span style={{ width:8,height:8,background:"#37b24d",borderRadius:"50%",display:"inline-block",animation:"pulseDot 2s ease-in-out infinite" }} />
-            Open for projects
+        {/* ── LEFT EDGE ── */}
+        <div
+          ref={sidesRef}
+          className="fade-sides"
+          style={{
+            position:"absolute", left:22, top:0, bottom:0,
+            display:"flex", flexDirection:"column",
+            alignItems:"center", justifyContent:"center",
+            gap:24, zIndex:20,
+          }}
+        >
+          {/* Scroll indicator */}
+          <div style={{ display:"flex", alignItems:"center", gap:8 }}>
+            <div style={{ width:28, height:1, background: isDark ? "rgba(255,255,255,0.25)" : "rgba(0,0,0,0.2)" }} />
+            <span className="vert-l" style={{ fontSize:10, letterSpacing:"0.14em", color: muted, fontWeight:400 }}>
+              Scroll
+            </span>
           </div>
 
+          {/* Theme toggle */}
+          <div className="theme-pill" style={{ color: isDark ? "rgba(255,255,255,0.55)" : "rgba(0,0,0,0.5)" }}>
+            <button
+              className={`theme-btn${theme==="dark" ? " active":""}`}
+              style={{ color: isDark ? "#f0ede8" : "#1a1714" }}
+              onClick={() => setTheme("dark")}
+            >Dark</button>
+            <button
+              className={`theme-btn${theme==="light" ? " active":""}`}
+              style={{ color: isDark ? "#f0ede8" : "#1a1714" }}
+              onClick={() => setTheme("light")}
+            >Light</button>
+          </div>
+        </div>
+
+        {/* ── RIGHT EDGE ── */}
+        <div
+          className="fade-sides"
+          style={{
+            position:"absolute", right:22, top:0, bottom:0,
+            display:"flex", alignItems:"center", justifyContent:"center",
+            zIndex:20,
+          }}
+        >
+          <span
+            className="vert-r"
+            style={{ fontSize:10, letterSpacing:"0.14em", color: muted, fontWeight:400 }}
+          >
+            Follow Us — Fb. / Ig. / Tw.
+          </span>
+        </div>
+
+        {/* ── CENTER CONTENT ── */}
+        <div
+          style={{
+            position:"relative", zIndex:10,
+            height:"100%",
+            display:"flex", flexDirection:"column",
+            alignItems:"center", justifyContent:"center",
+            paddingLeft:60, paddingRight:60,
+          }}
+        >
           {/* Heading */}
-          <div style={{ fontFamily:"'Barlow Condensed',sans-serif", fontWeight:900, fontSize:"clamp(80px,14vw,180px)", color:"#fff", textAlign:"center", textTransform:"uppercase", letterSpacing:"-0.01em", position:"relative" }}>
-            <span className="heading-word" ref={word1Ref}>
-              <span className="heading-inner" style={{ transitionDelay:"0s" }}>RAFIUL</span>
+          <div
+            style={{
+              fontFamily:"'Cormorant Garamond',serif",
+              fontWeight:600,
+              fontSize:"clamp(68px,10vw,140px)",
+              lineHeight:1.0,
+              textAlign:"center",
+              letterSpacing:"-0.02em",
+              userSelect:"none",
+            }}
+          >
+            {/* Line 1 */}
+            <span ref={line1Ref} className="reveal-line" style={{ transitionDelay:"0s" }}>
+              <span className="reveal-inner" style={{ color: txt }}>Humanized</span>
             </span>
-            <span className="heading-word" ref={word2Ref}>
-              <span className="heading-inner" style={{ transitionDelay:"0.12s" }}>ISLAM</span>
+            {/* Line 2 — gradient */}
+            <span ref={line2Ref} className="reveal-line" style={{ transitionDelay:"0.1s" }}>
+              <span className="reveal-inner grad-text">Design.</span>
             </span>
-            <div className="scan-line" ref={scanRef} />
           </div>
 
           {/* Subtitle */}
-          <p ref={subtitleRef} className="subtitle-el text-center mt-8" style={{ fontSize:"clamp(14px,1.8vw,18px)", lineHeight:1.65 }}>
-            A creative human from Amsterdam<br />making digital experiences.
+          <p
+            ref={subtitleRef}
+            className="fade-up"
+            style={{
+              marginTop:28,
+              fontSize:"clamp(13px,1.3vw,16px)",
+              color: muted,
+              textAlign:"center",
+              lineHeight:1.7,
+              maxWidth:360,
+              fontWeight:300,
+              letterSpacing:"0.01em",
+            }}
+          >
+            Crafting interfaces where form meets function,<br />
+            and every pixel earns its place.
           </p>
+        </div>
+
+        {/* ── BOTTOM LEFT ── */}
+        <div
+          ref={bottomRef}
+          className="fade-up"
+          style={{
+            position:"absolute", left:60, bottom:44, zIndex:20,
+            maxWidth:260,
+          }}
+        >
+          <p style={{ fontSize:13, color: muted, lineHeight:1.7, fontWeight:300, marginBottom:14 }}>
+            I transform thorny problems into elegant solutions
+            using visual design, rapid prototyping, and
+            interaction skills.
+          </p>
+          <span className="know-link" style={{ color: txt }}>
+            Know more
+            <span style={{ fontSize:15 }}>→</span>
+          </span>
+        </div>
+
+        {/* ── BOTTOM RIGHT: Play Intro ── */}
+        <div
+          ref={playRef}
+          className="play-wrap"
+          style={{
+            position:"absolute", right:48, bottom:40, zIndex:20,
+          }}
+        >
+          <div
+            className="play-btn"
+            style={{
+              display:"flex", alignItems:"center", gap:12,
+              cursor:"pointer",
+            }}
+          >
+            {/* Avatar circle */}
+            <div
+              style={{
+                width:44, height:44, borderRadius:"50%",
+                background: isDark
+                  ? "linear-gradient(135deg,#2a1f10,#3d2a14)"
+                  : "linear-gradient(135deg,#e8ddd0,#d4c4b0)",
+                border:`2px solid ${isDark ? "rgba(255,255,255,0.12)" : "rgba(0,0,0,0.1)"}`,
+                overflow:"hidden",
+                flexShrink:0,
+                display:"flex", alignItems:"center", justifyContent:"center",
+              }}
+            >
+              {/* Play icon inside */}
+              <svg width="16" height="16" viewBox="0 0 24 24" fill={isDark ? "rgba(255,255,255,0.7)" : "rgba(0,0,0,0.5)"}>
+                <polygon points="5,3 19,12 5,21"/>
+              </svg>
+            </div>
+            <span
+              style={{
+                fontSize:13, fontWeight:500,
+                color: txt,
+                letterSpacing:"0.03em",
+              }}
+            >
+              Play Intro
+            </span>
+          </div>
         </div>
       </div>
     </>
