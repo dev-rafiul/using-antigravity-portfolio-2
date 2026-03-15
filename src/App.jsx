@@ -1,23 +1,35 @@
 import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './components/Header';
+import InteractiveNavbar from './components/InteractiveNavbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const [darkMode, setDarkMode] = useState(true);
 
   useEffect(() => {
-    // Check for saved theme preference or default to light mode
     const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
+    if (savedTheme === 'light') {
+      setDarkMode(false);
+      document.documentElement.classList.remove('dark');
+    } else {
       setDarkMode(true);
       document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
     }
   }, []);
+
+  const toggleDarkMode = () => {
+    if (darkMode) {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+      setDarkMode(false);
+    } else {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+      setDarkMode(true);
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,29 +54,20 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-    if (!darkMode) {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
-    }
-  };
-
   return (
     <Router>
-      <div className="min-h-screen bg-light-bg dark:bg-dark-bg text-light-navbar dark:text-dark-paragraph font-inter transition-colors duration-300 flex flex-col">
-        <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} activeSection={activeSection} />
+      <div className="min-h-screen bg-white dark:bg-[#050505] text-black dark:text-white font-inter flex flex-col relative w-full overflow-hidden transition-colors duration-500">
+        <InteractiveNavbar activeSection={activeSection} darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
 
-        <div className="flex-grow">
+        <div className="flex-grow w-full relative z-10">
           <Routes>
             <Route path="/" element={<Home />} />
           </Routes>
         </div>
 
-        <Footer />
+        <div className="relative z-10">
+          <Footer />
+        </div>
       </div>
     </Router>
   );
