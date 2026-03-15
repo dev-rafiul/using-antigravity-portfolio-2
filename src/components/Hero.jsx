@@ -152,10 +152,10 @@ export default function DigitalDesignerHero() {
           {/* Heading */}
           <div style={{ fontFamily:"'Barlow Condensed',sans-serif", fontWeight:900, fontSize:"clamp(80px,14vw,180px)", color:"#fff", textAlign:"center", textTransform:"uppercase", letterSpacing:"-0.01em", position:"relative" }}>
             <span className="heading-word" ref={word1Ref}>
-              <span className="heading-inner" style={{ transitionDelay:"0s" }}>DIGITAL</span>
+              <span className="heading-inner" style={{ transitionDelay:"0s" }}>RAFIUL</span>
             </span>
             <span className="heading-word" ref={word2Ref}>
-              <span className="heading-inner" style={{ transitionDelay:"0.12s" }}>DESIGNER</span>
+              <span className="heading-inner" style={{ transitionDelay:"0.12s" }}>ISLAM</span>
             </span>
             <div className="scan-line" ref={scanRef} />
           </div>
