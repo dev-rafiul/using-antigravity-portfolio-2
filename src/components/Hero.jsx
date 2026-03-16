@@ -244,7 +244,7 @@ export default function HumanizedHero() {
               userSelect:"none",
             }}
           >
-            {/* Line 1 */}
+            
             <span ref={line1Ref} className="reveal-line" style={{ transitionDelay:"0s" }}>
               <span className="reveal-inner" style={{ color: txt }}>RAFIUL</span>
             </span>
