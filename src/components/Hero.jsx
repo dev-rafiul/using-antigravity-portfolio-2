@@ -294,50 +294,8 @@ export default function HumanizedHero() {
           </span>
         </div>
 
-        {/* ── BOTTOM RIGHT: Play Intro ── */}
-        <div
-          ref={playRef}
-          className="play-wrap"
-          style={{
-            position:"absolute", right:48, bottom:40, zIndex:20,
-          }}
-        >
-          <div
-            className="play-btn"
-            style={{
-              display:"flex", alignItems:"center", gap:12,
-              cursor:"pointer",
-            }}
-          >
-            {/* Avatar circle */}
-            <div
-              style={{
-                width:44, height:44, borderRadius:"50%",
-                background: isDark
-                  ? "linear-gradient(135deg,#2a1f10,#3d2a14)"
-                  : "linear-gradient(135deg,#e8ddd0,#d4c4b0)",
-                border:`2px solid ${isDark ? "rgba(255,255,255,0.12)" : "rgba(0,0,0,0.1)"}`,
-                overflow:"hidden",
-                flexShrink:0,
-                display:"flex", alignItems:"center", justifyContent:"center",
-              }}
-            >
-              {/* Play icon inside */}
-              <svg width="16" height="16" viewBox="0 0 24 24" fill={isDark ? "rgba(255,255,255,0.7)" : "rgba(0,0,0,0.5)"}>
-                <polygon points="5,3 19,12 5,21"/>
-              </svg>
-            </div>
-            <span
-              style={{
-                fontSize:13, fontWeight:500,
-                color: txt,
-                letterSpacing:"0.03em",
-              }}
-            >
-              Play Intro
-            </span>
-          </div>
-        </div>
+       
+        
       </div>
     </>
   );
