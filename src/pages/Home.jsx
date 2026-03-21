@@ -10,7 +10,7 @@ const Home = ({ darkMode }) => {
   return (
     <main>
       <Hero darkMode={darkMode} />
-      <About />
+      <About darkMode={darkMode} />
       <Skills />
       <Projects />
       <Experience />
