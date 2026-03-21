@@ -132,17 +132,6 @@ const InteractiveNavbar = ({ activeSection, darkMode, toggleDarkMode }) => {
           })}
         </div>
 
-        {/* Separator */}
-        <div className="w-[1px] h-8 bg-slate-600/50 mx-1 hidden sm:block"></div>
-
-        {/* Dark Mode Toggle */}
-        <button
-          onClick={toggleDarkMode}
-          className="p-2.5 mr-1 rounded-full text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
-          aria-label="Toggle Theme"
-        >
-          {darkMode ? <Sun size={18} /> : <Moon size={18} />}
-        </button>
       </motion.nav>
     </div>
   );
