@@ -3,10 +3,12 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import InteractiveNavbar from './components/InteractiveNavbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
+import Loader from './components/Loader';
 
 function App() {
   const [activeSection, setActiveSection] = useState('home');
   const [darkMode, setDarkMode] = useState(true);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
@@ -55,21 +57,24 @@ function App() {
   }, []);
 
   return (
-    <Router>
-      <div className="min-h-screen bg-white dark:bg-[#050505] text-black dark:text-white font-inter flex flex-col relative w-full overflow-hidden transition-colors duration-500">
-        <InteractiveNavbar activeSection={activeSection} darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+    <>
+      {loading && <Loader onComplete={() => setLoading(false)} />}
+      <Router>
+        <div className="min-h-screen bg-white dark:bg-[#050505] text-black dark:text-white font-inter flex flex-col relative w-full overflow-hidden transition-colors duration-500">
+          <InteractiveNavbar activeSection={activeSection} darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
 
-        <div className="flex-grow w-full relative z-10">
-          <Routes>
-            <Route path="/" element={<Home />} />
-          </Routes>
-        </div>
+          <div className="flex-grow w-full relative z-10">
+            <Routes>
+              <Route path="/" element={<Home />} />
+            </Routes>
+          </div>
 
-        <div className="relative z-10">
-          <Footer />
+          <div className="relative z-10">
+            <Footer />
+          </div>
         </div>
-      </div>
-    </Router>
+      </Router>
+    </>
   );
 }
 
