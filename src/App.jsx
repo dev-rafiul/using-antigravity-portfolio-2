@@ -61,11 +61,11 @@ function App() {
       {loading && <Loader onComplete={() => setLoading(false)} />}
       <Router>
         <div className="min-h-screen bg-white dark:bg-[#050505] text-black dark:text-white font-inter flex flex-col relative w-full overflow-hidden transition-colors duration-500">
-          <InteractiveNavbar activeSection={activeSection} darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+          <InteractiveNavbar activeSection={activeSection} theme={darkMode ? 'dark' : 'light'} toggleDarkMode={toggleDarkMode} />
 
           <div className="flex-grow w-full relative z-10">
             <Routes>
-              <Route path="/" element={<Home />} />
+              <Route path="/" element={<Home darkMode={darkMode} />} />
             </Routes>
           </div>
 

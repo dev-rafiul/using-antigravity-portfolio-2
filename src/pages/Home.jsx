@@ -1,4 +1,3 @@
-
 import Hero from '../components/Hero';
 import About from '../components/About';
 import Skills from '../components/Skills';
@@ -6,13 +5,11 @@ import Projects from '../components/Projects';
 import Experience from '../components/Experience';
 import Education from '../components/Education';
 import Contact from '../components/Contact';
-import Header from '../components/Header';
 
-const Home = () => {
+const Home = ({ darkMode }) => {
   return (
     <main>
-      
-      <Hero></Hero>
+      <Hero darkMode={darkMode} />
       <About />
       <Skills />
       <Projects />
