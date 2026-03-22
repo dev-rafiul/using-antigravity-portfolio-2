@@ -174,10 +174,10 @@ const InteractiveNavbar = ({ theme = 'dark', toggleDarkMode, activeSection }) =>
             </span>
           </button>
 
-          {/* Hire me CTA — desktop */}
+          {/* Download CV — desktop */}
           <a
-            href="#contact"
-            onClick={e => { e.preventDefault(); scrollTo('contact'); }}
+            href="/resume.pdf"
+            download
             className="hidden sm:inline-flex"
             style={{
               alignItems: 'center', gap: 6,
@@ -194,7 +194,7 @@ const InteractiveNavbar = ({ theme = 'dark', toggleDarkMode, activeSection }) =>
             onMouseEnter={e => { e.currentTarget.style.transform = 'scale(1.05)'; e.currentTarget.style.boxShadow = '0 4px 24px rgba(236,72,153,0.5)'; }}
             onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.boxShadow = '0 2px 16px rgba(236,72,153,0.3)'; }}
           >
-            Hire Me ↗
+            ↓ Download CV
           </a>
 
           {/* Mobile hamburger */}
