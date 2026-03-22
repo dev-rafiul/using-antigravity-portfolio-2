@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Sun, Moon, Menu, X } from 'lucide-react';
+import 
+  import Mode from '../shared/Mode';
 
 const InteractiveNavbar = ({ theme = 'dark', toggleDarkMode, activeSection }) => {
   const [scrolled, setScrolled]   = useState(false);
@@ -115,7 +117,7 @@ const InteractiveNavbar = ({ theme = 'dark', toggleDarkMode, activeSection }) =>
         <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
 
           {/* Toggle pill */}
-          <button
+          <Mode
             onClick={toggleDarkMode}
             aria-label="Toggle theme"
             style={{
@@ -171,7 +173,7 @@ const InteractiveNavbar = ({ theme = 'dark', toggleDarkMode, activeSection }) =>
                 : <Sun  size={10} style={{ color: '#d97706' }} />
               }
             </span>
-          </button>
+          </Mode>
 
           {/* Hire me CTA — desktop */}
           <a
