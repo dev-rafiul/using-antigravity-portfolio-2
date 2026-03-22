@@ -75,3 +75,181 @@ html.dark ::-webkit-scrollbar-thumb:hover {
 .animate-blob-reverse {
   animation: float-reversed 15s infinite ease-in-out;
 }
+
+/* ═══════════════════════════════════════════════
+   GLOBAL SCROLL ANIMATION SYSTEM
+   Usage: add data-scroll="fade-up" (or any variant)
+   to any element. Optionally add data-scroll-delay="0.2"
+═══════════════════════════════════════════════ */
+
+/* ── Scroll progress bar ── */
+#scroll-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 2px;
+  width: 0%;
+  background: linear-gradient(90deg, #f97316, #ec4899, #a855f7);
+  z-index: 9999;
+  transition: width 0.1s linear;
+  box-shadow: 0 0 8px rgba(236, 72, 153, 0.6);
+}
+
+/* ── Base hidden state ── */
+[data-scroll] {
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  transition-duration: 0.85s;
+  transition-property: opacity, transform, filter;
+  will-change: opacity, transform;
+}
+
+/* ── Variants: hidden state ── */
+[data-scroll="fade-up"]      { opacity: 0; transform: translateY(48px); }
+[data-scroll="fade-down"]    { opacity: 0; transform: translateY(-48px); }
+[data-scroll="fade-left"]    { opacity: 0; transform: translateX(-56px); }
+[data-scroll="fade-right"]   { opacity: 0; transform: translateX(56px); }
+[data-scroll="fade-in"]      { opacity: 0; }
+[data-scroll="zoom-in"]      { opacity: 0; transform: scale(0.88); }
+[data-scroll="zoom-out"]     { opacity: 0; transform: scale(1.12); }
+[data-scroll="flip-up"]      { opacity: 0; transform: perspective(600px) rotateX(18deg) translateY(32px); }
+[data-scroll="flip-left"]    { opacity: 0; transform: perspective(600px) rotateY(-18deg) translateX(-32px); }
+[data-scroll="flip-right"]   { opacity: 0; transform: perspective(600px) rotateY(18deg) translateX(32px); }
+[data-scroll="slide-up"]     { opacity: 0; transform: translateY(80px); }
+[data-scroll="blur-in"]      { opacity: 0; filter: blur(12px); transform: translateY(20px); }
+[data-scroll="rotate-in"]    { opacity: 0; transform: rotate(-8deg) scale(0.92); }
+
+/* ── In-view: all variants resolve to visible ── */
+[data-scroll].in-view {
+  opacity: 1 !important;
+  transform: none !important;
+  filter: none !important;
+}
+
+/* ── Stagger helpers (add data-scroll-delay="0.1" etc. via JS, or use these classes) ── */
+.stagger-1 { transition-delay: 0.08s !important; }
+.stagger-2 { transition-delay: 0.16s !important; }
+.stagger-3 { transition-delay: 0.24s !important; }
+.stagger-4 { transition-delay: 0.32s !important; }
+.stagger-5 { transition-delay: 0.40s !important; }
+.stagger-6 { transition-delay: 0.48s !important; }
+
+/* ── Slower / faster duration modifiers ── */
+.scroll-slow   { transition-duration: 1.2s !important; }
+.scroll-fast   { transition-duration: 0.5s !important; }
+.scroll-spring { transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1) !important; }
+
+/* ── Section divider line animation ── */
+.scroll-line {
+  width: 0%;
+  height: 1px;
+  background: linear-gradient(90deg, #f97316, #ec4899, #a855f7);
+  transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.scroll-line.in-view { width: 100%; }
+
+/* ── Gradient text reveal ── */
+.scroll-grad-reveal {
+  background: linear-gradient(120deg, #f97316 0%, #ec4899 55%, #a855f7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  transition: background-position 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.scroll-grad-reveal.in-view { background-position: 0% 0; }
+
+/* ── Number count-up shimmer ── */
+@keyframes countShimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+.scroll-count {
+  background: linear-gradient(90deg, #f97316 25%, #fff 50%, #a855f7 75%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.scroll-count.in-view {
+  animation: countShimmer 1.8s linear forwards;
+}
+
+/* ── Cursor glow (desktop only) ── */
+@media (pointer: fine) {
+  #cursor-glow {
+    position: fixed;
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(236,72,153,0.07) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+    transform: translate(-50%, -50%);
+    transition: left 0.08s linear, top 0.08s linear;
+  }
+}
+
+/* ── Horizontal scroll marquee (for tech stack strips etc.) ── */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 22s linear infinite;
+}
+.marquee-track:hover { animation-play-state: paused; }
+
+/* ── Floating particles (decorative) ── */
+@keyframes particleFloat {
+  0%   { transform: translateY(0px) rotate(0deg);   opacity: 0.4; }
+  50%  { transform: translateY(-24px) rotate(180deg); opacity: 0.8; }
+  100% { transform: translateY(0px) rotate(360deg); opacity: 0.4; }
+}
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: particleFloat var(--dur, 6s) ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+/* ── Section transition wipe ── */
+@keyframes sectionWipe {
+  from { clip-path: inset(0 100% 0 0); }
+  to   { clip-path: inset(0 0% 0 0); }
+}
+.scroll-wipe.in-view {
+  animation: sectionWipe 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ── Underline draw ── */
+.scroll-underline {
+  position: relative;
+  display: inline-block;
+}
+.scroll-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -3px; left: 0;
+  height: 2px; width: 0%;
+  background: linear-gradient(90deg, #f97316, #ec4899, #a855f7);
+  border-radius: 999px;
+  transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s;
+}
+.scroll-underline.in-view::after { width: 100%; }
+
+/* ── Reduce motion ── */
+@media (prefers-reduced-motion: reduce) {
+  [data-scroll],
+  .scroll-line,
+  .scroll-grad-reveal,
+  .marquee-track,
+  .particle {
+    transition: none !important;
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}

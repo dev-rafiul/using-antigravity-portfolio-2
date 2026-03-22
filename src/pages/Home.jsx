@@ -14,8 +14,8 @@ const Home = ({ darkMode }) => {
       <Skills darkMode={darkMode} />
       <Projects darkMode={darkMode} />
       <Experience darkMode={darkMode} />
-      <Education />
-      <Contact />
+      <Education darkMode={darkMode} />
+      <Contact darkMode={darkMode} />
     </main>
   );
 };
