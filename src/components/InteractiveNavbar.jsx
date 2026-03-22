@@ -112,10 +112,10 @@ const InteractiveNavbar = ({ theme = 'dark', toggleDarkMode, activeSection }) =>
           })}
         </ul>
 
-        {/* ── Right controls ── */}
+      
         <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
 
-          {/* Toggle pill */}
+         
           <button
             onClick={toggleDarkMode}
             aria-label="Toggle theme"
