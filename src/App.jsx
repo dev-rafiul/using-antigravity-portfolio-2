@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import InteractiveNavbar from './components/InteractiveNavbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
+import Resume from './pages/Resume';
 import Loader from './components/Loader';
 import useScrollAnimation from './hooks/useScrollAnimation';
 
@@ -53,6 +54,7 @@ function AppInner({ darkMode, toggleDarkMode }) {
       <div className="flex-grow w-full relative z-10">
         <Routes>
           <Route path="/" element={<Home darkMode={darkMode} />} />
+          <Route path="/resume" element={<Resume />} />
         </Routes>
       </div>
 

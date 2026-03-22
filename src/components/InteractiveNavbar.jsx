@@ -177,7 +177,7 @@ const InteractiveNavbar = ({ theme = 'dark', toggleDarkMode, activeSection }) =>
           {/* Download CV — desktop */}
           <a
             href="/resume.pdf"
-            download
+            download="Rafiul_Islam_CV.pdf"
             className="hidden sm:inline-flex"
             style={{
               alignItems: 'center', gap: 6,
