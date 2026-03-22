@@ -13,7 +13,7 @@ const Home = ({ darkMode }) => {
       <About darkMode={darkMode} />
       <Skills darkMode={darkMode} />
       <Projects darkMode={darkMode} />
-      <Experience />
+      <Experience darkMode={darkMode} />
       <Education />
       <Contact />
     </main>
