@@ -120,12 +120,12 @@ export default function Education({ darkMode }) {
             {educationData.map((edu, i) => (
               <div
                 key={edu.id}
-                data-scroll="fade-left"
-                data-scroll-delay={`${i * 0.12}`}
                 onClick={() => setActiveId(edu.id)}
                 style={{
                   display:'flex', gap:20, marginBottom:28, cursor:'pointer',
                   position:'relative', zIndex:1,
+                  opacity:1, transform:'none',
+                  animation:`cardIn 0.5s ease ${i * 0.12}s both`,
                 }}
               >
                 {/* dot */}
@@ -167,7 +167,6 @@ export default function Education({ darkMode }) {
           {/* RIGHT — detail panel */}
           {active && (
             <div
-              data-scroll="fade-right"
               key={active.id}
               style={{
                 background: card, borderRadius:20, padding:32,
@@ -233,7 +232,7 @@ export default function Education({ darkMode }) {
         </div>
 
         {/* stats bar */}
-        <div data-scroll="fade-up" style={{ display:'grid', gridTemplateColumns:'repeat(4,1fr)', gap:16, marginTop:64 }}>
+        <div style={{ display:'grid', gridTemplateColumns:'repeat(4,1fr)', gap:16, marginTop:64 }}>
           {[
             { label:'Years of Study', value:'8+' },
             { label:'Certifications', value:'4' },
@@ -252,6 +251,10 @@ export default function Education({ darkMode }) {
         @keyframes fadeSlideIn {
           from { opacity:0; transform:translateY(12px); }
           to   { opacity:1; transform:translateY(0); }
+        }
+        @keyframes cardIn {
+          from { opacity:0; transform:translateX(-24px); }
+          to   { opacity:1; transform:translateX(0); }
         }
       `}</style>
     </section>

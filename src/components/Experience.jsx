@@ -90,7 +90,6 @@ export default function Experience({ darkMode }) {
 
   const [activeId,    setActiveId]    = useState(1);
   const [expandedId,  setExpandedId]  = useState(null);
-  const [visibleIds,  setVisibleIds]  = useState([]);
   const [lineHeight,  setLineHeight]  = useState(0);
 
   const isDark  = darkMode;
@@ -112,9 +111,6 @@ export default function Experience({ darkMode }) {
       if (entry.isIntersecting) {
         headRef.current?.classList.add("ex-in");
         setTimeout(() => timelineRef.current?.classList.add("ex-in"), 150);
-        EXPERIENCES.forEach((e, i) =>
-          setTimeout(() => setVisibleIds(prev => [...prev, e.id]), 300 + i * 120)
-        );
         /* animate timeline line */
         let h = 0;
         const iv = setInterval(() => {
@@ -261,7 +257,7 @@ export default function Experience({ darkMode }) {
           <div className="ex-layout" style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:40, alignItems:"start" }}>
 
             {/* ── LEFT: Timeline ── */}
-            <div ref={timelineRef} className="ex-fade-up" style={{ position:"relative" }}>
+            <div ref={timelineRef} style={{ position:"relative" }}>
 
               {/* Vertical line */}
               <div style={{
@@ -282,16 +278,15 @@ export default function Experience({ darkMode }) {
                 {EXPERIENCES.map((exp, i) => {
                   const isActive   = activeId === exp.id;
                   const isExpanded = expandedId === exp.id;
-                  const isVisible  = visibleIds.includes(exp.id);
 
                   return (
                     <div
                       key={exp.id}
-                      className={`ex-card${isVisible ? " ex-card-visible" : ""}`}
+                      className="ex-card"
                       style={{
-                        opacity: isVisible ? undefined : 0,
                         animationDelay:`${i * 0.08}s`,
                         display:"flex", gap:0,
+                        animation:`exCardIn .55s cubic-bezier(.16,1,.3,1) ${i * 0.1}s both`,
                       }}
                     >
                       {/* Dot */}
@@ -417,7 +412,7 @@ export default function Experience({ darkMode }) {
             </div>
 
             {/* ── RIGHT: Detail panel ── */}
-            <div className="ex-detail ex-fade-panel" style={{ position:"sticky", top:120 }}>
+            <div className="ex-detail" style={{ position:"sticky", top:120 }}>
               {active && (
                 <div
                   key={active.id}
