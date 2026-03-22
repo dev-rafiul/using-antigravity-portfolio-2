@@ -75,7 +75,7 @@ const InteractiveNavbar = ({ theme = 'dark', toggleDarkMode, activeSection }) =>
           </span>
         </button>
 
-        {/* ── Desktop links ── */}
+        
         <ul style={{
           display: 'flex', alignItems: 'center', gap: 4,
           listStyle: 'none', margin: 0, padding: 0,
