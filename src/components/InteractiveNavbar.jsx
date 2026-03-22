@@ -18,7 +18,7 @@ const InteractiveNavbar = ({ theme = 'dark', toggleDarkMode, activeSection }) =>
     setMenuOpen(false);
   };
 
-  const navLinks = ['Home', 'About', 'Skills', 'Projects', 'Experience', 'Contact'];
+  const navLinks = ['Home', 'About', 'Skills', 'Projects', 'Experience', 'Education', 'Contact'];
 
   const navBg     = isDark ? 'rgba(15,13,11,0.55)'   : 'rgba(255,255,255,0.65)';
   const navBorder = isDark ? 'rgba(255,255,255,0.10)' : 'rgba(0,0,0,0.10)';
