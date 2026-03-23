@@ -27,32 +27,42 @@ html {
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: transparent;
 }
 
 html.dark ::-webkit-scrollbar-track {
-  background: #050505;
+  background: #0a0a0a;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #ccc;
-  border-radius: 4px;
+  background: linear-gradient(180deg, #f97316, #ec4899, #a855f7);
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background-clip: padding-box;
 }
 
 html.dark ::-webkit-scrollbar-thumb {
-  background: #333;
+  background: linear-gradient(180deg, #f97316, #ec4899, #a855f7);
+  border-radius: 999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #aaa;
+  background: linear-gradient(180deg, #fb923c, #f472b6, #c084fc);
+  border-radius: 999px;
 }
 
-html.dark ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #ec4899 transparent;
+}
+
+html.dark * {
+  scrollbar-color: #ec4899 #0a0a0a;
 }
 
 .bg-noise {
