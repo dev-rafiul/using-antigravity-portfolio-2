@@ -234,7 +234,7 @@ export default function Experience({ darkMode }) {
           }}/>
         ))}
 
-        <div style={{ maxWidth:1160, margin:"0 auto", padding:"0 32px", position:"relative", zIndex:1 }}>
+        <div className="section-inner" style={{ maxWidth:1160, margin:"0 auto", padding:"0 32px", position:"relative", zIndex:1 }}>
 
           {/* ── Heading ── */}
           <div ref={headRef} className="ex-fade-up" style={{ textAlign:"center", marginBottom:64 }}>
@@ -512,7 +512,7 @@ export default function Experience({ darkMode }) {
           </div>
 
           {/* ── Stats bar ── */}
-          <div style={{
+          <div className="stats-bar" style={{
             marginTop:64, padding:"28px 36px", borderRadius:20,
             background:bgCard, border:`1px solid ${border}`,
             display:"flex", flexWrap:"wrap", justifyContent:"space-around", gap:24,

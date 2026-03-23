@@ -480,7 +480,7 @@ export default function About({ darkMode }) {
           {/* ── Facts row ── */}
           <div
             ref={factsRef}
-            className="ab-fade-facts"
+            className="ab-fade-facts about-facts"
             style={{
               display: "grid",
               gridTemplateColumns: "repeat(4, 1fr)",

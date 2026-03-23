@@ -57,7 +57,7 @@ export default function Footer({ darkMode }) {
       <div style={{ maxWidth:1200, margin:'0 auto', padding:'60px 24px 32px', position:'relative', zIndex:1 }}>
 
         {/* top row */}
-        <div style={{ display:'grid', gridTemplateColumns:'1.5fr 1fr 1fr', gap:48, marginBottom:48 }}>
+        <div className="footer-grid" style={{ display:'grid', gridTemplateColumns:'1.5fr 1fr 1fr', gap:48, marginBottom:48 }}>
 
           {/* brand */}
           <div>
@@ -135,7 +135,7 @@ export default function Footer({ darkMode }) {
         <div style={{ height:1, background:`linear-gradient(90deg,transparent,${border},transparent)`, marginBottom:24 }} />
 
         {/* bottom row */}
-        <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', flexWrap:'wrap', gap:12 }}>
+        <div className="footer-bottom" style={{ display:'flex', justifyContent:'space-between', alignItems:'center', flexWrap:'wrap', gap:12 }}>
           <p style={{ color: muted, fontSize:13, margin:0 }}>
             © {new Date().getFullYear()} Rafiul Islam. Built with{' '}
             <span style={{ animation:'footerPulse 1.5s ease-in-out infinite', display:'inline-block' }}>❤️</span>
