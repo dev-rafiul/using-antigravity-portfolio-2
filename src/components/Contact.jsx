@@ -333,7 +333,7 @@ export default function Contact({ darkMode }) {
               </div>
             ) : (
               <form onSubmit={handleSubmit}>
-                <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:16, marginBottom:16 }}>
+                <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(160px, 1fr))', gap:16, marginBottom:16 }}>
                   <div>
                     <label style={{ color:muted, fontSize:12, fontWeight:600, display:'block', marginBottom:6 }}>Your Name</label>
                     <input name="name" value={form.name} onChange={handleChange} required
