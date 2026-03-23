@@ -1,4 +1,6 @@
 import { useEffect, useRef } from "react";
+// import rafiulImg from '../assets/rafiul.jpeg';
+import rafiulImg from '../assets/face-of-rafiul.jpg';
 
 export default function Hero({ darkMode }) {
   const heroRef     = useRef(null);
@@ -89,6 +91,11 @@ export default function Hero({ darkMode }) {
           50%      { opacity:1;   transform:scale(1.3); }
         }
         .dot-pulse { animation: dotPulse 2.4s ease-in-out infinite; }
+
+        @keyframes heroRingGrad {
+          0%   { background-position: 0% 50%; }
+          100% { background-position: 300% 50%; }
+        }
       `}</style>
 
       {/* Hero */}
@@ -210,6 +217,41 @@ export default function Hero({ darkMode }) {
             <span style={{ fontSize: 11, letterSpacing: "0.1em", color: muted, fontWeight: 500 }}>
               FULL STACK DEVELOPER
             </span>
+          </div>
+
+          {/* Photo */}
+          <div
+            style={{
+              marginBottom: 24,
+              position: 'relative',
+              width: 110, height: 110,
+            }}
+          >
+            {/* spinning gradient ring */}
+            <div style={{
+              position: 'absolute', inset: -3, borderRadius: '50%',
+              background: 'linear-gradient(135deg, #f97316, #ec4899, #a855f7, #f97316)',
+              backgroundSize: '300% 300%',
+              animation: 'heroRingGrad 3s linear infinite',
+              zIndex: 0,
+            }} />
+            {/* white gap ring */}
+            <div style={{
+              position: 'absolute', inset: 0, borderRadius: '50%',
+              background: isDark ? '#050505' : '#f9fafb',
+              zIndex: 1,
+              margin: 3,
+            }} />
+            <img
+              src={rafiulImg}
+              alt="Rafiul Islam"
+              style={{
+                position: 'absolute', inset: 6, borderRadius: '50%',
+                width: 'calc(100% - 12px)', height: 'calc(100% - 12px)',
+                objectFit: 'cover', objectPosition: 'top',
+                zIndex: 2,
+              }}
+            />
           </div>
 
           {/* Heading */}
