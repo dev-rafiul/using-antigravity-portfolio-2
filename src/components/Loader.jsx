@@ -1,150 +1,122 @@
-import { useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useEffect, useState, useRef } from 'react';
 
-const Loader = ({ onComplete }) => {
+export default function Loader({ onComplete }) {
   const [progress, setProgress] = useState(0);
-  const [visible, setVisible] = useState(true);
+  const [leaving, setLeaving]   = useState(false);
+  const raf = useRef(null);
+  const start = useRef(null);
+  const DURATION = 2600; // ms to reach 100
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setProgress(prev => {
-        if (prev >= 100) {
-          clearInterval(interval);
-          setTimeout(() => {
-            setVisible(false);
-            setTimeout(onComplete, 600);
-          }, 400);
-          return 100;
-        }
-        return prev + 1;
-      });
-    }, 22);
-    return () => clearInterval(interval);
+    const tick = (ts) => {
+      if (!start.current) start.current = ts;
+      const elapsed = ts - start.current;
+      const pct = Math.min(Math.floor((elapsed / DURATION) * 100), 100);
+      setProgress(pct);
+      if (pct < 100) {
+        raf.current = requestAnimationFrame(tick);
+      } else {
+        // hold briefly then exit
+        setTimeout(() => {
+          setLeaving(true);
+          setTimeout(onComplete, 900);
+        }, 350);
+      }
+    };
+    raf.current = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf.current);
   }, [onComplete]);
 
+  // clip-path wipe: progress 0→100 maps to clipPath revealing left→right
+  const wipeX = `${progress}%`;
+
   return (
-    <AnimatePresence>
-      {visible && (
-        <motion.div
-          initial={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.6, ease: 'easeInOut' }}
-          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black"
-        >
-          <div className="relative flex items-center justify-center w-48 h-48">
+    <div
+      style={{
+        position: 'fixed', inset: 0, zIndex: 9999,
+        background: '#0a0a0a',
+        display: 'flex', flexDirection: 'column',
+        alignItems: 'center', justifyContent: 'center',
+        opacity: leaving ? 0 : 1,
+        transition: leaving ? 'opacity 0.85s cubic-bezier(.4,0,.2,1)' : 'none',
+        overflow: 'hidden',
+      }}
+    >
+      {/* subtle noise grain overlay */}
+      <div style={{
+        position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 0,
+        backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E")`,
+        backgroundSize: '200px 200px', opacity: 0.35,
+      }} />
 
-            {/* Outer spinning dashed ring */}
-            <motion.svg
-              className="absolute inset-0 w-full h-full"
-              viewBox="0 0 200 200"
-              animate={{ rotate: 360 }}
-              transition={{ duration: 4, repeat: Infinity, ease: 'linear' }}
-            >
-              <circle
-                cx="100" cy="100" r="90"
-                fill="none"
-                stroke="#00d4ff"
-                strokeWidth="0.6"
-                strokeDasharray="4 8"
-                opacity="0.4"
-              />
-            </motion.svg>
+      {/* ── name stack ── */}
+      <div style={{ position: 'relative', userSelect: 'none', zIndex: 1 }}>
 
-            {/* Inner spinning arc */}
-            <motion.svg
-              className="absolute inset-0 w-full h-full"
-              viewBox="0 0 200 200"
-              animate={{ rotate: -360 }}
-              transition={{ duration: 2.5, repeat: Infinity, ease: 'linear' }}
-            >
-              <circle
-                cx="100" cy="100" r="72"
-                fill="none"
-                stroke="#00d4ff"
-                strokeWidth="1.2"
-                strokeDasharray="60 220"
-                strokeLinecap="round"
-                opacity="0.9"
-              />
-            </motion.svg>
+        {/* Layer 1 — dim base text */}
+        <div style={{
+          fontFamily: "'Cormorant Garamond', 'Playfair Display', serif",
+          fontSize: 'clamp(64px, 14vw, 160px)',
+          fontWeight: 700,
+          letterSpacing: '-0.03em',
+          lineHeight: 1,
+          color: 'rgba(255,255,255,0.08)',
+          whiteSpace: 'nowrap',
+        }}>
+          Rafiul Islam
+        </div>
 
-            {/* Outer arc (slow) */}
-            <motion.svg
-              className="absolute inset-0 w-full h-full"
-              viewBox="0 0 200 200"
-              animate={{ rotate: 360 }}
-              transition={{ duration: 6, repeat: Infinity, ease: 'linear' }}
-            >
-              <circle
-                cx="100" cy="100" r="82"
-                fill="none"
-                stroke="#00d4ff"
-                strokeWidth="0.8"
-                strokeDasharray="30 300"
-                strokeLinecap="round"
-                opacity="0.6"
-              />
-            </motion.svg>
+        {/* Layer 2 — gradient wipe reveal */}
+        <div style={{
+          position: 'absolute', inset: 0,
+          fontFamily: "'Cormorant Garamond', 'Playfair Display', serif",
+          fontSize: 'clamp(64px, 14vw, 160px)',
+          fontWeight: 700,
+          letterSpacing: '-0.03em',
+          lineHeight: 1,
+          whiteSpace: 'nowrap',
+          background: 'linear-gradient(135deg, #f97316 0%, #ec4899 50%, #a855f7 100%)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          backgroundClip: 'text',
+          // clip-path wipe from left to right
+          clipPath: `inset(0 ${100 - progress}% 0 0)`,
+          transition: 'clip-path 0.05s linear',
+        }}>
+          Rafiul Islam
+        </div>
+      </div>
 
-            {/* Orbiting dot — top */}
-            <motion.div
-              className="absolute w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_8px_3px_rgba(0,212,255,0.8)]"
-              style={{ top: '4px', left: '50%', marginLeft: '-4px' }}
-              animate={{ rotate: 360 }}
-              transition={{ duration: 2.5, repeat: Infinity, ease: 'linear' }}
-            />
+      {/* ── loading counter ── */}
+      <div style={{
+        marginTop: 20, zIndex: 1,
+        display: 'flex', alignItems: 'baseline', gap: 6,
+        fontFamily: "'DM Sans', 'Inter', sans-serif",
+      }}>
+        <span style={{ color: 'rgba(255,255,255,0.3)', fontSize: 12, letterSpacing: '0.15em' }}>
+          loading...
+        </span>
+        <span style={{
+          fontSize: 13, fontWeight: 600, letterSpacing: '0.05em',
+          background: 'linear-gradient(135deg,#f97316,#ec4899)',
+          WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
+        }}>
+          {progress} %
+        </span>
+      </div>
 
-            {/* Orbiting dot — bottom-left */}
-            <motion.div
-              className="absolute w-1.5 h-1.5 rounded-full bg-cyan-300 shadow-[0_0_6px_2px_rgba(0,212,255,0.7)]"
-              style={{ bottom: '18px', left: '14px' }}
-              animate={{ rotate: -360 }}
-              transition={{ duration: 4, repeat: Infinity, ease: 'linear' }}
-            />
-
-            {/* Orbiting dot — right */}
-            <motion.div
-              className="absolute w-1.5 h-1.5 rounded-full bg-cyan-400 shadow-[0_0_6px_2px_rgba(0,212,255,0.7)]"
-              style={{ top: '50%', right: '2px', marginTop: '-3px' }}
-              animate={{ rotate: 360 }}
-              transition={{ duration: 3, repeat: Infinity, ease: 'linear' }}
-            />
-
-            {/* Center content */}
-            <div className="relative z-10 flex flex-col items-center justify-center text-center">
-              {/* Counter */}
-              <motion.span
-                className="text-white font-mono text-2xl font-bold tracking-widest"
-                style={{ textShadow: '0 0 10px rgba(0,212,255,0.5)' }}
-              >
-                {String(progress).padStart(2, '0')}
-                <span className="text-cyan-400">%</span>
-              </motion.span>
-
-              {/* System loading text */}
-              <motion.p
-                className="text-cyan-400 font-mono text-[9px] tracking-[0.3em] mt-1 uppercase"
-                animate={{ opacity: [0.4, 1, 0.4] }}
-                transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
-              >
-                System Loading
-              </motion.p>
-            </div>
-          </div>
-
-          {/* Bottom progress bar */}
-          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 w-48">
-            <div className="w-full h-px bg-cyan-900/40 rounded-full overflow-hidden">
-              <motion.div
-                className="h-full bg-cyan-400 rounded-full"
-                style={{ width: `${progress}%`, boxShadow: '0 0 8px rgba(0,212,255,0.8)' }}
-              />
-            </div>
-          </div>
-        </motion.div>
-      )}
-    </AnimatePresence>
+      {/* ── thin progress line ── */}
+      <div style={{
+        position: 'absolute', bottom: 0, left: 0, right: 0,
+        height: 2, background: 'rgba(255,255,255,0.05)', zIndex: 1,
+      }}>
+        <div style={{
+          height: '100%',
+          width: `${progress}%`,
+          background: 'linear-gradient(90deg,#f97316,#ec4899,#a855f7)',
+          transition: 'width 0.05s linear',
+          boxShadow: '0 0 12px rgba(249,115,22,0.6)',
+        }} />
+      </div>
+    </div>
   );
-};
-
-export default Loader;
+}

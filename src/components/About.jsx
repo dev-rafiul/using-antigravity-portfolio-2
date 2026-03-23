@@ -264,7 +264,7 @@ export default function About({ darkMode }) {
                   opacity: 0.5,
                 }} />
 
-                {/* Photo */}
+              
                 <div style={{
                   position: "absolute", inset: 2,
                   borderRadius: 26,
