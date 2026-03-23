@@ -179,14 +179,14 @@ export default function Contact({ darkMode }) {
       <PulseOrb color="#06b6d4" size={60}  style={{ top:'50%', right:'3%' }} />
 
       {/* orbit rings */}
-      <OrbitRing color="#f97316" radius={60} duration={5}  style={{ top:'15%', left:'3%' }} />
-      <OrbitRing color="#ec4899" radius={50} duration={7}  reverse style={{ bottom:'20%', right:'5%' }} />
-      <OrbitRing color="#a855f7" radius={40} duration={9}  style={{ top:'60%', left:'8%' }} />
+      <div className="orbit-ring"><OrbitRing color="#f97316" radius={60} duration={5}  style={{ top:'15%', left:'3%' }} /></div>
+      <div className="orbit-ring"><OrbitRing color="#ec4899" radius={50} duration={7}  reverse style={{ bottom:'20%', right:'5%' }} /></div>
+      <div className="orbit-ring"><OrbitRing color="#a855f7" radius={40} duration={9}  style={{ top:'60%', left:'8%' }} /></div>
 
       {/* spinning dashed rings */}
-      <div style={{ position:'absolute', top:'20%', right:'15%', width:180, height:180, borderRadius:'50%',
+      <div className="spin-ring" style={{ position:'absolute', top:'20%', right:'15%', width:180, height:180, borderRadius:'50%',
         border:'1px dashed rgba(249,115,22,.25)', animation:'spinSlow 20s linear infinite', pointerEvents:'none' }} />
-      <div style={{ position:'absolute', bottom:'25%', left:'12%', width:140, height:140, borderRadius:'50%',
+      <div className="spin-ring" style={{ position:'absolute', bottom:'25%', left:'12%', width:140, height:140, borderRadius:'50%',
         border:'1px dashed rgba(168,85,247,.25)', animation:'spinSlowR 15s linear infinite', pointerEvents:'none' }} />
 
       {/* floating particles */}
@@ -223,7 +223,7 @@ export default function Contact({ darkMode }) {
           </p>
         </div>
 
-        <div style={{ display:'grid', gridTemplateColumns:'1fr 1.4fr', gap:48, alignItems:'start' }}>
+        <div className="contact-grid" style={{ display:'grid', gridTemplateColumns:'1fr 1.4fr', gap:48, alignItems:'start' }}>
 
           {/* ── LEFT: contact info ── */}
           <div>
@@ -388,7 +388,7 @@ export default function Contact({ darkMode }) {
         </div>
 
         {/* ── bottom stats ── */}
-        <div data-scroll="fade-up" style={{ display:'grid', gridTemplateColumns:'repeat(4,1fr)', gap:16, marginTop:64 }}>
+        <div className="contact-stats" data-scroll="fade-up" style={{ display:'grid', gridTemplateColumns:'repeat(4,1fr)', gap:16, marginTop:64 }}>
           {[
             { icon:'⚡', label:'Response Time', value:'< 24h' },
             { icon:'🌍', label:'Timezone',       value:'GMT+6' },

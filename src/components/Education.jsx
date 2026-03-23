@@ -108,7 +108,7 @@ export default function Education({ darkMode }) {
           </p>
         </div>
 
-        <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:48, alignItems:'start' }}>
+        <div className="edu-grid" style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:48, alignItems:'start' }}>
 
           {/* LEFT — timeline */}
           <div style={{ position:'relative' }}>
@@ -168,6 +168,7 @@ export default function Education({ darkMode }) {
           {active && (
             <div
               key={active.id}
+              className="edu-detail"
               style={{
                 background: card, borderRadius:20, padding:32,
                 border: `1px solid ${active.color}33`,
@@ -232,7 +233,7 @@ export default function Education({ darkMode }) {
         </div>
 
         {/* stats bar */}
-        <div style={{ display:'grid', gridTemplateColumns:'repeat(4,1fr)', gap:16, marginTop:64 }}>
+        <div className="edu-stats" style={{ display:'grid', gridTemplateColumns:'repeat(4,1fr)', gap:16, marginTop:64 }}>
           {[
             { label:'Years of Study', value:'8+' },
             { label:'Certifications', value:'4' },

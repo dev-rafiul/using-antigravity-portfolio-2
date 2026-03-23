@@ -134,7 +134,7 @@ export default function Hero({ darkMode }) {
         {/* ── LEFT EDGE ── */}
         <div
           ref={sidesRef}
-          className="fade-sides"
+          className="fade-sides hero-sides"
           style={{
             position: "absolute", left: 24, top: 0, bottom: 0,
             display: "flex", flexDirection: "column",
@@ -178,7 +178,7 @@ export default function Hero({ darkMode }) {
 
         {/* ── RIGHT EDGE ── */}
         <div
-          className="fade-sides"
+          className="fade-sides hero-sides"
           style={{
             position: "absolute", right: 24, top: 0, bottom: 0,
             display: "flex", alignItems: "center", justifyContent: "center",
@@ -192,6 +192,7 @@ export default function Hero({ darkMode }) {
 
         {/* ── CENTER CONTENT ── */}
         <div
+          className="hero-center"
           style={{
             position: "relative", zIndex: 10,
             height: "100%",
@@ -351,12 +352,12 @@ export default function Hero({ darkMode }) {
 
         {/* ── BOTTOM stats ── */}
         <div
+          className="fade-sides hero-stats"
           style={{
             position: "absolute", bottom: 36, left: "50%",
             transform: "translateX(-50%)",
             display: "flex", gap: 48, zIndex: 20,
           }}
-          className="fade-sides"
         >
           {[
             { num: "2+", label: "Years Exp." },
