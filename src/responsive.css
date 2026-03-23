@@ -1,0 +1,151 @@
+/* ═══════════════════════════════════════════
+   GLOBAL RESPONSIVE OVERRIDES
+   Targets all portfolio sections on mobile
+═══════════════════════════════════════════ */
+
+/* ── Hero ── */
+@media (max-width: 768px) {
+  #home .hero-sides { display: none !important; }
+  #home .hero-center {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  #home .hero-stats {
+    gap: 24px !important;
+    bottom: 20px !important;
+  }
+}
+
+/* ── About ── */
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .about-facts {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* ── Skills ── */
+@media (max-width: 640px) {
+  .sk-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+@media (max-width: 380px) {
+  .sk-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ── Projects ── */
+@media (max-width: 900px) {
+  .pj-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+@media (max-width: 600px) {
+  .pj-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .pj-modal-inner {
+    flex-direction: column !important;
+  }
+  .pj-modal-img {
+    height: 200px !important;
+    min-width: unset !important;
+    width: 100% !important;
+  }
+}
+
+/* ── Experience ── */
+@media (max-width: 900px) {
+  .ex-layout {
+    grid-template-columns: 1fr !important;
+  }
+  .ex-detail {
+    display: none !important;
+  }
+}
+@media (max-width: 600px) {
+  .ex-card-inner {
+    flex-direction: column !important;
+    gap: 8px !important;
+  }
+}
+
+/* ── Education ── */
+@media (max-width: 768px) {
+  .edu-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .edu-detail {
+    position: static !important;
+  }
+  .edu-stats {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* ── Contact ── */
+@media (max-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .contact-stats {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .orbit-ring,
+  .pulse-orb,
+  .spin-ring {
+    display: none !important;
+  }
+}
+
+/* ── Footer ── */
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+  .footer-bottom {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 8px !important;
+  }
+}
+
+/* ── General section padding ── */
+@media (max-width: 768px) {
+  section {
+    padding-top: 72px !important;
+    padding-bottom: 64px !important;
+  }
+  .section-inner {
+    padding: 0 16px !important;
+  }
+}
+
+/* ── Stats bars ── */
+@media (max-width: 600px) {
+  .stats-bar {
+    grid-template-columns: repeat(2, 1fr) !important;
+    padding: 20px 16px !important;
+  }
+}
+
+/* ── Navbar mobile ── */
+@media (max-width: 480px) {
+  nav {
+    width: 94% !important;
+    padding: 10px 16px !important;
+  }
+}
+
+/* ── Modal ── */
+@media (max-width: 480px) {
+  .sk-modal-card {
+    padding: 28px 20px !important;
+    border-radius: 20px !important;
+  }
+}
