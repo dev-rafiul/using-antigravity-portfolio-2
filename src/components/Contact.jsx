@@ -27,7 +27,7 @@ const STYLES = `
 
 const contactInfo = [
   { icon:'📧', label:'Email',    value:'rafiulislam040@gmail.com',   href:'mailto:rafiulislam040@gmail.com', color:'#f97316' },
-  { icon:'📱', label:'Phone',    value:'+880 1700-000000',      href:'tel:+8801700000000',        color:'#ec4899' },
+  { icon:'📱', label:'Phone',    value:'+880 1903168428',      href:'tel:+8801903168428',        color:'#ec4899' },
   { icon:'💬', label:'WhatsApp', value:'+880 1700-000000',      href:'https://wa.me/8801700000000',color:'#22c55e' },
   { icon:'📍', label:'Location', value:'Dhaka, Bangladesh',     href:'#',                         color:'#a855f7' },
 ];
