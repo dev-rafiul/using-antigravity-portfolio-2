@@ -21,7 +21,7 @@ const SKILLS_QUICK = [
   { label: "Node.js / Express", pct: 85 },
   { label: "MongoDB",           pct: 80 },
   { label: "Tailwind CSS",      pct: 95 },
-  { label: "TypeScript",        pct: 78 },
+  { label: "TypeScript",        pct: 28 },
   { label: "Figma / UI Design", pct: 72 },
 ];
 
