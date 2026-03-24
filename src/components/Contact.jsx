@@ -34,7 +34,7 @@ const contactInfo = [
 
 const socials = [
   { icon:'🐙', label:'GitHub',   href:'https://github.com/dev-rafiul',   color:'#eef4f7' },
-  { icon:'💼', label:'LinkedIn', href:'https://linkedin.com', color:'#0ea5e9' },
+  { icon:'💼', label:'LinkedIn', href:'https://www.linkedin.com/in/dev-rafi', color:'#0ea5e9' },
   { icon:'🐦', label:'Twitter',  href:'https://twitter.com',  color:'#38bdf8' },
   { icon:'📘', label:'Facebook', href:'https://facebook.com', color:'#3b82f6' },
 ];
