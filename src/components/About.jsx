@@ -26,7 +26,7 @@ const SKILLS_QUICK = [
 ];
 
 const FACTS = [
-  { num: "2+",  sub: "Years of\nExperience" },
+  { num: "1+",  sub: "Years of\nExperience" },
   { num: "15+", sub: "Projects\nDelivered"  },
   { num: "10+", sub: "Happy\nClients"       },
   { num: "∞",   sub: "Cups of\nCoffee"      },
