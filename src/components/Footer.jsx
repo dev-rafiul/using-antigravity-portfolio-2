@@ -14,13 +14,6 @@ const links = [
   { label:'Contact',    href:'#contact' },
 ];
 
-// const socials = [
-//   { icon:'🐙', href:'https://github.com/dev-rafiul',   color:'#eef4f7', label:'GitHub' },
-//   { icon:'💼', href:'https://linkedin.com', color:'#0ea5e9', label:'LinkedIn' },
-//   { icon:'🐦', href:'https://twitter.com',  color:'#38bdf8', label:'Twitter' },
-//   { icon:'📘', href:'https://facebook.com', color:'#3b82f6', label:'Facebook' },
-// ];
-
 
 
 
