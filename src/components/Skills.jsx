@@ -8,8 +8,8 @@ const CATEGORIES = ["All", "Frontend", "Backend", "Database", "Tools"];
 const SKILLS = [
   /* Frontend */
   { name: "React",        cat: "Frontend",  pct: 92, icon: "⚛️",  color: "#61dafb", desc: "Component architecture, hooks, context, performance optimisation." },
-  { name: "Next.js",      cat: "Frontend",  pct: 85, icon: "▲",   color: "#ffffff", desc: "SSR, SSG, App Router, API routes, image optimisation." },
-  { name: "TypeScript",   cat: "Frontend",  pct: 78, icon: "TS",  color: "#3178c6", desc: "Strict typing, generics, utility types, declaration files." },
+  { name: "Next.js",      cat: "Frontend",  pct: 65, icon: "▲",   color: "#ffffff", desc: "SSR, SSG, App Router, API routes, image optimisation." },
+  { name: "TypeScript",   cat: "Frontend",  pct: 28, icon: "TS",  color: "#3178c6", desc: "Strict typing, generics, utility types, declaration files." },
   { name: "Tailwind CSS", cat: "Frontend",  pct: 95, icon: "🌊",  color: "#38bdf8", desc: "Utility-first styling, custom themes, responsive design." },
   { name: "Framer Motion",cat: "Frontend",  pct: 80, icon: "🎞️", color: "#e879f9", desc: "Declarative animations, gestures, layout transitions." },
   { name: "JavaScript",   cat: "Frontend",  pct: 90, icon: "JS",  color: "#f7df1e", desc: "ES2022+, async/await, closures, event loop mastery." },
