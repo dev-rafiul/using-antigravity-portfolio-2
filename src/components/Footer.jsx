@@ -43,7 +43,7 @@ const FacebookIcon = () => (
 
 const socials = [
   { icon: <GitHubIcon />,   href: 'https://github.com/dev-rafiul', color: '#eef4f7', label: 'GitHub' },
-  { icon: <LinkedInIcon />, href: 'https://linkedin.com',           color: '#0ea5e9', label: 'LinkedIn' },
+  { icon: <LinkedInIcon />, href: 'https://www.linkedin.com/in/dev-rafi',           color: '#0ea5e9', label: 'LinkedIn' },
   { icon: <TwitterIcon />,  href: 'https://twitter.com',            color: '#38bdf8', label: 'Twitter' },
   { icon: <FacebookIcon />, href: 'https://facebook.com',           color: '#3b82f6', label: 'Facebook' },
 ];
