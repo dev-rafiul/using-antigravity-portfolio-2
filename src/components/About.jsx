@@ -27,9 +27,9 @@ const SKILLS_QUICK = [
 
 const FACTS = [
   { num: "1+",  sub: "Years of\nExperience" },
-  { num: "11+", sub: "Projects\nDelivered"  },
+  { num: "10+", sub: "Projects\nDelivered"  },
   { num: "1+", sub: "Happy\nClients"       },
-  { num: "∞",   sub: "Cups of\nCoffee"      },
+  { num: "∞",   sub: "Cups of\nCoffee / Tea"      },
 ];
 
 export default function About({ darkMode }) {
