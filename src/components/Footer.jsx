@@ -113,21 +113,7 @@ export default function Footer({ darkMode }) {
             </p>
             <div style={{ display:'flex', gap:10 }}>
               {socials.map((s,i) => (
-                // <a key={i} href={s.href} target="_blank" rel="noreferrer"
-                //   aria-label={s.label}
-                //   onMouseEnter={() => setHovered(`soc-${i}`)}
-                //   onMouseLeave={() => setHovered(null)}
-                //   style={{
-                //     width:40, height:40, borderRadius:10, background: card,
-                //     border:`1px solid ${hovered===`soc-${i}` ? s.color : border}`,
-                //     display:'flex', alignItems:'center', justifyContent:'center', fontSize:18,
-                //     textDecoration:'none',
-                //     transform: hovered===`soc-${i}` ? 'translateY(-4px)' : 'none',
-                //     boxShadow: hovered===`soc-${i}` ? `0 6px 20px ${s.color}40` : 'none',
-                //     transition:'all .3s ease',
-                //   }}>
-                //   {s.icon}
-                // </a>
+               
 
 
 <a key={i} href={s.href} target="_blank" rel="noreferrer"
