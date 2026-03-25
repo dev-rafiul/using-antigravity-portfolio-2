@@ -11,7 +11,7 @@ const SKILLS = [
   { name: "Next.js",      cat: "Frontend",  pct: 65, icon: "▲",   color: "#ffffff", desc: "SSR, SSG, App Router, API routes, image optimisation." },
   { name: "TypeScript",   cat: "Frontend",  pct: 28, icon: "TS",  color: "#3178c6", desc: "Strict typing, generics, utility types, declaration files." },
   { name: "Tailwind CSS", cat: "Frontend",  pct: 97, icon: "🌊",  color: "#38bdf8", desc: "Utility-first styling, custom themes, responsive design." },
-  { name: "Daisy UI",cat: "Frontend",  pct: 82, icon: "🎞️", color: "#e879f9", desc: "Declarative animations, gestures, layout transitions." },
+  { name: "Daisy UI",cat: "Frontend",  pct: 82, icon: "🎞️", color: "#e879f9", desc: "Declarative animations, gestures, layout transitions Component." },
   { name: "JavaScript",   cat: "Frontend",  pct: 90, icon: "JS",  color: "#f7df1e", desc: "ES2022+, async/await, closures, event loop mastery." },
 
   /* Backend */
