@@ -1,21 +1,21 @@
 import { useEffect, useRef, useState } from 'react';
 
 const educationData = [
+  // {
+  //   id: 1,
+  //   degree: 'Bachelor of Science in Computer Science',
+  //   institution: 'University of Dhaka',
+  //   period: '2020 – 2024',
+  //   grade: 'CGPA 3.75 / 4.00',
+  //   type: 'University',
+  //   icon: '🎓',
+  //   color: '#f97316',
+  //   description: 'Focused on software engineering, algorithms, data structures, and web technologies. Completed capstone project on real-time collaborative web applications.',
+  //   courses: ['Data Structures & Algorithms', 'Web Engineering', 'Database Systems', 'Software Architecture', 'Machine Learning Basics'],
+  //   achievements: ['Dean\'s List 2022 & 2023', 'Best Capstone Project Award', 'Programming Club President'],
+  // },
   {
     id: 1,
-    degree: 'Bachelor of Science in Computer Science',
-    institution: 'University of Dhaka',
-    period: '2020 – 2024',
-    grade: 'CGPA 3.75 / 4.00',
-    type: 'University',
-    icon: '🎓',
-    color: '#f97316',
-    description: 'Focused on software engineering, algorithms, data structures, and web technologies. Completed capstone project on real-time collaborative web applications.',
-    courses: ['Data Structures & Algorithms', 'Web Engineering', 'Database Systems', 'Software Architecture', 'Machine Learning Basics'],
-    achievements: ['Dean\'s List 2022 & 2023', 'Best Capstone Project Award', 'Programming Club President'],
-  },
-  {
-    id: 2,
     degree: 'Higher Secondary Certificate (HSC)',
     institution: 'Dhaka College',
     period: '2017 – 2019',
@@ -28,7 +28,7 @@ const educationData = [
     achievements: ['Perfect GPA 5.00', 'National Science Olympiad Participant', 'College Merit Scholarship'],
   },
   {
-    id: 3,
+    id: 2,
     degree: 'Secondary School Certificate (SSC)',
     institution: 'Motijheel Government High School',
     period: '2015 – 2017',
@@ -39,6 +39,19 @@ const educationData = [
     description: 'Science group with distinction. Developed early interest in computers and programming through school ICT classes.',
     courses: ['Mathematics', 'Science', 'ICT', 'English', 'Bengali'],
     achievements: ['Perfect GPA 5.00', 'School Board Scholarship', 'Math Olympiad Winner'],
+  },
+  {
+    id: 3,
+    degree: 'Madrasha',
+    institution: 'Ummul Qura Cadet Madrasha',
+    period: '2009 – 2014',
+    grade: 'CGPA 4.75 / 5.00',
+    type: 'Madrasha',
+    icon: '🎓',
+    color: '#f97316',
+    description: 'Focused on software engineering, algorithms, data structures, and web technologies. Completed capstone project on real-time collaborative web applications.',
+    courses: ['Data Structures & Algorithms', 'Web Engineering', 'Database Systems', 'Software Architecture', 'Machine Learning Basics'],
+    achievements: ['Dean\'s List 2022 & 2023', 'Best Capstone Project Award', 'Programming Club President'],
   },
   {
     id: 4,
