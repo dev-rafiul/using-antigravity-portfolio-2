@@ -12,7 +12,7 @@ const educationData = [
     icon: '📚',
     color: '#ec4899',
     description: 'Commerce group with Business, Architect, and Technology. Achieved perfect GPA and participated in national science olympiad.',
-    courses: ['Mathematics', 'Physics', 'Chemistry', 'ICT', 'English'],
+    courses: ['Mathematics', 'Technology', 'Business', 'ICT', 'English'],
     achievements: ['Perfect GPA 5.00', 'National Science Olympiad Participant', 'College Merit Scholarship'],
   },
   {
