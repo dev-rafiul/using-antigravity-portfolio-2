@@ -24,7 +24,7 @@ const educationData = [
     type: 'School',
     icon: '🏫',
     color: '#a855f7',
-    description: 'Science group with distinction. Developed early interest in computers and programming through school ICT classes.',
+    description: 'Commerce group with distinction. Developed early interest in computers and programming through school ICT classes.',
     courses: ['Mathematics', 'Science', 'ICT', 'English', 'Bengali'],
     achievements: ['Perfect GPA 5.00', 'School Board Scholarship', 'Math Olympiad Winner'],
   },
