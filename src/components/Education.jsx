@@ -1,19 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 const educationData = [
-  // {
-  //   id: 1,
-  //   degree: 'Bachelor of Science in Computer Science',
-  //   institution: 'University of Dhaka',
-  //   period: '2020 – 2024',
-  //   grade: 'CGPA 3.75 / 4.00',
-  //   type: 'University',
-  //   icon: '🎓',
-  //   color: '#f97316',
-  //   description: 'Focused on software engineering, algorithms, data structures, and web technologies. Completed capstone project on real-time collaborative web applications.',
-  //   courses: ['Data Structures & Algorithms', 'Web Engineering', 'Database Systems', 'Software Architecture', 'Machine Learning Basics'],
-  //   achievements: ['Dean\'s List 2022 & 2023', 'Best Capstone Project Award', 'Programming Club President'],
-  // },
+  
   {
     id: 1,
     degree: 'Higher Secondary Certificate (HSC)',
