@@ -5,7 +5,7 @@ const educationData = [
   {
     id: 1,
     degree: 'Higher Secondary Certificate (HSC)',
-    institution: 'Dhaka College',
+    institution: 'Mirpur Model Degree College',
     period: '2025 Ongoing',
     grade: 'Running',
     type: 'College',
