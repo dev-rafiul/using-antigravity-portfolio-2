@@ -159,7 +159,7 @@ export default function Footer({ darkMode }) {
             {[
               { icon:'📧', val:'rafiulislam040@gmail.com' },
               { icon:'📱', val:'+880 1903168428' },
-              { icon:'📍', val:'Dhaka, Bangladesh' },
+              { icon:'📍', val:'North Kafrul, Dhaka Cantonment Bangladesh 1206' },
             ].map((c,i) => (
               <div key={i} style={{ display:'flex', alignItems:'center', gap:10, marginBottom:12 }}>
                 <span style={{ fontSize:16, animation:`footerFloat ${3+i}s ease-in-out infinite`, animationDelay:`${i*0.5}s`, display:'inline-block' }}>{c.icon}</span>
