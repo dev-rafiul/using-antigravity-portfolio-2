@@ -393,7 +393,7 @@ export default function Contact({ darkMode }) {
             { icon:'⚡', label:'Response Time', value:'< 24h' },
             { icon:'🌍', label:'Timezone',       value:'GMT+6' },
             { icon:'💼', label:'Availability',   value:'Open' },
-            { icon:'🤝', label:'Projects Done',  value:'20+' },
+            { icon:'🤝', label:'Projects Done',  value:'12+' },
           ].map((s,i) => (
             <div key={i} data-scroll="fade-up" data-scroll-delay={`${i*0.1}`}
               onMouseEnter={() => setHovered(`stat-${i}`)}
