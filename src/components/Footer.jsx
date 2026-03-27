@@ -157,7 +157,7 @@ export default function Footer({ darkMode }) {
           <div>
             <h4 style={{ color:'#fff', fontWeight:700, fontSize:14, textTransform:'uppercase', letterSpacing:2, marginBottom:20 }}>Contact</h4>
             {[
-              { icon:'📧', val:'rafiul@example.com' },
+              { icon:'📧', val:'rafiulislam040@gmail.com' },
               { icon:'📱', val:'+880 1700-000000' },
               { icon:'📍', val:'Dhaka, Bangladesh' },
             ].map((c,i) => (
