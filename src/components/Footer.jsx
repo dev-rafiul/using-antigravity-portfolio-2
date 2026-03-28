@@ -181,7 +181,7 @@ export default function Footer({ darkMode }) {
           </p>
           <div style={{ display:'flex', gap:6, alignItems:'center' }}>
             <div style={{ width:6, height:6, borderRadius:'50%', background:'#22c55e', animation:'footerPulse 1.2s ease-in-out infinite' }} />
-            <span style={{ color: muted, fontSize:12 }}>All systems operational</span>
+            <span style={{ color: muted, fontSize:12 }}>All systems operational By Rafiul</span>
           </div>
         </div>
       </div>
