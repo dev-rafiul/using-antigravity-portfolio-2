@@ -153,7 +153,7 @@ export default function Hero({ darkMode }) {
           {/* Social icons */}
           <div style={{ display: "flex", flexDirection: "column", gap: 14, alignItems: "center" }}>
             {[
-              { label: "Gh", href: "https://github.com" },
+              { label: "Gh", href: "https://github.com/dev-rafiul" },
               { label: "Li", href: "https://linkedin.com" },
               { label: "Tw", href: "https://twitter.com" },
             ].map(({ label, href }) => (
