@@ -154,7 +154,7 @@ export default function Hero({ darkMode }) {
           <div style={{ display: "flex", flexDirection: "column", gap: 14, alignItems: "center" }}>
             {[
               { label: "Gh", href: "https://github.com/dev-rafiul" },
-              { label: "Li", href: "https://linkedin.com" },
+              { label: "Li", href: "https://www.linkedin.com/in/dev-rafi/" },
               { label: "Tw", href: "https://twitter.com" },
             ].map(({ label, href }) => (
               <a
