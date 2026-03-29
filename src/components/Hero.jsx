@@ -155,7 +155,7 @@ export default function Hero({ darkMode }) {
             {[
               { label: "Gh", href: "https://github.com/dev-rafiul" },
               { label: "Li", href: "https://www.linkedin.com/in/dev-rafi/" },
-              { label: "Tw", href: "https://twitter.com" },
+              { label: "Tw", href: "https://x.com/rafiulX" },
             ].map(({ label, href }) => (
               <a
                 key={label}
