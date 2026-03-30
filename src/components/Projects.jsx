@@ -36,7 +36,7 @@ const PROJECTS = [
     fullDesc: "Plateshare reduces food waste by connecting donors with recipients in local communities. Features include real-time food listing, geolocation-based matching, in-app messaging, and a reputation system. Integrated with Cloudinary for image optimisation and Google Maps for location services.",
     challenges: "Building a reliable geolocation matching system that works across different devices and network conditions. Implemented a fallback to manual location entry with address geocoding.",
     improvements: "Adding push notifications for new listings nearby, a mobile app, and partnerships with local restaurants for bulk donations.",
-    live: "https://curious-palmier-ba6203.netlify.app/",
+    live: "https://plate-shares.netlify.app/",
     github: "https://github.com/dev-rafiul/client-side-plateshare",
     image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&q=80",
   },
