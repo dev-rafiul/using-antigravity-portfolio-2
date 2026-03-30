@@ -19,7 +19,7 @@ const PROJECTS = [
     challenges: "Implementing real-time leaderboard updates without overwhelming the server was the biggest challenge. Solved using Redis pub/sub with debounced WebSocket broadcasts and client-side optimistic updates.",
     improvements: "Planning to add AI-powered code review, multi-language support, and a mobile app with offline contest participation.",
     live: "https://create-arena.web.app/",
-    github: "https://github.com/yourusername/create-arena",
+    github: "https://github.com/dev-rafiul/create_arena_frontend",
     image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80",
   },
   {
