@@ -390,7 +390,7 @@ export default function Contact({ darkMode }) {
         {/* ── bottom stats ── */}
         <div className="contact-stats" data-scroll="fade-up" style={{ display:'grid', gridTemplateColumns:'repeat(4,1fr)', gap:16, marginTop:64 }}>
           {[
-            { icon:'⚡', label:'Response Time', value:'< 24h' },
+            { icon:'⚡', label:'Response Time', value:'24h' },
             { icon:'🌍', label:'Timezone',       value:'GMT+6' },
             { icon:'💼', label:'Availability',   value:'Open' },
             { icon:'🤝', label:'Projects Done',  value:'12+' },
