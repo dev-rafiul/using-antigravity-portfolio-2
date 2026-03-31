@@ -307,7 +307,7 @@ export default function Contact({ darkMode }) {
             </div>
           </div>
 
-          {/* ── RIGHT: form ── */}
+        
           <div data-scroll="fade-right"
             style={{ background:card, borderRadius:24, padding:36, border:`1px solid ${border}`,
               position:'relative', overflow:'hidden' }}>
