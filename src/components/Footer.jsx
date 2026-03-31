@@ -169,7 +169,7 @@ export default function Footer({ darkMode }) {
           </div>
         </div>
 
-        {/* divider */}
+       
         <div style={{ height:1, background:`linear-gradient(90deg,transparent,${border},transparent)`, marginBottom:24 }} />
 
         {/* bottom row */}
