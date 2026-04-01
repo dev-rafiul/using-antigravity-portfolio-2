@@ -225,7 +225,7 @@ export default function Contact({ darkMode }) {
 
         <div className="contact-grid" style={{ display:'grid', gridTemplateColumns:'1fr 1.4fr', gap:48, alignItems:'start' }}>
 
-          {/* ── LEFT: contact info ── */}
+          {/* ── LEFT info ── */}
           <div>
             <div data-scroll="fade-left" style={{ marginBottom:28 }}>
               <h3 style={{ color:text, fontWeight:700, fontSize:20, marginBottom:8 }}>Contact Information</h3>
