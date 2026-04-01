@@ -270,7 +270,6 @@ export default function Contact({ darkMode }) {
               </a>
             ))}
 
-            {/* socials */}
             <div data-scroll="fade-left" data-scroll-delay="0.45" style={{ marginTop:28 }}>
               <p style={{ color:muted, fontSize:12, fontWeight:700, textTransform:'uppercase', letterSpacing:1, marginBottom:14 }}>Follow Me</p>
               <div style={{ display:'flex', gap:12 }}>
