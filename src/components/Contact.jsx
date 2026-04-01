@@ -249,7 +249,7 @@ export default function Contact({ darkMode }) {
                   transition:'all .3s ease',
                 }}
               >
-                {/* animated icon wrapper */}
+                {/* animated icon  */}
                 <div style={{
                   width:48, height:48, borderRadius:14, background:`${info.color}20`,
                   display:'flex', alignItems:'center', justifyContent:'center', fontSize:22, flexShrink:0,
