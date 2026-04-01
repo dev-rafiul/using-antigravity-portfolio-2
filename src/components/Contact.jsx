@@ -189,7 +189,7 @@ export default function Contact({ darkMode }) {
       <div className="spin-ring" style={{ position:'absolute', bottom:'25%', left:'12%', width:140, height:140, borderRadius:'50%',
         border:'1px dashed rgba(168,85,247,.25)', animation:'spinSlowR 15s linear infinite', pointerEvents:'none' }} />
 
-      {/* floating particles */}
+      {/* floating part */}
       {particles.map((p,i) => <Particle key={i} {...p} />)}
 
       
