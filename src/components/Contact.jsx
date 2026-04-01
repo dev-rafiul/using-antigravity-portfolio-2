@@ -297,7 +297,7 @@ export default function Contact({ darkMode }) {
               </div>
             </div>
 
-            {/* availability badge */}
+           
             <div data-scroll="fade-left" data-scroll-delay="0.55"
               style={{ marginTop:28, display:'inline-flex', alignItems:'center', gap:10,
                 padding:'10px 18px', borderRadius:999,
