@@ -183,7 +183,7 @@ export default function Contact({ darkMode }) {
       <div className="orbit-ring"><OrbitRing color="#ec4899" radius={50} duration={7}  reverse style={{ bottom:'20%', right:'5%' }} /></div>
       <div className="orbit-ring"><OrbitRing color="#a855f7" radius={40} duration={9}  style={{ top:'60%', left:'8%' }} /></div>
 
-      {/* spinning rings */}
+      {/* spinning ring */}
       <div className="spin-ring" style={{ position:'absolute', top:'20%', right:'15%', width:180, height:180, borderRadius:'50%',
         border:'1px dashed rgba(249,115,22,.25)', animation:'spinSlow 20s linear infinite', pointerEvents:'none' }} />
       <div className="spin-ring" style={{ position:'absolute', bottom:'25%', left:'12%', width:140, height:140, borderRadius:'50%',
