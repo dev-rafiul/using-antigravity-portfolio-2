@@ -178,7 +178,7 @@ export default function Contact({ darkMode }) {
       <PulseOrb color="#a855f7" size={80}  style={{ bottom:'12%', left:'6%' }} />
       <PulseOrb color="#06b6d4" size={60}  style={{ top:'50%', right:'3%' }} />
 
-      {/* orbit rings */}
+      {/* orbit ring*/}
       <div className="orbit-ring"><OrbitRing color="#f97316" radius={60} duration={5}  style={{ top:'15%', left:'3%' }} /></div>
       <div className="orbit-ring"><OrbitRing color="#ec4899" radius={50} duration={7}  reverse style={{ bottom:'20%', right:'5%' }} /></div>
       <div className="orbit-ring"><OrbitRing color="#a855f7" radius={40} duration={9}  style={{ top:'60%', left:'8%' }} /></div>
