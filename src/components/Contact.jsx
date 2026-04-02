@@ -173,7 +173,7 @@ export default function Contact({ darkMode }) {
         background:'radial-gradient(circle,rgba(236,72,153,.08) 0%,transparent 70%)',
         animation:'floatX 7s ease-in-out infinite', pointerEvents:'none' }} />
 
-      {/* pulse orbs */}
+     
       <PulseOrb color="#f97316" size={100} style={{ top:'8%', right:'8%' }} />
       <PulseOrb color="#a855f7" size={80}  style={{ bottom:'12%', left:'6%' }} />
       <PulseOrb color="#06b6d4" size={60}  style={{ top:'50%', right:'3%' }} />
