@@ -134,7 +134,7 @@ export default function Contact({ darkMode }) {
     boxSizing:'border-box', fontFamily:'inherit',
   });
 
-  /* inject keyframes once */
+  /* inject keyframes  */
   useEffect(() => {
     if (!document.getElementById('contact-anim-styles')) {
       const s = document.createElement('style');
