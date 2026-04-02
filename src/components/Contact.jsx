@@ -144,7 +144,7 @@ export default function Contact({ darkMode }) {
     }
   }, []);
 
-  /* particle positions */
+ 
   const particles = [
     { color:'#f97316', style:{ left:'10%', bottom:'20%' } },
     { color:'#ec4899', style:{ left:'20%', bottom:'30%' } },
