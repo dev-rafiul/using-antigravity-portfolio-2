@@ -160,7 +160,7 @@ export default function Contact({ darkMode }) {
     <section id="contact" ref={sectionRef}
       style={{ background:bg, padding:'100px 0', position:'relative', overflow:'hidden', minHeight:'100vh' }}
     >
-      {/* ── infinite background animations ── */}
+      {/* ── infinite back animations ── */}
 
       {/* large gradient orbs that float */}
       <div style={{ position:'absolute', top:'5%', left:'-5%', width:500, height:500, borderRadius:'50%',
