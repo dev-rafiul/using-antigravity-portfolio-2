@@ -83,7 +83,7 @@ function OrbitRing({ color, radius=70, dotSize=8, duration=6, reverse=false, sty
   );
 }
 
-/* ── wave bars (audio visualizer style) ── */
+/* ── wave bars (audio visualizer) ── */
 function WaveBars({ color }) {
   return (
     <div style={{ display:'flex', alignItems:'center', gap:3, height:24 }}>
