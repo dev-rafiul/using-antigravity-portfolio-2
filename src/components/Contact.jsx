@@ -39,7 +39,7 @@ const socials = [
   { icon:'📘', label:'Facebook', href:'https://www.facebook.com/devrafiul0/', color:'#3b82f6' },
 ];
 
-/* ── floati ── */
+/* ── ── */
 function Particle({ color, style }) {
   return (
     <div style={{
