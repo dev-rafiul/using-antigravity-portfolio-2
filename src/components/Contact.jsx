@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 
-/* ── infin ── */
+/* ── ── */
 const STYLES = `
 @keyframes floatUp    { 0%,100%{transform:translateY(0) scale(1);opacity:.7} 50%{transform:translateY(-28px) scale(1.15);opacity:1} }
 @keyframes floatX     { 0%,100%{transform:translateX(0);} 50%{transform:translateX(18px);} }
