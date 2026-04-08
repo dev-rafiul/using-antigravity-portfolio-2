@@ -52,7 +52,7 @@ export default function About({ darkMode }) {
   const line    = isDark ? "rgba(255,255,255,0.10)"   : "rgba(0,0,0,0.10)";
   const tabActiveBg = isDark ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.07)";
 
-  /* ── Intersection observer ── */
+  /* ── Intersection observ ── */
   useEffect(() => {
     const el = sectionRef.current;
     if (!el) return;
