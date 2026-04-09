@@ -49,7 +49,7 @@ function AppInner({ darkMode, toggleDarkMode }) {
       {/* Cursor glow */}
       <div id="cursor-glow" />
 
-      {/* <InteractiveNavbar activeSection={activeSection} theme={darkMode ? 'dark' : 'light'} toggleDarkMode={toggleDarkMode} /> */}
+      <InteractiveNavbar activeSection={activeSection} theme={darkMode ? 'dark' : 'light'} toggleDarkMode={toggleDarkMode} />
 
       <div className="flex-grow w-full relative z-10">
         <Routes>

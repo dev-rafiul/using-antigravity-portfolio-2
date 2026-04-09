@@ -18,7 +18,7 @@ const educationData = [
   {
     id: 2,
     degree: 'Secondary School Certificate (SSC)',
-    institution: 'Motijheel Government High School',
+    institution: 'Muslim Modern Academy',
     period: '2014 – 2022',
     grade: 'GPA 5.00 / 4.21',
     type: 'School',
