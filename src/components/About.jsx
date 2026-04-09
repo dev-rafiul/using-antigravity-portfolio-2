@@ -273,7 +273,8 @@ export default function About({ darkMode }) {
                   background: isDark ? "#1a1714" : "#e8e4df",
                 }}>
                   <img
-                    src="/src/assets/rafiul.jpeg"
+                    src="https://i.ibb.co.com/mVBjQsFJ/rafiul.jpg"
+                    
                     alt="Rafiul Islam"
                     style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top" }}
                     onError={e => { e.target.style.display = "none"; }}
