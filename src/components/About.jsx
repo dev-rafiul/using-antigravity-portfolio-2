@@ -502,7 +502,7 @@ export default function About({ darkMode }) {
                 }}
               >
                 <div style={{
-                  fontFamily: "'Cormorant Garamond', serif",
+                  fontFamily: "serif",
                   fontSize: "clamp(32px, 4vw, 48px)",
                   fontWeight: 700,
                   lineHeight: 1,
