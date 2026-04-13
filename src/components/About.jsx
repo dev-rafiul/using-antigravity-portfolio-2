@@ -328,10 +328,10 @@ export default function About({ darkMode }) {
               </div>
             </div>
 
-            {/* ── RIGHT — tabs + skills ── */}
+          
             <div ref={rightRef} className="ab-fade-right" style={{ display: "flex", flexDirection: "column", gap: 36 }}>
 
-              {/* Tab switcher */}
+              
               <div>
                 <div style={{
                   display: "flex", gap: 4,
@@ -363,7 +363,7 @@ export default function About({ darkMode }) {
                   ))}
                 </div>
 
-                {/* Tab body */}
+              
                 <div key={activeTab} className="tab-body" style={{
                   fontSize: "clamp(13px,1.1vw,15px)",
                   color: muted,
@@ -375,10 +375,10 @@ export default function About({ darkMode }) {
                 </div>
               </div>
 
-              {/* Divider */}
+            
               <div style={{ height: 1, background: `linear-gradient(90deg, ${line}, transparent)` }} />
 
-              {/* Skill bars */}
+              
               <div>
                 <h3 style={{
                   fontSize: 13, fontWeight: 600, letterSpacing: "0.12em",
