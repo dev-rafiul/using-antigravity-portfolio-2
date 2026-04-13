@@ -245,7 +245,7 @@ export default function About({ darkMode }) {
             {/* ── LEFT — photo + facts ── */}
             <div ref={leftRef} className="ab-fade-left" style={{ display: "flex", flexDirection: "column", gap: 32 }}>
 
-              {/* Photo card */}
+             
               <div style={{
                 position: "relative",
                 borderRadius: 28,
@@ -278,7 +278,7 @@ export default function About({ darkMode }) {
                     style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top" }}
                     onError={e => { e.target.style.display = "none"; }}
                   />
-                  {/* Gradient overlay */}
+                  
                   <div style={{
                     position: "absolute", inset: 0,
                     background: isDark
@@ -311,7 +311,7 @@ export default function About({ darkMode }) {
                 </div>
               </div>
 
-              {/* Tech tags */}
+            
               <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
                 {["React", "Next.js", "Node.js", "MongoDB", "TypeScript", "Tailwind", "Express", "Figma"].map(tag => (
                   <span key={tag} className="tech-tag" style={{
