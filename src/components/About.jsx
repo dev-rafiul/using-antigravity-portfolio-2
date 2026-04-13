@@ -437,7 +437,7 @@ export default function About({ darkMode }) {
                 </div>
               </div>
 
-              {/* CTA */}
+              
               <div style={{ display: "flex", gap: 16, flexWrap: "wrap", marginTop: 8 }}>
                 <a
                   href="/resume.pdf"
@@ -477,7 +477,7 @@ export default function About({ darkMode }) {
             </div>
           </div>
 
-          {/* ── Facts row ── */}
+          
           <div
             ref={factsRef}
             className="ab-fade-facts about-facts"
@@ -526,7 +526,7 @@ export default function About({ darkMode }) {
 
         </div>
 
-        {/* ── responsive styles ── */}
+        
         <style>{`
           @media (max-width: 768px) {
             .about-grid {
