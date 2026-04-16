@@ -180,7 +180,7 @@ export default function About({ darkMode }) {
           padding: "120px 0 100px",
         }}
       >
-        {/* ── background orb ── */}
+       
         <div style={{
           position: "absolute", right: "-10%", top: "20%",
           width: 500, height: 500, borderRadius: "50%",
