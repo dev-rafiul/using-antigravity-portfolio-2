@@ -67,7 +67,7 @@ function PulseOrb({ color, size=120, style }) {
   );
 }
 
-/* ── orbiting dot around a center ── */
+
 function OrbitRing({ color, radius=70, dotSize=8, duration=6, reverse=false, style }) {
   return (
     <div style={{ position:'absolute', width:radius*2, height:radius*2, ...style, pointerEvents:'none' }}>
