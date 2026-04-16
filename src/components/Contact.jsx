@@ -50,7 +50,7 @@ function Particle({ color, style }) {
   );
 }
 
-/* ── animated orbit with pulse ring ── */
+
 function PulseOrb({ color, size=120, style }) {
   return (
     <div style={{ position:'absolute', width:size, height:size, ...style, pointerEvents:'none' }}>
