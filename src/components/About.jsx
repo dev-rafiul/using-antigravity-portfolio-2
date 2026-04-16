@@ -204,7 +204,7 @@ export default function About({ darkMode }) {
 
         <div style={{ maxWidth: 1160, margin: "0 auto", padding: "0 32px", position: "relative", zIndex: 1 }}>
 
-          {/* ── Section heading ── */}
+
           <div ref={headRef} className="ab-fade-up" style={{ marginBottom: 72, textAlign: "center" }}>
             <span style={{
               display: "inline-block",
