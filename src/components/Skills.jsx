@@ -11,24 +11,24 @@ const SKILLS = [
   { name: "Next.js",      cat: "Frontend",  pct: 65, icon: "▲",   color: "#ffffff", desc: "SSR, SSG, App Router, API routes, image optimisation." },
   { name: "TypeScript",   cat: "Frontend",  pct: 28, icon: "TS",  color: "#3178c6", desc: "Strict typing, generics, utility types, declaration files." },
   { name: "Tailwind CSS", cat: "Frontend",  pct: 97, icon: "🌊",  color: "#38bdf8", desc: "Utility-first styling, custom themes, responsive design." },
-  { name: "Daisy UI",cat: "Frontend",  pct: 82, icon: "🎞️", color: "#e879f9", desc: "Declarative animations, gestures, layout transitions Component." },
+  { name: "Daisy UI",cat: "Frontend",  pct: 92, icon: "🎞️", color: "#e879f9", desc: "Declarative animations, gestures, layout transitions Component." },
   { name: "JavaScript",   cat: "Frontend",  pct: 90, icon: "JS",  color: "#f7df1e", desc: "ES2022+, async/await, closures, event loop mastery." },
 
   /* Backend */
-  { name: "Node.js",      cat: "Backend",   pct: 85, icon: "🟢",  color: "#68a063", desc: "Event-driven server, streams, worker threads, clustering." },
-  { name: "Express",      cat: "Backend",   pct: 88, icon: "🚂",  color: "#ffffff", desc: "REST APIs, middleware chains, error handling, auth." },
+  { name: "Node.js",      cat: "Backend",   pct: 75, icon: "🟢",  color: "#68a063", desc: "Event-driven server, streams, worker threads, clustering." },
+  { name: "Express",      cat: "Backend",   pct: 78, icon: "🚂",  color: "#ffffff", desc: "REST APIs, middleware chains, error handling, auth." },
   { name: "REST APIs",    cat: "Backend",   pct: 90, icon: "🔗",  color: "#f97316", desc: "Resource design, versioning, pagination, rate limiting." },
-  { name: "GraphQL",      cat: "Backend",   pct: 65, icon: "◈",   color: "#e535ab", desc: "Schema design, resolvers, Apollo Server, subscriptions." },
+  // { name: "GraphQL",      cat: "Backend",   pct: 65, icon: "◈",   color: "#e535ab", desc: "Schema design, resolvers, Apollo Server, subscriptions." },
 
   /* Database */
   { name: "MongoDB",      cat: "Database",  pct: 82, icon: "🍃",  color: "#47a248", desc: "Aggregation pipelines, indexing, Atlas, Mongoose ODM." },
-  { name: "Firebase",     cat: "Database",  pct: 75, icon: "🔥",  color: "#ffca28", desc: "Firestore, Realtime DB, Auth, Cloud Functions." },
-  { name: "PostgreSQL",   cat: "Database",  pct: 60, icon: "🐘",  color: "#336791", desc: "Relational design, joins, transactions, Prisma ORM." },
+  { name: "Firebase",     cat: "Database",  pct: 85, icon: "🔥",  color: "#ffca28", desc: "Firestore, Realtime DB, Auth, Cloud Functions." },
+  // { name: "PostgreSQL",   cat: "Database",  pct: 60, icon: "🐘",  color: "#336791", desc: "Relational design, joins, transactions, Prisma ORM." },
 
   /* Tools */
   { name: "Git & GitHub", cat: "Tools",     pct: 92, icon: "🐙",  color: "#f0f0f0", desc: "Branching strategies, PRs, CI/CD, GitHub Actions." },
-  { name: "Figma",        cat: "Tools",     pct: 74, icon: "🎨",  color: "#a259ff", desc: "Component libraries, auto-layout, prototyping, handoff." },
-  { name: "Docker",       cat: "Tools",     pct: 58, icon: "🐳",  color: "#2496ed", desc: "Containerisation, Compose, multi-stage builds." },
+  { name: "Figma",        cat: "Tools",     pct: 84, icon: "🎨",  color: "#a259ff", desc: "Component libraries, auto-layout, prototyping, handoff." },
+  // { name: "Docker",       cat: "Tools",     pct: 58, icon: "🐳",  color: "#2496ed", desc: "Containerisation, Compose, multi-stage builds." },
   { name: "Vercel",       cat: "Tools",     pct: 88, icon: "▲",   color: "#ffffff", desc: "Edge deployments, preview URLs, env management." },
 ];
 
