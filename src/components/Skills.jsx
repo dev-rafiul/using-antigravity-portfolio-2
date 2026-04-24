@@ -28,7 +28,7 @@ const SKILLS = [
   /* Tools */
   { name: "Git & GitHub", cat: "Tools",     pct: 92, icon: "🐙",  color: "#f0f0f0", desc: "Branching strategies, PRs, CI/CD, GitHub Actions." },
   { name: "Figma",        cat: "Tools",     pct: 84, icon: "🎨",  color: "#a259ff", desc: "Component libraries, auto-layout, prototyping, handoff." },
-  // { name: "Docker",       cat: "Tools",     pct: 58, icon: "🐳",  color: "#2496ed", desc: "Containerisation, Compose, multi-stage builds." },
+  { name: "Bootstrap",       cat: "Frontend",     pct: 89, icon: "🅱️",  color: "#2496ed", desc: "Layout Component responsive multi-stage builds." },
   { name: "Vercel",       cat: "Tools",     pct: 88, icon: "▲",   color: "#ffffff", desc: "Edge deployments, preview URLs, env management." },
 ];
 

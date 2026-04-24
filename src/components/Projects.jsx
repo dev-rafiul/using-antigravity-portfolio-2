@@ -112,6 +112,24 @@ const PROJECTS = [
     github: "",
     image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=80",
   },
+  {
+    id: 7,
+    title: "Tea House",
+    subtitle: "Tea Shop",
+    category: "Frontend",
+    year: "2025",
+    status: "Live",
+    color: "#f59e0b",
+    gradient: "linear-gradient(135deg, #f59e0b 0%, #f97316 100%)",
+    tags: ["CSS", "HTML", "Tailwind"],
+    shortDesc: "A Frontend Project Just Show My designs i have plan for this project need times",
+    fullDesc: "PortfolioOS reimagines the personal portfolio as a fully interactive desktop operating system. Features draggable, resizable windows, a macOS-style dock, a working terminal, a music player, and a photo gallery — all built with React and Framer Motion for buttery-smooth interactions.",
+    challenges: "Implementing a proper window management system with z-index stacking, focus management, and smooth resize/drag without performance degradation. Used a custom hook with pointer events.",
+    improvements: "Adding more 'apps', a file system simulation, and multi-monitor support.",
+    live: "https://tea-house-pro.netlify.app/",
+    github: "",
+    image: "https://i.ibb.co.com/PzcQxcFs/Screenshot-32.png",
+  },
 ];
 
 /* ── COMPONENT ── */
