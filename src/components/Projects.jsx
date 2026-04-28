@@ -74,7 +74,7 @@ const PROJECTS = [
     improvements: "Adding AI-powered daily standup generation, time tracking integration, and team analytics.",
     live: "https://heroapppss.netlify.app/",
     github: "https://github.com/dev-rafiul/assignment-8-Hero_Apps",
-    image: "https://rafiul040.github.io/govt-emergency-service-project/",
+    image: "https://i.ibb.co.com/CpmpsMqF/Screenshot-36.png",
   },
   {
     id: 5,
