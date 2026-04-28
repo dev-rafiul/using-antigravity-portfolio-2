@@ -20,7 +20,7 @@ const PROJECTS = [
     improvements: "Planning to add AI-powered code review, multi-language support, and a mobile app with offline contest participation.",
     live: "https://create-arena.web.app/",
     github: "https://github.com/dev-rafiul/create_arena_frontend",
-    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80",
+    image: "https://i.ibb.co.com/gZsfVvdB/Screenshot-33.png",
   },
   {
     id: 2,
