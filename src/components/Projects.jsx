@@ -9,7 +9,7 @@ const PROJECTS = [
     title: "Create Arena",
     subtitle: "Contest Platform",
     category: "Full Stack",
-    year: "2024",
+    year: "2025",
     status: "Live",
     color: "#f97316",
     gradient: "linear-gradient(135deg, #f97316 0%, #ec4899 100%)",
@@ -27,7 +27,7 @@ const PROJECTS = [
     title: "Plateshare",
     subtitle: "Food Sharing Platform",
     category: "Full Stack",
-    year: "2024",
+    year: "2025",
     status: "Live",
     color: "#22c55e",
     gradient: "linear-gradient(135deg, #22c55e 0%, #06b6d4 100%)",
@@ -45,7 +45,7 @@ const PROJECTS = [
     title: "Sun Bloom",
     subtitle: "Flower Shop E-Commerce",
     category: "Frontend",
-    year: "2023",
+    year: "2025",
     status: "Live",
     color: "#a855f7",
     gradient: "linear-gradient(135deg, #a855f7 0%, #ec4899 100%)",
@@ -63,7 +63,7 @@ const PROJECTS = [
     title: "Hero Apps",
     subtitle: "Hero Developer All Apps",
     category: "Frontend",
-    year: "2024",
+    year: "2025",
     status: "In Progress",
     color: "#3b82f6",
     gradient: "linear-gradient(135deg, #3b82f6 0%, #a855f7 100%)",
@@ -81,7 +81,7 @@ const PROJECTS = [
     title: "Green Earth",
     subtitle: "A Plant Ecommerce",
     category: "Frontend",
-    year: "2023",
+    year: "2025",
     status: "Live",
     color: "#06b6d4",
     gradient: "linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%)",
@@ -191,6 +191,12 @@ export default function Projects({ darkMode }) {
     return () => window.removeEventListener("keydown", fn);
   }, []);
 
+  /* ── lock body scroll when modal open ── */
+  useEffect(() => {
+    document.body.style.overflow = selectedProj ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [selectedProj]);
+
   /* ── mouse parallax on cards ── */
   const handleMouseMove = (e, id) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -287,20 +293,17 @@ export default function Projects({ darkMode }) {
         }
         .pj-pulse { animation: pjPulse 2s ease-in-out infinite; }
 
-        /* ── number counter ── */
-        @keyframes pjCount {
-          from { opacity:0; transform:translateY(12px); }
-          to   { opacity:1; transform:translateY(0); }
-        }
-
         /* ── responsive ── */
         @media (max-width:768px) {
           .pj-grid { grid-template-columns:1fr !important; }
           .pj-modal-inner { flex-direction:column !important; }
-          .pj-modal-img { height:200px !important; min-width:unset !important; }
+          .pj-modal-img { height:220px !important; min-width:unset !important; width:100% !important; }
+          /* FIX: on mobile, image-to-content blend goes bottom → down, not right → content */
+          .pj-modal-img-overlay { background: linear-gradient(to bottom, transparent 50%, var(--modal-bg) 100%) !important; }
         }
         @media (max-width:480px) {
           .pj-modal { padding:24px 20px !important; }
+          .pj-modal-content { padding: 20px 20px 20px !important; }
         }
       `}</style>
 
@@ -482,7 +485,7 @@ export default function Projects({ darkMode }) {
               { val:`${PROJECTS.length}+`, label:"Total Projects" },
               { val:PROJECTS.filter(p=>p.status==="Live").length, label:"Live & Deployed" },
               { val:"4+", label:"Tech Stacks" },
-              { val:"2024", label:"Latest Year" },
+              { val: Math.max(...PROJECTS.map(p => parseInt(p.year))).toString(), label:"Latest Year" },
             ].map(({ val, label }) => (
               <div key={label} style={{ textAlign:"center" }}>
                 <div style={{
@@ -508,7 +511,8 @@ export default function Projects({ darkMode }) {
             background:"rgba(0,0,0,.72)",
             backdropFilter:"blur(10px)",
             display:"flex", alignItems:"center", justifyContent:"center",
-            padding:24, overflowY:"auto",
+            padding:"24px 16px",
+            overflowY:"auto",
           }}
         >
           <div
@@ -516,19 +520,25 @@ export default function Projects({ darkMode }) {
             onClick={e => e.stopPropagation()}
             style={{
               background:modalBg,
+              /* FIX: expose --modal-bg so the CSS media query can reference it for the gradient */
+              "--modal-bg": modalBg,
               border:`1px solid ${border}`,
               borderRadius:28,
               maxWidth:860, width:"100%",
+              /* FIX: removed overflow:hidden so close button is never clipped;
+                 inner panels clip themselves where needed */
               boxShadow:"0 40px 100px rgba(0,0,0,.6)",
               fontFamily:"'DM Sans',sans-serif",
-              overflow:"hidden",
               position:"relative",
+              /* FIX: constrain height so content never overflows viewport */
+              maxHeight:"calc(100vh - 48px)",
+              display:"flex", flexDirection:"column",
             }}
           >
             {/* Gradient top bar */}
-            <div style={{ height:4, background:selectedProj.gradient }} />
+            <div style={{ height:4, background:selectedProj.gradient, borderRadius:"28px 28px 0 0", flexShrink:0 }} />
 
-            {/* Close */}
+            {/* Close — sits outside the scrollable area so it's always visible */}
             <button
               onClick={() => setSelectedProj(null)}
               style={{
@@ -544,15 +554,43 @@ export default function Projects({ darkMode }) {
               onMouseLeave={e => e.currentTarget.style.background = isDark ? "rgba(255,255,255,.08)" : "rgba(0,0,0,.06)"}
             >✕</button>
 
-            <div className="pj-modal-inner" style={{ display:"flex" }}>
+            {/* FIX: scrollable inner wrapper — modal scrolls internally on small screens */}
+            <div
+              className="pj-modal-inner"
+              style={{
+                display:"flex",
+                overflowY:"auto",
+                borderRadius:"0 0 28px 28px",
+                flex:1,
+                minHeight:0,
+              }}
+            >
               {/* Image panel */}
-              <div className="pj-modal-img" style={{ minWidth:280, height:320, position:"relative", flexShrink:0 }}>
-                <img src={selectedProj.image} alt={selectedProj.title}
-                  style={{ width:"100%", height:"100%", objectFit:"cover", display:"block" }} />
-                <div style={{
-                  position:"absolute", inset:0,
-                  background:"linear-gradient(to right, transparent 60%, " + modalBg + ")",
-                }} />
+              <div
+                className="pj-modal-img"
+                style={{
+                  minWidth:280, position:"relative", flexShrink:0,
+                  /* FIX: use minHeight instead of height so panel fills flex height */
+                  minHeight:320,
+                  overflow:"hidden",
+                }}
+              >
+                <img
+                  src={selectedProj.image} alt={selectedProj.title}
+                  style={{ width:"100%", height:"100%", objectFit:"cover", display:"block", position:"absolute", inset:0 }}
+                />
+                {/*
+                  FIX: gradient direction is "to right" on desktop (blends into the side-by-side
+                  content panel) but the media query above switches it to "to bottom" on mobile
+                  when the panels stack vertically.
+                */}
+                <div
+                  className="pj-modal-img-overlay"
+                  style={{
+                    position:"absolute", inset:0,
+                    background:`linear-gradient(to right, transparent 55%, ${modalBg} 100%)`,
+                  }}
+                />
                 {/* Status badge */}
                 <div style={{
                   position:"absolute", top:16, left:16,
@@ -567,7 +605,10 @@ export default function Projects({ darkMode }) {
               </div>
 
               {/* Content panel */}
-              <div style={{ padding:"32px 32px 28px", flex:1, minWidth:0 }}>
+              <div
+                className="pj-modal-content"
+                style={{ padding:"32px 32px 28px", flex:1, minWidth:0 }}
+              >
                 <span style={{ fontSize:11, fontWeight:600, letterSpacing:"0.14em", color:muted, textTransform:"uppercase" }}>
                   {selectedProj.category} · {selectedProj.year}
                 </span>
@@ -613,7 +654,11 @@ export default function Projects({ darkMode }) {
 
                 {/* CTA buttons */}
                 <div style={{ display:"flex", gap:12, marginTop:24, flexWrap:"wrap" }}>
-                  <a href={selectedProj.live} target="_blank" rel="noopener noreferrer"
+                  {/* FIX: disable when live URL is empty string, not just "#" */}
+                  <a
+                    href={selectedProj.live || undefined}
+                    target="_blank" rel="noopener noreferrer"
+                    onClick={!selectedProj.live ? e => e.preventDefault() : undefined}
                     style={{
                       display:"inline-flex", alignItems:"center", gap:8,
                       padding:"10px 22px", borderRadius:999,
@@ -622,29 +667,50 @@ export default function Projects({ darkMode }) {
                       textDecoration:"none", letterSpacing:"0.03em",
                       boxShadow:"0 4px 20px rgba(236,72,153,.3)",
                       transition:"transform .2s ease, box-shadow .2s ease",
-                      opacity: selectedProj.live === "#" ? .5 : 1,
-                      pointerEvents: selectedProj.live === "#" ? "none" : "auto",
+                      opacity: !selectedProj.live ? 0.45 : 1,
+                      pointerEvents: !selectedProj.live ? "none" : "auto",
+                      cursor: !selectedProj.live ? "not-allowed" : "pointer",
                     }}
-                    onMouseEnter={e => { e.currentTarget.style.transform="scale(1.04)"; e.currentTarget.style.boxShadow="0 6px 28px rgba(236,72,153,.5)"; }}
+                    onMouseEnter={e => { if (selectedProj.live) { e.currentTarget.style.transform="scale(1.04)"; e.currentTarget.style.boxShadow="0 6px 28px rgba(236,72,153,.5)"; }}}
                     onMouseLeave={e => { e.currentTarget.style.transform="scale(1)"; e.currentTarget.style.boxShadow="0 4px 20px rgba(236,72,153,.3)"; }}
                   >
                     ↗ Live Demo
                   </a>
-                  <a href={selectedProj.github} target="_blank" rel="noopener noreferrer"
-                    style={{
+
+                  {/* FIX: only render GitHub button when a URL actually exists */}
+                  {selectedProj.github ? (
+                    <a
+                      href={selectedProj.github}
+                      target="_blank" rel="noopener noreferrer"
+                      style={{
+                        display:"inline-flex", alignItems:"center", gap:8,
+                        padding:"10px 22px", borderRadius:999,
+                        background: isDark ? "rgba(255,255,255,.06)" : "rgba(0,0,0,.05)",
+                        border:`1px solid ${border}`,
+                        color:txt, fontSize:13, fontWeight:500,
+                        textDecoration:"none", letterSpacing:"0.03em",
+                        transition:"all .2s ease",
+                      }}
+                      onMouseEnter={e => e.currentTarget.style.background = isDark ? "rgba(255,255,255,.1)" : "rgba(0,0,0,.08)"}
+                      onMouseLeave={e => e.currentTarget.style.background = isDark ? "rgba(255,255,255,.06)" : "rgba(0,0,0,.05)"}
+                    >
+                      🐙 GitHub
+                    </a>
+                  ) : (
+                    /* FIX: show clearly disabled "Private Repo" label instead of broken link */
+                    <span style={{
                       display:"inline-flex", alignItems:"center", gap:8,
                       padding:"10px 22px", borderRadius:999,
-                      background: isDark ? "rgba(255,255,255,.06)" : "rgba(0,0,0,.05)",
+                      background: isDark ? "rgba(255,255,255,.03)" : "rgba(0,0,0,.03)",
                       border:`1px solid ${border}`,
-                      color:txt, fontSize:13, fontWeight:500,
-                      textDecoration:"none", letterSpacing:"0.03em",
-                      transition:"all .2s ease",
-                    }}
-                    onMouseEnter={e => e.currentTarget.style.background = isDark ? "rgba(255,255,255,.1)" : "rgba(0,0,0,.08)"}
-                    onMouseLeave={e => e.currentTarget.style.background = isDark ? "rgba(255,255,255,.06)" : "rgba(0,0,0,.05)"}
-                  >
-                    🐙 GitHub
-                  </a>
+                      color:muted, fontSize:13, fontWeight:400,
+                      letterSpacing:"0.03em",
+                      cursor:"default",
+                      opacity:0.6,
+                    }}>
+                      🔒 Private Repo
+                    </span>
+                  )}
                 </div>
               </div>
             </div>
