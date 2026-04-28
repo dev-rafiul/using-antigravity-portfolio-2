@@ -31,7 +31,7 @@ const PROJECTS = [
     status: "Live",
     color: "#22c55e",
     gradient: "linear-gradient(135deg, #22c55e 0%, #06b6d4 100%)",
-    tags: ["React", "Express", "MongoDB", "Stripe"],
+    tags: ["React", "Express", "MongoDB", "Tanstack Query", "Sweet Alert", "Lottie Animations", "Framer"],
     shortDesc: "Community-driven food sharing app connecting people with surplus food to those who need it.",
     fullDesc: "Plateshare reduces food waste by connecting donors with recipients in local communities. Features include real-time food listing, geolocation-based matching, in-app messaging, and a reputation system. Integrated with Cloudinary for image optimisation and Google Maps for location services.",
     challenges: "Building a reliable geolocation matching system that works across different devices and network conditions. Implemented a fallback to manual location entry with address geocoding.",
