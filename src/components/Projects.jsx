@@ -56,7 +56,7 @@ const PROJECTS = [
     improvements: "Subscription bouquet service, AR flower arrangement preview, and a loyalty rewards programme.",
     live: "https://aesthetic-genie-7553ed.netlify.app/",
     github: "https://github.com/yourusername/sun-bloom",
-    image: "https://images.unsplash.com/photo-1487530811015-780f2f5e3f6e?w=800&q=80",
+    image: "https://i.ibb.co.com/G4z4F4qk/Screenshot-35.png",
   },
   {
     id: 4,
