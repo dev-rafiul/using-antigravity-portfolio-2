@@ -13,7 +13,7 @@ const PROJECTS = [
     status: "Live",
     color: "#f97316",
     gradient: "linear-gradient(135deg, #f97316 0%, #ec4899 100%)",
-    tags: ["React", "Node.js", "MongoDB", "JWT", "Stripe"],
+    tags: ["React", "Node.js", "MongoDB", "JWT", "Stripe", "Firebase", "Express.js", "Tailwind CSS"],
     shortDesc: "A competitive programming contest platform where users create, join, and judge contests in real time.",
     fullDesc: "Create Arena is a full-featured contest platform built for developers and competitive programmers. It supports real-time contest creation, participant management, live leaderboards, and automated judging. The platform handles thousands of concurrent users with optimised WebSocket connections.",
     challenges: "Implementing real-time leaderboard updates without overwhelming the server was the biggest challenge. Solved using Redis pub/sub with debounced WebSocket broadcasts and client-side optimistic updates.",
