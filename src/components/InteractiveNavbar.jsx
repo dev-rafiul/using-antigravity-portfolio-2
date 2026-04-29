@@ -48,7 +48,7 @@ const InteractiveNavbar = ({ theme = 'dark', toggleDarkMode, activeSection }) =>
           alignItems: 'center',
           justifyContent: 'space-between',
           transition: 'all 0.4s cubic-bezier(0.16,1,0.3,1)',
-          fontFamily: "'Radeyn', sans-serif",
+          fontFamily: "'Radeyn', system-ui, sans-serif",
         }}
       >
         {/* ── Logo ── */}
@@ -61,13 +61,13 @@ const InteractiveNavbar = ({ theme = 'dark', toggleDarkMode, activeSection }) =>
         >
           <span style={{
             width: 8, height: 8, borderRadius: '50%',
-            background: 'linear-gradient(135deg, #f97316, #ec4899, #a855f7)',
+            background: 'linear-gradient(135deg, #602486, #341352, #1B0F23)',
             display: 'inline-block', flexShrink: 0,
           }} />
           <span style={{
-            fontFamily: "'Radeyn', sans-serif",
+            fontFamily: "'Radeyn', system-ui, sans-serif",
             fontSize: 20, fontWeight: 600,
-            background: 'linear-gradient(120deg, #f97316, #ec4899, #a855f7)',
+            background: 'linear-gradient(120deg, #602486, #341352, #1B0F23)',
             WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
             backgroundClip: 'text',
           }}>
@@ -184,15 +184,15 @@ const InteractiveNavbar = ({ theme = 'dark', toggleDarkMode, activeSection }) =>
               padding: '8px 18px',
               borderRadius: 999,
               fontSize: 12, fontWeight: 600, letterSpacing: '0.04em',
-              background: 'linear-gradient(120deg, #f97316, #ec4899, #a855f7)',
+              background: 'linear-gradient(120deg, #602486, #341352, #1B0F23)',
               color: '#fff',
               textDecoration: 'none',
-              boxShadow: '0 2px 16px rgba(236,72,153,0.3)',
+              boxShadow: '0 2px 16px rgba(52,19,82,0.3)',
               transition: 'transform 0.2s ease, box-shadow 0.2s ease',
               whiteSpace: 'nowrap',
             }}
-            onMouseEnter={e => { e.currentTarget.style.transform = 'scale(1.05)'; e.currentTarget.style.boxShadow = '0 4px 24px rgba(236,72,153,0.5)'; }}
-            onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.boxShadow = '0 2px 16px rgba(236,72,153,0.3)'; }}
+            onMouseEnter={e => { e.currentTarget.style.transform = 'scale(1.05)'; e.currentTarget.style.boxShadow = '0 4px 24px rgba(52,19,82,0.5)'; }}
+            onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.boxShadow = '0 2px 16px rgba(52,19,82,0.3)'; }}
           >
             ↓ Download CV
           </a>
@@ -227,7 +227,7 @@ const InteractiveNavbar = ({ theme = 'dark', toggleDarkMode, activeSection }) =>
             padding: '12px 8px',
             backdropFilter: 'blur(20px)',
             boxShadow: navShadow,
-            fontFamily: "'Radeyn', sans-serif",
+            fontFamily: "'Radeyn', system-ui, sans-serif",
           }}
         >
           {navLinks.map((item) => (
@@ -240,7 +240,7 @@ const InteractiveNavbar = ({ theme = 'dark', toggleDarkMode, activeSection }) =>
                 background: 'none', border: 'none',
                 textAlign: 'left', cursor: 'pointer',
                 fontSize: 15, fontWeight: 500,
-                color: activeSection === item.toLowerCase() ? '#ec4899' : linkColor,
+                color: activeSection === item.toLowerCase() ? '#341352' : linkColor,
                 borderRadius: 12,
                 transition: 'background 0.2s ease',
               }}

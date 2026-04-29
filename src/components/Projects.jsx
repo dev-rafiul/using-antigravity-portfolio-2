@@ -11,8 +11,8 @@ const PROJECTS = [
     category: "Full Stack",
     year: "2025",
     status: "Live",
-    color: "#f97316",
-    gradient: "linear-gradient(135deg, #f97316 0%, #ec4899 100%)",
+    color: "#602486",
+    gradient: "linear-gradient(135deg, #602486 0%, #341352 100%)",
     tags: ["React", "Node.js", "MongoDB", "JWT", "Stripe", "Firebase", "Express.js", "Tailwind CSS", "Authentication"],
     shortDesc: "A competitive programming contest platform where users create, join, and judge contests in real time.",
     fullDesc: "Create Arena is a full-featured contest platform built for developers and competitive programmers. It supports real-time contest creation, participant management, live leaderboards, and automated judging. The platform handles thousands of concurrent users with optimised WebSocket connections.",
@@ -47,8 +47,8 @@ const PROJECTS = [
     category: "Frontend",
     year: "2025",
     status: "Live",
-    color: "#a855f7",
-    gradient: "linear-gradient(135deg, #a855f7 0%, #ec4899 100%)",
+    color: "#1B0F23",
+    gradient: "linear-gradient(135deg, #1B0F23 0%, #341352 100%)",
     tags: ["React", "Firebase", "DaisyUI", "Tailwind"],
     shortDesc: "Elegant e-commerce experience for a premium flower shop with real-time inventory and Stripe checkout.",
     fullDesc: "Sun Bloom is a premium flower shop e-commerce platform with a focus on visual storytelling and seamless purchasing. Features include animated product galleries, real-time inventory tracking via Firebase, Stripe payment integration, order tracking, and an admin dashboard for inventory management.",
@@ -66,7 +66,7 @@ const PROJECTS = [
     year: "2025",
     status: "In Progress",
     color: "#3b82f6",
-    gradient: "linear-gradient(135deg, #3b82f6 0%, #a855f7 100%)",
+    gradient: "linear-gradient(135deg, #3b82f6 0%, #1B0F23 100%)",
     tags: ["React.Js", "Javascript", "TailwindCss", "Daisy Ui"],
     shortDesc: "Unified developer productivity dashboard aggregating GitHub, Jira, and Slack into one clean interface.",
     fullDesc: "DevBoard brings together all the tools developers use daily into a single, customisable dashboard. Real-time GitHub activity, Jira ticket management, Slack notifications, and custom widgets. Built with Next.js App Router for optimal performance and TypeScript for type safety throughout.",
@@ -102,7 +102,7 @@ const PROJECTS = [
     year: "2025",
     status: "Live",
     color: "#f59e0b",
-    gradient: "linear-gradient(135deg, #f59e0b 0%, #f97316 100%)",
+    gradient: "linear-gradient(135deg, #f59e0b 0%, #602486 100%)",
     tags: ["CSS", "HTML", "Tailwind", "Javascript"],
     shortDesc: "An interactive portfolio designed as a desktop OS with draggable windows, a dock, and real apps.",
     fullDesc: "PortfolioOS reimagines the personal portfolio as a fully interactive desktop operating system. Features draggable, resizable windows, a macOS-style dock, a working terminal, a music player, and a photo gallery — all built with React and Framer Motion for buttery-smooth interactions.",
@@ -120,7 +120,7 @@ const PROJECTS = [
     year: "2025",
     status: "Live",
     color: "#f59e0b",
-    gradient: "linear-gradient(135deg, #f59e0b 0%, #f97316 100%)",
+    gradient: "linear-gradient(135deg, #f59e0b 0%, #602486 100%)",
     tags: ["CSS", "HTML", "Tailwind"],
     shortDesc: "A Frontend Project Just Show My designs i have plan for this project need times",
     fullDesc: "PortfolioOS reimagines the personal portfolio as a fully interactive desktop operating system. Features draggable, resizable windows, a macOS-style dock, a working terminal, a music player, and a photo gallery — all built with React and Framer Motion for buttery-smooth interactions.",
@@ -312,16 +312,16 @@ export default function Projects({ darkMode }) {
           position:"relative", width:"100%",
           background: bg,
           overflow:"hidden",
-          fontFamily:"'Radeyn', sans-serif",
+          fontFamily:"'Radeyn', system-ui, sans-serif",
           transition:"background .5s ease",
           padding:"120px 0 100px",
         }}
       >
         {/* ── ambient orbs ── */}
         {[
-          { left:"-6%", top:"8%",  w:500, color:"rgba(249,115,22,.07)",  dur:"12s" },
-          { right:"-8%",bottom:"12%",w:520,color:"rgba(168,85,247,.07)", dur:"16s", rev:true },
-          { left:"40%", top:"50%", w:400, color:"rgba(236,72,153,.05)",  dur:"9s"  },
+          { left:"-6%", top:"8%",  w:500, color:"rgba(96,36,134,.07)",  dur:"12s" },
+          { right:"-8%",bottom:"12%",w:520,color:"rgba(27,15,35,.07)", dur:"16s", rev:true },
+          { left:"40%", top:"50%", w:400, color:"rgba(52,19,82,.05)",  dur:"9s"  },
         ].map((o, i) => (
           <div key={i} style={{
             position:"absolute",
@@ -342,12 +342,12 @@ export default function Projects({ darkMode }) {
               — What I've Built
             </span>
             <h2 style={{
-              fontFamily:"'Radeyn', sans-serif",
+              fontFamily:"'Radeyn', system-ui, sans-serif",
               fontSize:"clamp(48px,7vw,88px)", fontWeight:600,
               lineHeight:.95, letterSpacing:"-0.02em", color:txt, margin:0,
             }}>
               Featured{" "}
-              <span style={{ background:"linear-gradient(120deg,#f97316,#ec4899,#a855f7)", WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent", backgroundClip:"text" }}>
+              <span style={{ background:"linear-gradient(120deg,#602486,#341352,#1B0F23)", WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent", backgroundClip:"text" }}>
                 Projects
               </span>
             </h2>
@@ -366,11 +366,11 @@ export default function Projects({ darkMode }) {
                   style={{
                     padding:"9px 22px", borderRadius:999,
                     border: active ? "1px solid transparent" : `1px solid ${border}`,
-                    background: active ? "linear-gradient(120deg,#f97316,#ec4899,#a855f7)" : bgCard,
+                    background: active ? "linear-gradient(120deg,#602486,#341352,#1B0F23)" : bgCard,
                     color: active ? "#fff" : muted,
                     fontSize:13, fontWeight: active ? 600 : 400,
                     letterSpacing:"0.03em",
-                    boxShadow: active ? "0 4px 20px rgba(236,72,153,.35)" : "none",
+                    boxShadow: active ? "0 4px 20px rgba(52,19,82,.35)" : "none",
                   }}
                 >
                   {f}
@@ -487,9 +487,9 @@ export default function Projects({ darkMode }) {
             ].map(({ val, label }) => (
               <div key={label} style={{ textAlign:"center" }}>
                 <div style={{
-                  fontFamily:"'Radeyn', sans-serif",
+                  fontFamily:"'Radeyn', system-ui, sans-serif",
                   fontSize:"clamp(28px,3.5vw,42px)", fontWeight:700, lineHeight:1,
-                  background:"linear-gradient(120deg,#f97316,#ec4899,#a855f7)",
+                  background:"linear-gradient(120deg,#602486,#341352,#1B0F23)",
                   WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent", backgroundClip:"text",
                 }}>{val}</div>
                 <div style={{ fontSize:11, fontWeight:500, letterSpacing:"0.1em", color:muted, textTransform:"uppercase", marginTop:6 }}>{label}</div>
@@ -526,7 +526,7 @@ export default function Projects({ darkMode }) {
               /* FIX: removed overflow:hidden so close button is never clipped;
                  inner panels clip themselves where needed */
               boxShadow:"0 40px 100px rgba(0,0,0,.6)",
-              fontFamily:"'Radeyn', sans-serif",
+              fontFamily:"'Radeyn', system-ui, sans-serif",
               position:"relative",
               /* FIX: constrain height so content never overflows viewport */
               maxHeight:"calc(100vh - 48px)",
@@ -611,7 +611,7 @@ export default function Projects({ darkMode }) {
                   {selectedProj.category} · {selectedProj.year}
                 </span>
                 <h2 style={{
-                  fontFamily:"'Radeyn', sans-serif",
+                  fontFamily:"'Radeyn', system-ui, sans-serif",
                   fontSize:"clamp(28px,4vw,40px)", fontWeight:700,
                   color:txt, margin:"6px 0 4px", lineHeight:1,
                 }}>{selectedProj.title}</h2>
@@ -660,17 +660,17 @@ export default function Projects({ darkMode }) {
                     style={{
                       display:"inline-flex", alignItems:"center", gap:8,
                       padding:"10px 22px", borderRadius:999,
-                      background:"linear-gradient(120deg,#f97316,#ec4899,#a855f7)",
+                      background:"linear-gradient(120deg,#602486,#341352,#1B0F23)",
                       color:"#fff", fontSize:13, fontWeight:600,
                       textDecoration:"none", letterSpacing:"0.03em",
-                      boxShadow:"0 4px 20px rgba(236,72,153,.3)",
+                      boxShadow:"0 4px 20px rgba(52,19,82,.3)",
                       transition:"transform .2s ease, box-shadow .2s ease",
                       opacity: !selectedProj.live ? 0.45 : 1,
                       pointerEvents: !selectedProj.live ? "none" : "auto",
                       cursor: !selectedProj.live ? "not-allowed" : "pointer",
                     }}
-                    onMouseEnter={e => { if (selectedProj.live) { e.currentTarget.style.transform="scale(1.04)"; e.currentTarget.style.boxShadow="0 6px 28px rgba(236,72,153,.5)"; }}}
-                    onMouseLeave={e => { e.currentTarget.style.transform="scale(1)"; e.currentTarget.style.boxShadow="0 4px 20px rgba(236,72,153,.3)"; }}
+                    onMouseEnter={e => { if (selectedProj.live) { e.currentTarget.style.transform="scale(1.04)"; e.currentTarget.style.boxShadow="0 6px 28px rgba(52,19,82,.5)"; }}}
+                    onMouseLeave={e => { e.currentTarget.style.transform="scale(1)"; e.currentTarget.style.boxShadow="0 4px 20px rgba(52,19,82,.3)"; }}
                   >
                     ↗ Live Demo
                   </a>

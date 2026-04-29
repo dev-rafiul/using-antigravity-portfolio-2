@@ -58,7 +58,7 @@ export default function Hero({ darkMode }) {
 
         /* ── GRADIENT text ── */
         .grad-text {
-          background: linear-gradient(120deg, #f97316 0%, #ec4899 55%, #a855f7 100%);
+          background: linear-gradient(120deg, #602486 0%, #341352 55%, #1B0F23 100%);
           -webkit-background-clip:text;
           -webkit-text-fill-color:transparent;
           background-clip:text;
@@ -106,7 +106,7 @@ export default function Hero({ darkMode }) {
           height: "100vh",
           background: bg,
           overflow: "hidden",
-          fontFamily: "'Radeyn', sans-serif",
+          fontFamily: "'Radeyn', system-ui, sans-serif",
           transition: "background 0.5s ease",
         }}
       >
@@ -120,8 +120,8 @@ export default function Hero({ darkMode }) {
             width: "600px", height: "600px",
             borderRadius: "50%",
             background: isDark
-              ? "radial-gradient(circle, rgba(249,115,22,0.13) 0%, rgba(236,72,153,0.10) 45%, transparent 72%)"
-              : "radial-gradient(circle, rgba(249,115,22,0.14) 0%, rgba(236,72,153,0.11) 45%, transparent 72%)",
+              ? "radial-gradient(circle, rgba(96,36,134,0.13) 0%, rgba(52,19,82,0.10) 45%, transparent 72%)"
+              : "radial-gradient(circle, rgba(96,36,134,0.14) 0%, rgba(52,19,82,0.11) 45%, transparent 72%)",
             filter: "blur(60px)",
             animation: "orbFloat 8s ease-in-out infinite",
             pointerEvents: "none",
@@ -229,7 +229,7 @@ export default function Hero({ darkMode }) {
             {/* spinning gradient ring */}
             <div style={{
               position: 'absolute', inset: -3, borderRadius: '50%',
-              background: 'linear-gradient(135deg, #f97316, #ec4899, #a855f7, #f97316)',
+              background: 'linear-gradient(135deg, #602486, #341352, #1B0F23, #602486)',
               backgroundSize: '300% 300%',
               animation: 'heroRingGrad 3s linear infinite',
               zIndex: 0,
@@ -256,7 +256,7 @@ export default function Hero({ darkMode }) {
           {/* Heading */}
           <div
             style={{
-              fontFamily: "'Radeyn', sans-serif",
+              fontFamily: "'Radeyn', system-ui, sans-serif",
               fontWeight: 600,
               fontSize: "clamp(72px, 11vw, 148px)",
               lineHeight: 0.95,
@@ -307,15 +307,15 @@ export default function Hero({ darkMode }) {
                 display: "inline-flex", alignItems: "center", gap: 10,
                 padding: "12px 28px",
                 borderRadius: 999,
-                background: "linear-gradient(120deg, #f97316, #ec4899, #a855f7)",
+                background: "linear-gradient(120deg, #602486, #341352, #1B0F23)",
                 color: "#fff",
                 fontSize: 13, fontWeight: 600, letterSpacing: "0.04em",
                 textDecoration: "none",
                 transition: "transform 0.25s ease, box-shadow 0.25s ease",
-                boxShadow: "0 4px 24px rgba(236,72,153,0.35)",
+                boxShadow: "0 4px 24px rgba(52,19,82,0.35)",
               }}
-              onMouseEnter={e => { e.currentTarget.style.transform = "scale(1.04)"; e.currentTarget.style.boxShadow = "0 6px 32px rgba(236,72,153,0.5)"; }}
-              onMouseLeave={e => { e.currentTarget.style.transform = "scale(1)"; e.currentTarget.style.boxShadow = "0 4px 24px rgba(236,72,153,0.35)"; }}
+              onMouseEnter={e => { e.currentTarget.style.transform = "scale(1.04)"; e.currentTarget.style.boxShadow = "0 6px 32px rgba(52,19,82,0.5)"; }}
+              onMouseLeave={e => { e.currentTarget.style.transform = "scale(1)"; e.currentTarget.style.boxShadow = "0 4px 24px rgba(52,19,82,0.35)"; }}
             >
               View Work
               <span style={{ fontSize: 16 }}>→</span>
@@ -365,8 +365,8 @@ export default function Hero({ darkMode }) {
             <div key={label} style={{ textAlign: "center" }}>
               <div style={{
                 fontSize: "clamp(18px,2vw,24px)", fontWeight: 700,
-                fontFamily: "'Radeyn', sans-serif",
-                background: "linear-gradient(120deg, #f97316, #ec4899, #a855f7)",
+                fontFamily: "'Radeyn', system-ui, sans-serif",
+                background: "linear-gradient(120deg, #602486, #341352, #1B0F23)",
                 WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
               }}>
                 {num}

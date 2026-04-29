@@ -10,7 +10,7 @@ const educationData = [
     grade: 'Average',
     type: 'Madrasha',
     icon: '🎓',
-    color: '#f97316',
+    color: '#602486',
     description: 'Focused on software engineering, algorithms, data structures, and web technologies. Completed capstone project on real-time collaborative web applications.',
     courses: ['Data Structures & Algorithms', 'Web Engineering', 'Database Systems', 'Software Architecture', 'Machine Learning Basics'],
     achievements: ['Dean\'s List 2022 & 2023', 'Best Capstone Project Award', 'Programming Club President'],
@@ -23,7 +23,7 @@ const educationData = [
     grade: 'GPA 5.00 / 4.21',
     type: 'School',
     icon: '🏫',
-    color: '#a855f7',
+    color: '#1B0F23',
     description: 'Commerce group with distinction. Developed early interest in computers and programming through school ICT classes.',
     courses: ['Mathematics', 'Science', 'ICT', 'English', 'Bengali'],
     achievements: ['Perfect GPA 4.21', 'Scout Leader'],
@@ -36,7 +36,7 @@ const educationData = [
     grade: 'Running',
     type: 'College',
     icon: '📚',
-    color: '#ec4899',
+    color: '#341352',
     description: 'Commerce group with Business, Architect, and Technology. Achieved perfect GPA and participated in national science olympiad.',
     courses: ['Mathematics', 'Technology', 'Business', 'ICT', 'English'],
     achievements: ['Goal GPA 5.00', 'National Science Olympiad Participant'],
@@ -89,19 +89,19 @@ export default function Education({ darkMode }) {
       style={{ background: bg, padding: '100px 0', position: 'relative', overflow: 'hidden' }}
     >
       {/* ambient orbs */}
-      <div style={{ position:'absolute', top:'10%', right:'5%', width:350, height:350, borderRadius:'50%', background:'radial-gradient(circle, rgba(168,85,247,0.12) 0%, transparent 70%)', pointerEvents:'none' }} />
-      <div style={{ position:'absolute', bottom:'15%', left:'3%', width:280, height:280, borderRadius:'50%', background:'radial-gradient(circle, rgba(249,115,22,0.1) 0%, transparent 70%)', pointerEvents:'none' }} />
+      <div style={{ position:'absolute', top:'10%', right:'5%', width:350, height:350, borderRadius:'50%', background:'radial-gradient(circle, rgba(27,15,35,0.12) 0%, transparent 70%)', pointerEvents:'none' }} />
+      <div style={{ position:'absolute', bottom:'15%', left:'3%', width:280, height:280, borderRadius:'50%', background:'radial-gradient(circle, rgba(96,36,134,0.1) 0%, transparent 70%)', pointerEvents:'none' }} />
 
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px' }}>
 
         {/* heading */}
         <div data-scroll="fade-up" style={{ textAlign:'center', marginBottom: 64 }}>
-          <span style={{ display:'inline-block', padding:'6px 18px', borderRadius:999, background:'rgba(168,85,247,0.15)', border:'1px solid rgba(168,85,247,0.3)', color:'#a855f7', fontSize:13, fontWeight:600, letterSpacing:2, textTransform:'uppercase', marginBottom:16 }}>
+          <span style={{ display:'inline-block', padding:'6px 18px', borderRadius:999, background:'rgba(27,15,35,0.15)', border:'1px solid rgba(27,15,35,0.3)', color:'#1B0F23', fontSize:13, fontWeight:600, letterSpacing:2, textTransform:'uppercase', marginBottom:16 }}>
             Academic Journey
           </span>
-          <h2 style={{ fontSize:'clamp(2rem,5vw,3.2rem)', fontWeight:800, color: text, margin:'0 0 16px', fontFamily:"'Radeyn', sans-serif" }}>
+          <h2 style={{ fontSize:'clamp(2rem,5vw,3.2rem)', fontWeight:800, color: text, margin:'0 0 16px', fontFamily:"'Radeyn', system-ui, sans-serif" }}>
             Education &{' '}
-            <span style={{ background:'linear-gradient(135deg,#f97316,#ec4899,#a855f7)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent' }}>
+            <span style={{ background:'linear-gradient(135deg,#602486,#341352,#1B0F23)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent' }}>
               Qualifications
             </span>
           </h2>
@@ -116,7 +116,7 @@ export default function Education({ darkMode }) {
           <div style={{ position:'relative' }}>
             {/* vertical line */}
             <div style={{ position:'absolute', left:28, top:0, bottom:0, width:2, background: border }}>
-              <div ref={lineRef} style={{ width:'100%', height:0, background:'linear-gradient(180deg,#f97316,#ec4899,#a855f7)', transition:'height 1.4s cubic-bezier(.4,0,.2,1)', borderRadius:2 }} />
+              <div ref={lineRef} style={{ width:'100%', height:0, background:'linear-gradient(180deg,#602486,#341352,#1B0F23)', transition:'height 1.4s cubic-bezier(.4,0,.2,1)', borderRadius:2 }} />
             </div>
 
             {educationData.map((edu, i) => (
@@ -243,7 +243,7 @@ export default function Education({ darkMode }) {
             { label:'Awards Won', value:'9' },
           ].map((s, i) => (
             <div key={i} style={{ textAlign:'center', padding:'24px 16px', borderRadius:16, background: card, border:`1px solid ${border}` }}>
-              <div style={{ fontSize:'2rem', fontWeight:900, background:'linear-gradient(135deg,#f97316,#ec4899,#a855f7)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent' }}>{s.value}</div>
+              <div style={{ fontSize:'2rem', fontWeight:900, background:'linear-gradient(135deg,#602486,#341352,#1B0F23)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent' }}>{s.value}</div>
               <div style={{ color: muted, fontSize:13, marginTop:4 }}>{s.label}</div>
             </div>
           ))}

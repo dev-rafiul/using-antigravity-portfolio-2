@@ -60,7 +60,7 @@ function AppInner({ darkMode, toggleDarkMode }) {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white dark:bg-[#050505] text-black dark:text-white font-inter flex flex-col relative w-full overflow-hidden transition-colors duration-500">
+    <div className="min-h-screen bg-white dark:bg-[#131417] text-black dark:text-white flex flex-col relative w-full overflow-hidden transition-colors duration-500">
       {/* Scroll progress bar */}
       <div id="scroll-progress" />
       {/* Cursor glow */}

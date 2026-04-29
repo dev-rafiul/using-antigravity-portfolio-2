@@ -119,7 +119,7 @@ export default function About({ darkMode }) {
         .skill-bar-fill {
           height: 100%;
           border-radius: 999px;
-          background: linear-gradient(90deg, #f97316, #ec4899, #a855f7);
+          background: linear-gradient(90deg, #602486, #341352, #1B0F23);
           width: 0%;
           transition: width 1.1s cubic-bezier(0.16,1,0.3,1);
         }
@@ -173,7 +173,7 @@ export default function About({ darkMode }) {
           width: "100%",
           background: bg,
           overflow: "hidden",
-          fontFamily: "'Radeyn', sans-serif",
+          fontFamily: "'Radeyn', system-ui, sans-serif",
           transition: "background 0.5s ease",
           padding: "120px 0 100px",
         }}
@@ -183,8 +183,8 @@ export default function About({ darkMode }) {
           position: "absolute", right: "-10%", top: "20%",
           width: 500, height: 500, borderRadius: "50%",
           background: isDark
-            ? "radial-gradient(circle, rgba(168,85,247,0.08) 0%, transparent 70%)"
-            : "radial-gradient(circle, rgba(168,85,247,0.07) 0%, transparent 70%)",
+            ? "radial-gradient(circle, rgba(27,15,35,0.08) 0%, transparent 70%)"
+            : "radial-gradient(circle, rgba(27,15,35,0.07) 0%, transparent 70%)",
           filter: "blur(60px)",
           animation: "aboutOrb 10s ease-in-out infinite",
           pointerEvents: "none", zIndex: 0,
@@ -193,8 +193,8 @@ export default function About({ darkMode }) {
           position: "absolute", left: "-8%", bottom: "15%",
           width: 400, height: 400, borderRadius: "50%",
           background: isDark
-            ? "radial-gradient(circle, rgba(249,115,22,0.07) 0%, transparent 70%)"
-            : "radial-gradient(circle, rgba(249,115,22,0.06) 0%, transparent 70%)",
+            ? "radial-gradient(circle, rgba(96,36,134,0.07) 0%, transparent 70%)"
+            : "radial-gradient(circle, rgba(96,36,134,0.06) 0%, transparent 70%)",
           filter: "blur(50px)",
           animation: "aboutOrb 14s ease-in-out infinite reverse",
           pointerEvents: "none", zIndex: 0,
@@ -212,7 +212,7 @@ export default function About({ darkMode }) {
               — Who I Am
             </span>
             <h2 style={{
-              fontFamily: "'Radeyn', sans-serif",
+              fontFamily: "'Radeyn', system-ui, sans-serif",
               fontSize: "clamp(48px, 7vw, 88px)",
               fontWeight: 600,
               lineHeight: 0.95,
@@ -222,7 +222,7 @@ export default function About({ darkMode }) {
             }}>
               About{" "}
               <span style={{
-                background: "linear-gradient(120deg, #f97316, #ec4899, #a855f7)",
+                background: "linear-gradient(120deg, #602486, #341352, #1B0F23)",
                 WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
               }}>
@@ -257,7 +257,7 @@ export default function About({ darkMode }) {
                 <div className="ring-spin" style={{
                   position: "absolute", inset: -3,
                   borderRadius: 30,
-                  background: "conic-gradient(from 0deg, #f97316, #ec4899, #a855f7, transparent, transparent, #f97316)",
+                  background: "conic-gradient(from 0deg, #602486, #341352, #1B0F23, transparent, transparent, #602486)",
                   zIndex: 0,
                   opacity: 0.5,
                 }} />
@@ -289,7 +289,7 @@ export default function About({ darkMode }) {
                     display: "flex", alignItems: "center", justifyContent: "space-between",
                   }}>
                     <div>
-                      <div style={{ fontFamily: "'Radeyn', sans-serif", fontSize: 22, fontWeight: 600, color: "#f0ede8" }}>
+                      <div style={{ fontFamily: "'Radeyn', system-ui, sans-serif", fontSize: 22, fontWeight: 600, color: "#f0ede8" }}>
                         Rafiul Islam
                       </div>
                       <div style={{ fontSize: 11, letterSpacing: "0.1em", color: "rgba(240,237,232,0.6)" }}>
@@ -405,7 +405,7 @@ export default function About({ darkMode }) {
                         </span>
                         <span style={{
                           fontSize: 12, fontWeight: 600,
-                          background: "linear-gradient(120deg, #f97316, #ec4899, #a855f7)",
+                          background: "linear-gradient(120deg, #602486, #341352, #1B0F23)",
                           WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
                           backgroundClip: "text",
                           opacity: hoveredBar === i ? 1 : 0.7,
@@ -443,14 +443,14 @@ export default function About({ darkMode }) {
                   style={{
                     display: "inline-flex", alignItems: "center", gap: 8,
                     padding: "11px 24px", borderRadius: 999,
-                    background: "linear-gradient(120deg, #f97316, #ec4899, #a855f7)",
+                    background: "linear-gradient(120deg, #602486, #341352, #1B0F23)",
                     color: "#fff", fontSize: 13, fontWeight: 600,
                     textDecoration: "none", letterSpacing: "0.03em",
-                    boxShadow: "0 4px 20px rgba(236,72,153,0.3)",
+                    boxShadow: "0 4px 20px rgba(52,19,82,0.3)",
                     transition: "transform 0.2s ease, box-shadow 0.2s ease",
                   }}
-                  onMouseEnter={e => { e.currentTarget.style.transform = "scale(1.04)"; e.currentTarget.style.boxShadow = "0 6px 28px rgba(236,72,153,0.5)"; }}
-                  onMouseLeave={e => { e.currentTarget.style.transform = "scale(1)"; e.currentTarget.style.boxShadow = "0 4px 20px rgba(236,72,153,0.3)"; }}
+                  onMouseEnter={e => { e.currentTarget.style.transform = "scale(1.04)"; e.currentTarget.style.boxShadow = "0 6px 28px rgba(52,19,82,0.5)"; }}
+                  onMouseLeave={e => { e.currentTarget.style.transform = "scale(1)"; e.currentTarget.style.boxShadow = "0 4px 20px rgba(52,19,82,0.3)"; }}
                 >
                   ↓ Download CV
                 </a>
@@ -500,11 +500,11 @@ export default function About({ darkMode }) {
                 }}
               >
                 <div style={{
-                  fontFamily: "'Radeyn', sans-serif",
+                  fontFamily: "'Radeyn', system-ui, sans-serif",
                   fontSize: "clamp(32px, 4vw, 48px)",
                   fontWeight: 700,
                   lineHeight: 1,
-                  background: "linear-gradient(120deg, #f97316, #ec4899, #a855f7)",
+                  background: "linear-gradient(120deg, #602486, #341352, #1B0F23)",
                   WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
                   backgroundClip: "text",
                   marginBottom: 8,

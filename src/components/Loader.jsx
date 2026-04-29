@@ -54,7 +54,7 @@ export default function Loader({ onComplete }) {
 
         {/* Layer 1 — dim base text */}
         <div style={{
-          fontFamily: "'Radeyn', sans-serif",
+          fontFamily: "'Radeyn', system-ui, sans-serif",
           fontSize: 'clamp(64px, 14vw, 160px)',
           fontWeight: 700,
           letterSpacing: '-0.03em',
@@ -68,13 +68,13 @@ export default function Loader({ onComplete }) {
         {/* Layer 2 — gradient wipe reveal */}
         <div style={{
           position: 'absolute', inset: 0,
-          fontFamily: "'Radeyn', sans-serif",
+          fontFamily: "'Radeyn', system-ui, sans-serif",
           fontSize: 'clamp(64px, 14vw, 160px)',
           fontWeight: 700,
           letterSpacing: '-0.03em',
           lineHeight: 1,
           whiteSpace: 'nowrap',
-          background: 'linear-gradient(135deg, #f97316 0%, #ec4899 50%, #a855f7 100%)',
+          background: 'linear-gradient(135deg, #602486 0%, #341352 50%, #1B0F23 100%)',
           WebkitBackgroundClip: 'text',
           WebkitTextFillColor: 'transparent',
           backgroundClip: 'text',
@@ -90,14 +90,14 @@ export default function Loader({ onComplete }) {
       <div style={{
         marginTop: 20, zIndex: 1,
         display: 'flex', alignItems: 'baseline', gap: 6,
-        fontFamily: "'Radeyn', sans-serif",
+        fontFamily: "'Radeyn', system-ui, sans-serif",
       }}>
         <span style={{ color: 'rgba(255,255,255,0.3)', fontSize: 12, letterSpacing: '0.15em' }}>
           loading...
         </span>
         <span style={{
           fontSize: 13, fontWeight: 600, letterSpacing: '0.05em',
-          background: 'linear-gradient(135deg,#f97316,#ec4899)',
+          background: 'linear-gradient(135deg,#602486,#341352)',
           WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
         }}>
           {progress} %
@@ -112,9 +112,9 @@ export default function Loader({ onComplete }) {
         <div style={{
           height: '100%',
           width: `${progress}%`,
-          background: 'linear-gradient(90deg,#f97316,#ec4899,#a855f7)',
+          background: 'linear-gradient(90deg,#602486,#341352,#1B0F23)',
           transition: 'width 0.05s linear',
-          boxShadow: '0 0 12px rgba(249,115,22,0.6)',
+          boxShadow: '0 0 12px rgba(96,36,134,0.6)',
         }} />
       </div>
     </div>

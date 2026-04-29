@@ -26,10 +26,10 @@ const STYLES = `
 `;
 
 const contactInfo = [
-  { icon:'📧', label:'Email',    value:'rafiulislam040@gmail.com',   href:'mailto:rafiulislam040@gmail.com', color:'#f97316' },
-  { icon:'📱', label:'Phone',    value:'+880 1903168428',      href:'tel:+8801903168428',        color:'#ec4899' },
+  { icon:'📧', label:'Email',    value:'rafiulislam040@gmail.com',   href:'mailto:rafiulislam040@gmail.com', color:'#602486' },
+  { icon:'📱', label:'Phone',    value:'+880 1903168428',      href:'tel:+8801903168428',        color:'#341352' },
   { icon:'💬', label:'WhatsApp', value:'+880 1903168428',      href:'https://wa.me/8801903168428',color:'#22c55e' },
-  { icon:'📍', label:'Location', value:'Dhaka, Bangladesh',     href:'#',                         color:'#a855f7' },
+  { icon:'📍', label:'Location', value:'Dhaka, Bangladesh',     href:'#',                         color:'#1B0F23' },
 ];
 
 const socials = [
@@ -127,10 +127,10 @@ export default function Contact({ darkMode }) {
   const inputStyle = field => ({
     width:'100%', padding:'14px 16px', borderRadius:12,
     background: inputBg,
-    border:`1px solid ${focused===field ? '#f97316' : border}`,
+    border:`1px solid ${focused===field ? '#602486' : border}`,
     color: text, fontSize:14, outline:'none',
     transition:'border-color .3s, box-shadow .3s',
-    boxShadow: focused===field ? '0 0 0 3px rgba(249,115,22,.15)' : 'none',
+    boxShadow: focused===field ? '0 0 0 3px rgba(96,36,134,.15)' : 'none',
     boxSizing:'border-box', fontFamily:'inherit',
   });
 
@@ -146,14 +146,14 @@ export default function Contact({ darkMode }) {
 
  
   const particles = [
-    { color:'#f97316', style:{ left:'10%', bottom:'20%' } },
-    { color:'#ec4899', style:{ left:'20%', bottom:'30%' } },
-    { color:'#a855f7', style:{ left:'15%', bottom:'10%' } },
+    { color:'#602486', style:{ left:'10%', bottom:'20%' } },
+    { color:'#341352', style:{ left:'20%', bottom:'30%' } },
+    { color:'#1B0F23', style:{ left:'15%', bottom:'10%' } },
     { color:'#06b6d4', style:{ right:'12%', bottom:'25%' } },
-    { color:'#f97316', style:{ right:'22%', bottom:'15%' } },
+    { color:'#602486', style:{ right:'22%', bottom:'15%' } },
     { color:'#22c55e', style:{ right:'8%',  bottom:'35%' } },
-    { color:'#ec4899', style:{ left:'50%',  bottom:'5%'  } },
-    { color:'#a855f7', style:{ left:'35%',  bottom:'12%' } },
+    { color:'#341352', style:{ left:'50%',  bottom:'5%'  } },
+    { color:'#1B0F23', style:{ left:'35%',  bottom:'12%' } },
   ];
 
   return (
@@ -164,30 +164,30 @@ export default function Contact({ darkMode }) {
 
       {/* large gradient orbs that float */}
       <div style={{ position:'absolute', top:'5%', left:'-5%', width:500, height:500, borderRadius:'50%',
-        background:'radial-gradient(circle,rgba(249,115,22,.12) 0%,transparent 70%)',
+        background:'radial-gradient(circle,rgba(96,36,134,.12) 0%,transparent 70%)',
         animation:'floatUp 8s ease-in-out infinite', pointerEvents:'none' }} />
       <div style={{ position:'absolute', bottom:'5%', right:'-5%', width:450, height:450, borderRadius:'50%',
-        background:'radial-gradient(circle,rgba(168,85,247,.12) 0%,transparent 70%)',
+        background:'radial-gradient(circle,rgba(27,15,35,.12) 0%,transparent 70%)',
         animation:'floatUp 10s ease-in-out infinite', animationDelay:'3s', pointerEvents:'none' }} />
       <div style={{ position:'absolute', top:'40%', left:'40%', width:300, height:300, borderRadius:'50%',
-        background:'radial-gradient(circle,rgba(236,72,153,.08) 0%,transparent 70%)',
+        background:'radial-gradient(circle,rgba(52,19,82,.08) 0%,transparent 70%)',
         animation:'floatX 7s ease-in-out infinite', pointerEvents:'none' }} />
 
      
-      <PulseOrb color="#f97316" size={100} style={{ top:'8%', right:'8%' }} />
-      <PulseOrb color="#a855f7" size={80}  style={{ bottom:'12%', left:'6%' }} />
+      <PulseOrb color="#602486" size={100} style={{ top:'8%', right:'8%' }} />
+      <PulseOrb color="#1B0F23" size={80}  style={{ bottom:'12%', left:'6%' }} />
       <PulseOrb color="#06b6d4" size={60}  style={{ top:'50%', right:'3%' }} />
 
       {/* orbit ring*/}
-      <div className="orbit-ring"><OrbitRing color="#f97316" radius={60} duration={5}  style={{ top:'15%', left:'3%' }} /></div>
-      <div className="orbit-ring"><OrbitRing color="#ec4899" radius={50} duration={7}  reverse style={{ bottom:'20%', right:'5%' }} /></div>
-      <div className="orbit-ring"><OrbitRing color="#a855f7" radius={40} duration={9}  style={{ top:'60%', left:'8%' }} /></div>
+      <div className="orbit-ring"><OrbitRing color="#602486" radius={60} duration={5}  style={{ top:'15%', left:'3%' }} /></div>
+      <div className="orbit-ring"><OrbitRing color="#341352" radius={50} duration={7}  reverse style={{ bottom:'20%', right:'5%' }} /></div>
+      <div className="orbit-ring"><OrbitRing color="#1B0F23" radius={40} duration={9}  style={{ top:'60%', left:'8%' }} /></div>
 
      
       <div className="spin-ring" style={{ position:'absolute', top:'20%', right:'15%', width:180, height:180, borderRadius:'50%',
-        border:'1px dashed rgba(249,115,22,.25)', animation:'spinSlow 20s linear infinite', pointerEvents:'none' }} />
+        border:'1px dashed rgba(96,36,134,.25)', animation:'spinSlow 20s linear infinite', pointerEvents:'none' }} />
       <div className="spin-ring" style={{ position:'absolute', bottom:'25%', left:'12%', width:140, height:140, borderRadius:'50%',
-        border:'1px dashed rgba(168,85,247,.25)', animation:'spinSlowR 15s linear infinite', pointerEvents:'none' }} />
+        border:'1px dashed rgba(27,15,35,.25)', animation:'spinSlowR 15s linear infinite', pointerEvents:'none' }} />
 
       {/* floating part */}
       {particles.map((p,i) => <Particle key={i} {...p} />)}
@@ -200,17 +200,17 @@ export default function Contact({ darkMode }) {
           <span style={{
             display:'inline-flex', alignItems:'center', gap:8,
             padding:'6px 18px', borderRadius:999,
-            background:'rgba(249,115,22,.15)', border:'1px solid rgba(249,115,22,.3)',
-            color:'#f97316', fontSize:13, fontWeight:600, letterSpacing:2, textTransform:'uppercase', marginBottom:16,
+            background:'rgba(96,36,134,.15)', border:'1px solid rgba(96,36,134,.3)',
+            color:'#602486', fontSize:13, fontWeight:600, letterSpacing:2, textTransform:'uppercase', marginBottom:16,
           }}>
-            <WaveBars color="#f97316" />
+            <WaveBars color="#602486" />
             Get In Touch
           </span>
           <h2 style={{ fontSize:'clamp(2rem,5vw,3.2rem)', fontWeight:800, color:text, margin:'0 0 16px',
-            fontFamily:"'Radeyn', sans-serif" }}>
+            fontFamily:"'Radeyn', system-ui, sans-serif" }}>
             Let's{' '}
             <span style={{
-              background:'linear-gradient(135deg,#f97316,#ec4899,#a855f7)',
+              background:'linear-gradient(135deg,#602486,#341352,#1B0F23)',
               backgroundSize:'200% 200%',
               WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent',
               animation:'gradShift 4s ease infinite',
@@ -313,11 +313,11 @@ export default function Contact({ darkMode }) {
 
             {/* animated top gradient bar */}
             <div style={{ position:'absolute', top:0, left:0, right:0, height:3,
-              background:'linear-gradient(90deg,#f97316,#ec4899,#a855f7,#f97316)',
+              background:'linear-gradient(90deg,#602486,#341352,#1B0F23,#602486)',
               backgroundSize:'200% 100%', animation:'gradShift 3s linear infinite' }} />
 
             {/* corner orbit decoration */}
-            <OrbitRing color="#f97316" radius={35} duration={4} style={{ top:-35, right:-35, opacity:.5 }} />
+            <OrbitRing color="#602486" radius={35} duration={4} style={{ top:-35, right:-35, opacity:.5 }} />
 
             <h3 style={{ color:text, fontWeight:700, fontSize:20, marginBottom:24 }}>Send a Message</h3>
 
@@ -364,14 +364,14 @@ export default function Contact({ darkMode }) {
                   onMouseLeave={e => { e.currentTarget.style.transform='none'; }}
                   style={{
                     width:'100%', padding:'15px 24px', borderRadius:14,
-                    background: status==='sending' ? 'rgba(249,115,22,.5)' : 'linear-gradient(135deg,#f97316,#ec4899)',
+                    background: status==='sending' ? 'rgba(96,36,134,.5)' : 'linear-gradient(135deg,#602486,#341352)',
                     backgroundSize:'200% 200%',
                     animation: status!=='sending' ? 'gradShift 3s ease infinite' : 'none',
                     border:'none', color:'#fff', fontWeight:700, fontSize:15,
                     cursor: status==='sending' ? 'not-allowed' : 'pointer',
                     transition:'transform .2s, box-shadow .2s',
                     display:'flex', alignItems:'center', justifyContent:'center', gap:10,
-                    boxShadow:'0 4px 20px rgba(249,115,22,.35)',
+                    boxShadow:'0 4px 20px rgba(96,36,134,.35)',
                   }}>
                   {status==='sending' ? (
                     <>
@@ -399,14 +399,14 @@ export default function Contact({ darkMode }) {
               onMouseLeave={() => setHovered(null)}
               style={{
                 textAlign:'center', padding:'24px 16px', borderRadius:16,
-                background: card, border:`1px solid ${hovered===`stat-${i}` ? 'rgba(249,115,22,.4)' : border}`,
+                background: card, border:`1px solid ${hovered===`stat-${i}` ? 'rgba(96,36,134,.4)' : border}`,
                 transform: hovered===`stat-${i}` ? 'translateY(-6px)' : 'none',
-                boxShadow: hovered===`stat-${i}` ? '0 12px 32px rgba(249,115,22,.15)' : 'none',
+                boxShadow: hovered===`stat-${i}` ? '0 12px 32px rgba(96,36,134,.15)' : 'none',
                 transition:'all .3s ease', cursor:'default',
               }}>
               <div style={{ fontSize:28, marginBottom:8, animation:`floatUp ${3+i*0.5}s ease-in-out infinite`, animationDelay:`${i*0.4}s` }}>{s.icon}</div>
               <div style={{ fontSize:'1.6rem', fontWeight:900,
-                background:'linear-gradient(135deg,#f97316,#ec4899,#a855f7)',
+                background:'linear-gradient(135deg,#602486,#341352,#1B0F23)',
                 WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent' }}>{s.value}</div>
               <div style={{ color:muted, fontSize:12, marginTop:4 }}>{s.label}</div>
             </div>

@@ -7,7 +7,7 @@ const RESUME_STYLES = `
   body { background: #e5e7eb; }
 
   .resume-page {
-    font-family: 'Radeyn', sans-serif;
+    font-family: 'Radeyn', system-ui, sans-serif;
     font-size: 13px;
     color: #1a1a1a;
     line-height: 1.5;
@@ -23,11 +23,11 @@ const RESUME_STYLES = `
   }
 
   /* ── header ── */
-  .r-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 14px; padding-bottom: 12px; border-bottom: 2px solid #f97316; }
+  .r-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 14px; padding-bottom: 12px; border-bottom: 2px solid #602486; }
   .r-name { font-size: 28px; font-weight: 700; color: #111; letter-spacing: -0.5px; }
-  .r-title { font-size: 13px; font-weight: 500; color: #f97316; margin-top: 3px; letter-spacing: 0.5px; text-transform: uppercase; }
+  .r-title { font-size: 13px; font-weight: 500; color: #602486; margin-top: 3px; letter-spacing: 0.5px; text-transform: uppercase; }
   .r-contact { text-align: right; font-size: 11.5px; color: #555; line-height: 1.8; }
-  .r-contact a { color: #f97316; text-decoration: none; }
+  .r-contact a { color: #602486; text-decoration: none; }
 
   /* ── two-col layout ── */
   .r-body { display: grid; grid-template-columns: 1fr 2.2fr; gap: 20px; }
@@ -36,9 +36,15 @@ const RESUME_STYLES = `
   .r-section { margin-bottom: 16px; }
   .r-section-title {
     font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
-    text-transform: uppercase; color: #f97316;
-    border-bottom: 1px solid #f9731640;
+    text-transform: uppercase; color: #602486;
+    border-bottom: 1px solid #60248640;
     padding-bottom: 4px; margin-bottom: 10px;
+  }
+  .r-name,
+  .r-section-title,
+  .r-item-role,
+  .r-project-name {
+    font-family: 'Radeyn', system-ui, sans-serif;
   }
 
   /* ── skills ── */
@@ -55,7 +61,7 @@ const RESUME_STYLES = `
   .r-item { margin-bottom: 12px; }
   .r-item-header { display: flex; justify-content: space-between; align-items: flex-start; }
   .r-item-role { font-size: 13px; font-weight: 700; color: #111; }
-  .r-item-company { font-size: 11.5px; color: #f97316; font-weight: 500; }
+  .r-item-company { font-size: 11.5px; color: #602486; font-weight: 500; }
   .r-item-meta { font-size: 10.5px; color: #888; text-align: right; line-height: 1.6; }
   .r-item-desc { font-size: 11.5px; color: #444; margin-top: 4px; line-height: 1.6; }
   .r-bullets { margin-top: 5px; padding-left: 14px; }
@@ -64,7 +70,7 @@ const RESUME_STYLES = `
   /* ── projects ── */
   .r-project { margin-bottom: 10px; }
   .r-project-name { font-size: 12.5px; font-weight: 700; color: #111; }
-  .r-project-stack { font-size: 10.5px; color: #f97316; font-weight: 500; margin-bottom: 2px; }
+  .r-project-stack { font-size: 10.5px; color: #602486; font-weight: 500; margin-bottom: 2px; }
   .r-project-desc { font-size: 11px; color: #555; line-height: 1.55; }
 
   /* ── print button (hidden on print) ── */
@@ -78,7 +84,7 @@ const RESUME_STYLES = `
   .print-btn {
     padding: 8px 20px; border-radius: 8px; border: none; cursor: pointer;
     font-size: 13px; font-weight: 600; font-family: 'Radeyn', sans-serif;
-    background: linear-gradient(135deg, #f97316, #ec4899);
+    background: linear-gradient(135deg, #602486, #341352);
     color: #fff; transition: opacity .2s;
   }
   .print-btn:hover { opacity: .85; }
@@ -189,7 +195,7 @@ export default function Resume() {
                     </div>
                     <div className="r-item-meta">
                       <div>{e.period}</div>
-                      <div style={{ color: '#f97316', fontWeight: 600 }}>{e.grade}</div>
+                      <div style={{ color: '#602486', fontWeight: 600 }}>{e.grade}</div>
                     </div>
                   </div>
                 </div>
@@ -201,7 +207,7 @@ export default function Resume() {
               <div className="r-section-title">Certifications</div>
               <div className="r-item" style={{ marginBottom: 6 }}>
                 <div style={{ fontSize: 12, fontWeight: 600, color: '#111' }}>Full Stack Web Development</div>
-                <div style={{ fontSize: 11, color: '#f97316' }}>Programming Hero · 2022–2023</div>
+                <div style={{ fontSize: 11, color: '#602486' }}>Programming Hero · 2022–2023</div>
               </div>
             </div>
 

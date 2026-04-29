@@ -17,7 +17,7 @@ const SKILLS = [
   /* Backend */
   { name: "Node.js",      cat: "Backend",   pct: 75, icon: "🟢",  color: "#68a063", desc: "Event-driven server, streams, worker threads, clustering." },
   { name: "Express",      cat: "Backend",   pct: 78, icon: "🚂",  color: "#ffffff", desc: "REST APIs, middleware chains, error handling, auth." },
-  { name: "REST APIs",    cat: "Backend",   pct: 90, icon: "🔗",  color: "#f97316", desc: "Resource design, versioning, pagination, rate limiting." },
+  { name: "REST APIs",    cat: "Backend",   pct: 90, icon: "🔗",  color: "#602486", desc: "Resource design, versioning, pagination, rate limiting." },
   // { name: "GraphQL",      cat: "Backend",   pct: 65, icon: "◈",   color: "#e535ab", desc: "Schema design, resolvers, Apollo Server, subscriptions." },
 
   /* Database */
@@ -139,7 +139,7 @@ export default function Skills({ darkMode }) {
         /* ── bar fill ── */
         .sk-bar-fill {
           height: 100%; border-radius: 999px;
-          background: linear-gradient(90deg, #f97316, #ec4899, #a855f7);
+          background: linear-gradient(90deg, #602486, #341352, #1B0F23);
           width: 0%;
           transition: width 1.1s cubic-bezier(0.16,1,0.3,1);
           position: relative; overflow: hidden;
@@ -210,7 +210,7 @@ export default function Skills({ darkMode }) {
           width: "100%",
           background: bg,
           overflow: "hidden",
-          fontFamily: "'Radeyn', sans-serif",
+          fontFamily: "'Radeyn', system-ui, sans-serif",
           transition: "background 0.5s ease",
           padding: "120px 0 100px",
         }}
@@ -220,8 +220,8 @@ export default function Skills({ darkMode }) {
           position: "absolute", left: "-5%", top: "10%",
           width: 480, height: 480, borderRadius: "50%",
           background: isDark
-            ? "radial-gradient(circle, rgba(249,115,22,0.07) 0%, transparent 70%)"
-            : "radial-gradient(circle, rgba(249,115,22,0.08) 0%, transparent 70%)",
+            ? "radial-gradient(circle, rgba(96,36,134,0.07) 0%, transparent 70%)"
+            : "radial-gradient(circle, rgba(96,36,134,0.08) 0%, transparent 70%)",
           filter: "blur(70px)",
           animation: "skOrb 11s ease-in-out infinite",
           pointerEvents: "none", zIndex: 0,
@@ -230,8 +230,8 @@ export default function Skills({ darkMode }) {
           position: "absolute", right: "-8%", bottom: "15%",
           width: 520, height: 520, borderRadius: "50%",
           background: isDark
-            ? "radial-gradient(circle, rgba(168,85,247,0.07) 0%, transparent 70%)"
-            : "radial-gradient(circle, rgba(168,85,247,0.07) 0%, transparent 70%)",
+            ? "radial-gradient(circle, rgba(27,15,35,0.07) 0%, transparent 70%)"
+            : "radial-gradient(circle, rgba(27,15,35,0.07) 0%, transparent 70%)",
           filter: "blur(70px)",
           animation: "skOrb 15s ease-in-out infinite reverse",
           pointerEvents: "none", zIndex: 0,
@@ -249,14 +249,14 @@ export default function Skills({ darkMode }) {
               — What I Work With
             </span>
             <h2 style={{
-              fontFamily: "'Radeyn', sans-serif",
+              fontFamily: "'Radeyn', system-ui, sans-serif",
               fontSize: "clamp(48px, 7vw, 88px)",
               fontWeight: 600, lineHeight: 0.95,
               letterSpacing: "-0.02em", color: txt, margin: 0,
             }}>
               My{" "}
               <span style={{
-                background: "linear-gradient(120deg, #f97316, #ec4899, #a855f7)",
+                background: "linear-gradient(120deg, #602486, #341352, #1B0F23)",
                 WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
               }}>
@@ -294,12 +294,12 @@ export default function Skills({ darkMode }) {
                       ? "1px solid transparent"
                       : `1px solid ${border}`,
                     background: isActive
-                      ? "linear-gradient(120deg, #f97316, #ec4899, #a855f7)"
+                      ? "linear-gradient(120deg, #602486, #341352, #1B0F23)"
                       : bgCard,
                     color: isActive ? "#fff" : muted,
                     fontSize: 13, fontWeight: isActive ? 600 : 400,
                     letterSpacing: "0.03em",
-                    boxShadow: isActive ? "0 4px 20px rgba(236,72,153,0.35)" : "none",
+                    boxShadow: isActive ? "0 4px 20px rgba(52,19,82,0.35)" : "none",
                   }}
                 >
                   {cat}
@@ -355,7 +355,7 @@ export default function Skills({ darkMode }) {
                         fontWeight: 700,
                         color: skill.color,
                         flexShrink: 0,
-                        fontFamily: "'Radeyn', sans-serif",
+                        fontFamily: "'Radeyn', system-ui, sans-serif",
                       }}
                     >
                       {skill.icon}
@@ -381,7 +381,7 @@ export default function Skills({ darkMode }) {
                       </span>
                       <span style={{
                         fontSize: 12, fontWeight: 700,
-                        background: "linear-gradient(120deg, #f97316, #ec4899, #a855f7)",
+                        background: "linear-gradient(120deg, #602486, #341352, #1B0F23)",
                         WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
                         backgroundClip: "text",
                       }}>
@@ -435,10 +435,10 @@ export default function Skills({ darkMode }) {
             ].map(({ label, value }) => (
               <div key={label} style={{ textAlign: "center" }}>
                 <div style={{
-                  fontFamily: "'Radeyn', sans-serif",
+                  fontFamily: "'Radeyn', system-ui, sans-serif",
                   fontSize: "clamp(28px, 3.5vw, 42px)",
                   fontWeight: 700, lineHeight: 1,
-                  background: "linear-gradient(120deg, #f97316, #ec4899, #a855f7)",
+                  background: "linear-gradient(120deg, #602486, #341352, #1B0F23)",
                   WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
                   backgroundClip: "text",
                 }}>
@@ -479,7 +479,7 @@ export default function Skills({ darkMode }) {
               padding: "40px 36px",
               maxWidth: 440, width: "100%",
               boxShadow: "0 32px 80px rgba(0,0,0,0.5)",
-              fontFamily: "'Radeyn', sans-serif",
+              fontFamily: "'Radeyn', system-ui, sans-serif",
               position: "relative",
             }}
           >
@@ -509,7 +509,7 @@ export default function Skills({ darkMode }) {
               display: "flex", alignItems: "center", justifyContent: "center",
               fontSize: selectedSkill.icon.length <= 2 ? 22 : 32,
               fontWeight: 700, color: selectedSkill.color,
-              fontFamily: "'Radeyn', sans-serif",
+              fontFamily: "'Radeyn', system-ui, sans-serif",
               marginBottom: 20,
             }}>
               {selectedSkill.icon}
@@ -517,7 +517,7 @@ export default function Skills({ darkMode }) {
 
             {/* Name + category */}
             <h3 style={{
-              fontFamily: "'Radeyn', sans-serif",
+              fontFamily: "'Radeyn', system-ui, sans-serif",
               fontSize: 36, fontWeight: 700,
               color: txt, margin: "0 0 4px",
               lineHeight: 1,
@@ -550,7 +550,7 @@ export default function Skills({ darkMode }) {
                 </span>
                 <span style={{
                   fontSize: 14, fontWeight: 700,
-                  background: "linear-gradient(120deg, #f97316, #ec4899, #a855f7)",
+                  background: "linear-gradient(120deg, #602486, #341352, #1B0F23)",
                   WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
                   backgroundClip: "text",
                 }}>
@@ -564,7 +564,7 @@ export default function Skills({ darkMode }) {
               }}>
                 <div style={{
                   height: "100%", borderRadius: 999,
-                  background: "linear-gradient(90deg, #f97316, #ec4899, #a855f7)",
+                  background: "linear-gradient(90deg, #602486, #341352, #1B0F23)",
                   width: `${selectedSkill.pct}%`,
                   transition: "width 0.9s cubic-bezier(0.16,1,0.3,1) 0.1s",
                   position: "relative", overflow: "hidden",

@@ -73,15 +73,15 @@ export default function Footer({ darkMode }) {
     <footer style={{ background: bg, borderTop:`1px solid ${border}`, position:'relative', overflow:'hidden' }}>
       {/* top gradient line */}
       <div style={{ position:'absolute', top:0, left:0, right:0, height:2,
-        background:'linear-gradient(90deg,#f97316,#ec4899,#a855f7,#f97316)',
+        background:'linear-gradient(90deg,#602486,#341352,#1B0F23,#602486)',
         backgroundSize:'200% 100%', animation:'footerGrad 4s linear infinite' }} />
 
       {/* ambient orbs */}
       <div style={{ position:'absolute', bottom:'-30%', left:'-5%', width:300, height:300, borderRadius:'50%',
-        background:'radial-gradient(circle,rgba(249,115,22,.08) 0%,transparent 70%)',
+        background:'radial-gradient(circle,rgba(96,36,134,.08) 0%,transparent 70%)',
         animation:'footerFloat 8s ease-in-out infinite', pointerEvents:'none' }} />
       <div style={{ position:'absolute', bottom:'-20%', right:'-5%', width:250, height:250, borderRadius:'50%',
-        background:'radial-gradient(circle,rgba(168,85,247,.08) 0%,transparent 70%)',
+        background:'radial-gradient(circle,rgba(27,15,35,.08) 0%,transparent 70%)',
         animation:'footerFloat 10s ease-in-out infinite', animationDelay:'3s', pointerEvents:'none' }} />
 
       <div style={{ maxWidth:1200, margin:'0 auto', padding:'60px 24px 32px', position:'relative', zIndex:1 }}>
@@ -93,8 +93,8 @@ export default function Footer({ darkMode }) {
           <div>
             <div style={{ marginBottom:16 }}>
               <span style={{
-                fontSize:28, fontWeight:900, fontFamily:"'Radeyn', sans-serif",
-                background:'linear-gradient(135deg,#f97316,#ec4899,#a855f7)',
+                fontSize:28, fontWeight:900, fontFamily:"'Radeyn', system-ui, sans-serif",
+                background:'linear-gradient(135deg,#602486,#341352,#1B0F23)',
                 backgroundSize:'200% 200%', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent',
                 animation:'footerGrad 4s ease infinite',
               }}>
@@ -142,12 +142,12 @@ export default function Footer({ darkMode }) {
                 onMouseLeave={() => setHovered(null)}
                 style={{
                   display:'flex', alignItems:'center', gap:8,
-                  color: hovered===`link-${i}` ? '#f97316' : muted,
+                  color: hovered===`link-${i}` ? '#602486' : muted,
                   textDecoration:'none', fontSize:14, marginBottom:10,
                   transform: hovered===`link-${i}` ? 'translateX(6px)' : 'none',
                   transition:'all .25s ease',
                 }}>
-                <span style={{ fontSize:10, color:'#f97316', opacity: hovered===`link-${i}` ? 1 : 0, transition:'opacity .25s' }}>▶</span>
+                <span style={{ fontSize:10, color:'#602486', opacity: hovered===`link-${i}` ? 1 : 0, transition:'opacity .25s' }}>▶</span>
                 {l.label}
               </a>
             ))}

@@ -1,21 +1,26 @@
 @import "tailwindcss";
 @import "./responsive.css";
 
+/* ── Local font: Radeyn ── */
 @font-face {
   font-family: 'Radeyn';
   src: url('/fonts/Radeyn/Radeyn-Regular-Exfont1452.otf') format('opentype');
-  font-weight: 400;
+  font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
 
 body {
-  font-family: 'Radeyn', sans-serif;
+  font-family: 'Radeyn', system-ui, sans-serif;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   background-color: #ffffff;
   color: #000000;
   transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Radeyn', system-ui, sans-serif;
 }
 
 html.dark body {
@@ -28,7 +33,7 @@ html {
 }
 
 .font-display {
-  font-family: 'Radeyn', sans-serif;
+  font-family: 'Radeyn', system-ui, sans-serif;
 }
 
 /* Custom scrollbar — hidden on load, visible on scroll */
@@ -53,11 +58,11 @@ html.dark ::-webkit-scrollbar-track {
 
 /* Shown when .scrolling class is on html */
 html.scrolling ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #f97316, #ec4899, #a855f7);
+  background: linear-gradient(180deg, #602486, #341352, #1B0F23);
 }
 
 html.scrolling ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #fb923c, #f472b6, #c084fc);
+  background: linear-gradient(180deg, #7a39a6, #4a1a73, #2a163a);
 }
 
 /* Firefox */
@@ -67,11 +72,11 @@ html.scrolling ::-webkit-scrollbar-thumb:hover {
 }
 
 html.scrolling * {
-  scrollbar-color: #ec4899 transparent;
+  scrollbar-color: #341352 transparent;
 }
 
 html.dark.scrolling * {
-  scrollbar-color: #ec4899 #0a0a0a;
+  scrollbar-color: #341352 #0a0a0a;
 }
 
 .bg-noise {
@@ -108,7 +113,7 @@ html.dark.scrolling * {
   top: 0; left: 0;
   height: 2px;
   width: 0%;
-  background: linear-gradient(90deg, #f97316, #ec4899, #a855f7);
+  background: linear-gradient(90deg, #602486, #341352, #1B0F23);
   z-index: 9999;
   transition: width 0.1s linear;
   box-shadow: 0 0 8px rgba(236, 72, 153, 0.6);
@@ -161,14 +166,14 @@ html.dark.scrolling * {
 .scroll-line {
   width: 0%;
   height: 1px;
-  background: linear-gradient(90deg, #f97316, #ec4899, #a855f7);
+  background: linear-gradient(90deg, #602486, #341352, #1B0F23);
   transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .scroll-line.in-view { width: 100%; }
 
 /* ── Gradient text reveal ── */
 .scroll-grad-reveal {
-  background: linear-gradient(120deg, #f97316 0%, #ec4899 55%, #a855f7 100%);
+  background: linear-gradient(120deg, #602486 0%, #341352 55%, #1B0F23 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -184,7 +189,7 @@ html.dark.scrolling * {
   100% { background-position: 200% center; }
 }
 .scroll-count {
-  background: linear-gradient(90deg, #f97316 25%, #fff 50%, #a855f7 75%);
+  background: linear-gradient(90deg, #602486 25%, #fff 50%, #1B0F23 75%);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -200,7 +205,7 @@ html.dark.scrolling * {
     position: fixed;
     width: 320px; height: 320px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(236,72,153,0.07) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(52,19,82,0.07) 0%, transparent 70%);
     pointer-events: none;
     z-index: 0;
     transform: translate(-50%, -50%);
@@ -253,7 +258,7 @@ html.dark.scrolling * {
   position: absolute;
   bottom: -3px; left: 0;
   height: 2px; width: 0%;
-  background: linear-gradient(90deg, #f97316, #ec4899, #a855f7);
+  background: linear-gradient(90deg, #602486, #341352, #1B0F23);
   border-radius: 999px;
   transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s;
 }
