@@ -21,7 +21,7 @@ export default {
         }
       },
       fontFamily: {
-        inter: ['Inter', 'sans-serif'],
+        inter: ['Radeyn', 'sans-serif'],
       },
       boxShadow: {
         'glow': '0 0 20px rgba(219, 185, 123, 0.3)',

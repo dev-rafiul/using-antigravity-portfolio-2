@@ -79,8 +79,6 @@ export default function About({ darkMode }) {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;600;700&family=DM+Sans:wght@300;400;500;600&display=swap');
-
         /* ── entry animations ── */
         .ab-fade-up {
           opacity: 0;
@@ -175,7 +173,7 @@ export default function About({ darkMode }) {
           width: "100%",
           background: bg,
           overflow: "hidden",
-          fontFamily: "'DM Sans', sans-serif",
+          fontFamily: "'Radeyn', sans-serif",
           transition: "background 0.5s ease",
           padding: "120px 0 100px",
         }}
@@ -214,7 +212,7 @@ export default function About({ darkMode }) {
               — Who I Am
             </span>
             <h2 style={{
-              fontFamily: "'Cormorant Garamond', serif",
+              fontFamily: "'Radeyn', sans-serif",
               fontSize: "clamp(48px, 7vw, 88px)",
               fontWeight: 600,
               lineHeight: 0.95,
@@ -291,7 +289,7 @@ export default function About({ darkMode }) {
                     display: "flex", alignItems: "center", justifyContent: "space-between",
                   }}>
                     <div>
-                      <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 22, fontWeight: 600, color: "#f0ede8" }}>
+                      <div style={{ fontFamily: "'Radeyn', sans-serif", fontSize: 22, fontWeight: 600, color: "#f0ede8" }}>
                         Rafiul Islam
                       </div>
                       <div style={{ fontSize: 11, letterSpacing: "0.1em", color: "rgba(240,237,232,0.6)" }}>
@@ -502,7 +500,7 @@ export default function About({ darkMode }) {
                 }}
               >
                 <div style={{
-                  fontFamily: "serif",
+                  fontFamily: "'Radeyn', sans-serif",
                   fontSize: "clamp(32px, 4vw, 48px)",
                   fontWeight: 700,
                   lineHeight: 1,

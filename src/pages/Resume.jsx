@@ -2,14 +2,12 @@ import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const RESUME_STYLES = `
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
   body { background: #e5e7eb; }
 
   .resume-page {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Radeyn', sans-serif;
     font-size: 13px;
     color: #1a1a1a;
     line-height: 1.5;
@@ -76,17 +74,17 @@ const RESUME_STYLES = `
     display: flex; align-items: center; justify-content: space-between;
     gap: 12px;
   }
-  .print-bar span { color: #aaa; font-size: 13px; font-family: 'Inter', sans-serif; }
+  .print-bar span { color: #aaa; font-size: 13px; font-family: 'Radeyn', sans-serif; }
   .print-btn {
     padding: 8px 20px; border-radius: 8px; border: none; cursor: pointer;
-    font-size: 13px; font-weight: 600; font-family: 'Inter', sans-serif;
+    font-size: 13px; font-weight: 600; font-family: 'Radeyn', sans-serif;
     background: linear-gradient(135deg, #f97316, #ec4899);
     color: #fff; transition: opacity .2s;
   }
   .print-btn:hover { opacity: .85; }
   .back-btn {
     padding: 8px 16px; border-radius: 8px; border: 1px solid #333; cursor: pointer;
-    font-size: 13px; font-weight: 500; font-family: 'Inter', sans-serif;
+    font-size: 13px; font-weight: 500; font-family: 'Radeyn', sans-serif;
     background: transparent; color: #ccc; transition: border-color .2s;
   }
   .back-btn:hover { border-color: #666; }

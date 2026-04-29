@@ -214,8 +214,6 @@ export default function Projects({ darkMode }) {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;600;700&family=DM+Sans:wght@300;400;500;600&display=swap');
-
         /* ── entry ── */
         .pj-fade-up {
           opacity:0; transform:translateY(36px);
@@ -314,7 +312,7 @@ export default function Projects({ darkMode }) {
           position:"relative", width:"100%",
           background: bg,
           overflow:"hidden",
-          fontFamily:"'DM Sans',sans-serif",
+          fontFamily:"'Radeyn', sans-serif",
           transition:"background .5s ease",
           padding:"120px 0 100px",
         }}
@@ -344,7 +342,7 @@ export default function Projects({ darkMode }) {
               — What I've Built
             </span>
             <h2 style={{
-              fontFamily:"'Cormorant Garamond',serif",
+              fontFamily:"'Radeyn', sans-serif",
               fontSize:"clamp(48px,7vw,88px)", fontWeight:600,
               lineHeight:.95, letterSpacing:"-0.02em", color:txt, margin:0,
             }}>
@@ -489,7 +487,7 @@ export default function Projects({ darkMode }) {
             ].map(({ val, label }) => (
               <div key={label} style={{ textAlign:"center" }}>
                 <div style={{
-                  fontFamily:"'Cormorant Garamond',serif",
+                  fontFamily:"'Radeyn', sans-serif",
                   fontSize:"clamp(28px,3.5vw,42px)", fontWeight:700, lineHeight:1,
                   background:"linear-gradient(120deg,#f97316,#ec4899,#a855f7)",
                   WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent", backgroundClip:"text",
@@ -528,7 +526,7 @@ export default function Projects({ darkMode }) {
               /* FIX: removed overflow:hidden so close button is never clipped;
                  inner panels clip themselves where needed */
               boxShadow:"0 40px 100px rgba(0,0,0,.6)",
-              fontFamily:"'DM Sans',sans-serif",
+              fontFamily:"'Radeyn', sans-serif",
               position:"relative",
               /* FIX: constrain height so content never overflows viewport */
               maxHeight:"calc(100vh - 48px)",
@@ -613,7 +611,7 @@ export default function Projects({ darkMode }) {
                   {selectedProj.category} · {selectedProj.year}
                 </span>
                 <h2 style={{
-                  fontFamily:"'Cormorant Garamond',serif",
+                  fontFamily:"'Radeyn', sans-serif",
                   fontSize:"clamp(28px,4vw,40px)", fontWeight:700,
                   color:txt, margin:"6px 0 4px", lineHeight:1,
                 }}>{selectedProj.title}</h2>

@@ -13,7 +13,7 @@ function AppInner({ darkMode, toggleDarkMode }) {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'skills', 'projects', 'experience', 'education', 'contact'];
+      const sections = ['home', 'about', 'skills', 'projects', 'education', 'contact'];
       const scrollPosition = window.scrollY + 100;
       for (const section of sections) {
         const element = document.getElementById(section);
@@ -40,6 +40,23 @@ function AppInner({ darkMode, toggleDarkMode }) {
     };
     window.addEventListener('mousemove', onMove);
     return () => window.removeEventListener('mousemove', onMove);
+  }, []);
+
+  // Show scrollbar only while scrolling
+  useEffect(() => {
+    let timer;
+    const onScroll = () => {
+      document.documentElement.classList.add('scrolling');
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        document.documentElement.classList.remove('scrolling');
+      }, 1000);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      clearTimeout(timer);
+    };
   }, []);
 
   return (

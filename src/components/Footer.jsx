@@ -93,7 +93,7 @@ export default function Footer({ darkMode }) {
           <div>
             <div style={{ marginBottom:16 }}>
               <span style={{
-                fontSize:28, fontWeight:900, fontFamily:"'Playfair Display',serif",
+                fontSize:28, fontWeight:900, fontFamily:"'Radeyn', sans-serif",
                 background:'linear-gradient(135deg,#f97316,#ec4899,#a855f7)',
                 backgroundSize:'200% 200%', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent',
                 animation:'footerGrad 4s ease infinite',

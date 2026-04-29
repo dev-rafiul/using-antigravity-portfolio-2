@@ -54,7 +54,7 @@ export default function Loader({ onComplete }) {
 
         {/* Layer 1 — dim base text */}
         <div style={{
-          fontFamily: "'Cormorant Garamond', 'Playfair Display', serif",
+          fontFamily: "'Radeyn', sans-serif",
           fontSize: 'clamp(64px, 14vw, 160px)',
           fontWeight: 700,
           letterSpacing: '-0.03em',
@@ -68,7 +68,7 @@ export default function Loader({ onComplete }) {
         {/* Layer 2 — gradient wipe reveal */}
         <div style={{
           position: 'absolute', inset: 0,
-          fontFamily: "'Cormorant Garamond', 'Playfair Display', serif",
+          fontFamily: "'Radeyn', sans-serif",
           fontSize: 'clamp(64px, 14vw, 160px)',
           fontWeight: 700,
           letterSpacing: '-0.03em',
@@ -90,7 +90,7 @@ export default function Loader({ onComplete }) {
       <div style={{
         marginTop: 20, zIndex: 1,
         display: 'flex', alignItems: 'baseline', gap: 6,
-        fontFamily: "'DM Sans', 'Inter', sans-serif",
+        fontFamily: "'Radeyn', sans-serif",
       }}>
         <span style={{ color: 'rgba(255,255,255,0.3)', fontSize: 12, letterSpacing: '0.15em' }}>
           loading...

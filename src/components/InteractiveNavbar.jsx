@@ -18,7 +18,7 @@ const InteractiveNavbar = ({ theme = 'dark', toggleDarkMode, activeSection }) =>
     setMenuOpen(false);
   };
 
-  const navLinks = ['Home', 'About', 'Skills', 'Projects', 'Experience', 'Education', 'Contact'];
+  const navLinks = ['Home', 'About', 'Skills', 'Projects', 'Education', 'Contact'];
 
   const navBg     = isDark ? 'rgba(15,13,11,0.55)'   : 'rgba(255,255,255,0.65)';
   const navBorder = isDark ? 'rgba(255,255,255,0.10)' : 'rgba(0,0,0,0.10)';
@@ -48,7 +48,7 @@ const InteractiveNavbar = ({ theme = 'dark', toggleDarkMode, activeSection }) =>
           alignItems: 'center',
           justifyContent: 'space-between',
           transition: 'all 0.4s cubic-bezier(0.16,1,0.3,1)',
-          fontFamily: "'DM Sans', 'Inter', sans-serif",
+          fontFamily: "'Radeyn', sans-serif",
         }}
       >
         {/* ── Logo ── */}
@@ -65,7 +65,7 @@ const InteractiveNavbar = ({ theme = 'dark', toggleDarkMode, activeSection }) =>
             display: 'inline-block', flexShrink: 0,
           }} />
           <span style={{
-            fontFamily: "'Cormorant Garamond', serif",
+            fontFamily: "'Radeyn', sans-serif",
             fontSize: 20, fontWeight: 600,
             background: 'linear-gradient(120deg, #f97316, #ec4899, #a855f7)',
             WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
@@ -227,7 +227,7 @@ const InteractiveNavbar = ({ theme = 'dark', toggleDarkMode, activeSection }) =>
             padding: '12px 8px',
             backdropFilter: 'blur(20px)',
             boxShadow: navShadow,
-            fontFamily: "'DM Sans', 'Inter', sans-serif",
+            fontFamily: "'Radeyn', sans-serif",
           }}
         >
           {navLinks.map((item) => (

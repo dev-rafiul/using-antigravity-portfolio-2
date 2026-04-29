@@ -99,7 +99,7 @@ export default function Education({ darkMode }) {
           <span style={{ display:'inline-block', padding:'6px 18px', borderRadius:999, background:'rgba(168,85,247,0.15)', border:'1px solid rgba(168,85,247,0.3)', color:'#a855f7', fontSize:13, fontWeight:600, letterSpacing:2, textTransform:'uppercase', marginBottom:16 }}>
             Academic Journey
           </span>
-          <h2 style={{ fontSize:'clamp(2rem,5vw,3.2rem)', fontWeight:800, color: text, margin:'0 0 16px', fontFamily:"'Playfair Display', serif" }}>
+          <h2 style={{ fontSize:'clamp(2rem,5vw,3.2rem)', fontWeight:800, color: text, margin:'0 0 16px', fontFamily:"'Radeyn', sans-serif" }}>
             Education &{' '}
             <span style={{ background:'linear-gradient(135deg,#f97316,#ec4899,#a855f7)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent' }}>
               Qualifications

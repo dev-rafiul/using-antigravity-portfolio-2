@@ -7,7 +7,7 @@ const CATEGORIES = ["All", "Frontend", "Backend", "Database", "Tools"];
 
 const SKILLS = [
   /* Frontend */
-  { name: "React",        cat: "Frontend",  pct: 92, icon: "⚛️",  color: "#61dafb", desc: "Component architecture, hooks, context, performance optimisation." },
+  { name: "React",        cat: "Frontend",  pct: 92, icon: "⚛️",  color: "#61dafb", desc: "Component architecture, hooks, context, performance optimization." },
   { name: "Next.js",      cat: "Frontend",  pct: 65, icon: "▲",   color: "#ffffff", desc: "SSR, SSG, App Router, API routes, image optimisation." },
   { name: "TypeScript",   cat: "Frontend",  pct: 28, icon: "TS",  color: "#3178c6", desc: "Strict typing, generics, utility types, declaration files." },
   { name: "Tailwind CSS", cat: "Frontend",  pct: 97, icon: "🌊",  color: "#38bdf8", desc: "Utility-first styling, custom themes, responsive design." },
@@ -27,7 +27,7 @@ const SKILLS = [
 
   /* Tools */
   { name: "Git & GitHub", cat: "Tools",     pct: 92, icon: "🐙",  color: "#f0f0f0", desc: "Branching strategies, PRs, CI/CD, GitHub Actions." },
-  { name: "Figma",        cat: "Tools",     pct: 84, icon: "🎨",  color: "#a259ff", desc: "Component libraries, auto-layout, prototyping, handoff." },
+  { name: "Figma",        cat: "Tools",     pct: 98, icon: "🎨",  color: "#a259ff", desc: "Component libraries, auto-layout, prototyping, handoff." },
   { name: "Bootstrap",       cat: "Frontend",     pct: 89, icon: "🅱️",  color: "#2496ed", desc: "Layout Component responsive multi-stage builds." },
   { name: "Vercel",       cat: "Tools",     pct: 88, icon: "▲",   color: "#ffffff", desc: "Edge deployments, preview URLs, env management." },
 ];
@@ -103,8 +103,6 @@ export default function Skills({ darkMode }) {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;600;700&family=DM+Sans:wght@300;400;500;600&display=swap');
-
         /* ── entry ── */
         .sk-fade-up {
           opacity: 0; transform: translateY(36px);
@@ -212,7 +210,7 @@ export default function Skills({ darkMode }) {
           width: "100%",
           background: bg,
           overflow: "hidden",
-          fontFamily: "'DM Sans', sans-serif",
+          fontFamily: "'Radeyn', sans-serif",
           transition: "background 0.5s ease",
           padding: "120px 0 100px",
         }}
@@ -251,7 +249,7 @@ export default function Skills({ darkMode }) {
               — What I Work With
             </span>
             <h2 style={{
-              fontFamily: "'Cormorant Garamond', serif",
+              fontFamily: "'Radeyn', sans-serif",
               fontSize: "clamp(48px, 7vw, 88px)",
               fontWeight: 600, lineHeight: 0.95,
               letterSpacing: "-0.02em", color: txt, margin: 0,
@@ -357,7 +355,7 @@ export default function Skills({ darkMode }) {
                         fontWeight: 700,
                         color: skill.color,
                         flexShrink: 0,
-                        fontFamily: "monospace",
+                        fontFamily: "'Radeyn', sans-serif",
                       }}
                     >
                       {skill.icon}
@@ -437,7 +435,7 @@ export default function Skills({ darkMode }) {
             ].map(({ label, value }) => (
               <div key={label} style={{ textAlign: "center" }}>
                 <div style={{
-                  fontFamily: "'Cormorant Garamond', serif",
+                  fontFamily: "'Radeyn', sans-serif",
                   fontSize: "clamp(28px, 3.5vw, 42px)",
                   fontWeight: 700, lineHeight: 1,
                   background: "linear-gradient(120deg, #f97316, #ec4899, #a855f7)",
@@ -481,7 +479,7 @@ export default function Skills({ darkMode }) {
               padding: "40px 36px",
               maxWidth: 440, width: "100%",
               boxShadow: "0 32px 80px rgba(0,0,0,0.5)",
-              fontFamily: "'DM Sans', sans-serif",
+              fontFamily: "'Radeyn', sans-serif",
               position: "relative",
             }}
           >
@@ -511,7 +509,7 @@ export default function Skills({ darkMode }) {
               display: "flex", alignItems: "center", justifyContent: "center",
               fontSize: selectedSkill.icon.length <= 2 ? 22 : 32,
               fontWeight: 700, color: selectedSkill.color,
-              fontFamily: "monospace",
+              fontFamily: "'Radeyn', sans-serif",
               marginBottom: 20,
             }}>
               {selectedSkill.icon}
@@ -519,7 +517,7 @@ export default function Skills({ darkMode }) {
 
             {/* Name + category */}
             <h3 style={{
-              fontFamily: "'Cormorant Garamond', serif",
+              fontFamily: "'Radeyn', sans-serif",
               fontSize: 36, fontWeight: 700,
               color: txt, margin: "0 0 4px",
               lineHeight: 1,

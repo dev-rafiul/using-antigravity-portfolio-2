@@ -207,7 +207,7 @@ export default function Contact({ darkMode }) {
             Get In Touch
           </span>
           <h2 style={{ fontSize:'clamp(2rem,5vw,3.2rem)', fontWeight:800, color:text, margin:'0 0 16px',
-            fontFamily:"'Playfair Display',serif" }}>
+            fontFamily:"'Radeyn', sans-serif" }}>
             Let's{' '}
             <span style={{
               background:'linear-gradient(135deg,#f97316,#ec4899,#a855f7)',

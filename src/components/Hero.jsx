@@ -33,8 +33,6 @@ export default function Hero({ darkMode }) {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;0,700;1,300;1,600&family=DM+Sans:wght@300;400;500&display=swap');
-
         /* ── ORB ── */
         .orb-wrap { opacity:0; transition:opacity 1.4s ease; }
         .orb-in .orb-wrap { opacity:1; }
@@ -108,7 +106,7 @@ export default function Hero({ darkMode }) {
           height: "100vh",
           background: bg,
           overflow: "hidden",
-          fontFamily: "'DM Sans', sans-serif",
+          fontFamily: "'Radeyn', sans-serif",
           transition: "background 0.5s ease",
         }}
       >
@@ -258,7 +256,7 @@ export default function Hero({ darkMode }) {
           {/* Heading */}
           <div
             style={{
-              fontFamily: "'Cormorant Garamond', serif",
+              fontFamily: "'Radeyn', sans-serif",
               fontWeight: 600,
               fontSize: "clamp(72px, 11vw, 148px)",
               lineHeight: 0.95,
@@ -367,7 +365,7 @@ export default function Hero({ darkMode }) {
             <div key={label} style={{ textAlign: "center" }}>
               <div style={{
                 fontSize: "clamp(18px,2vw,24px)", fontWeight: 700,
-                fontFamily: "'Cormorant Garamond', serif",
+                fontFamily: "'Radeyn', sans-serif",
                 background: "linear-gradient(120deg, #f97316, #ec4899, #a855f7)",
                 WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
               }}>
