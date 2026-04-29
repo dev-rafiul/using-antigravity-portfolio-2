@@ -22,7 +22,7 @@ const SKILLS_QUICK = [
   { label: "MongoDB",           pct: 80 },
   { label: "Tailwind CSS",      pct: 95 },
   { label: "TypeScript",        pct: 28 },
-  { label: "Figma / UI Design", pct: 72 },
+  { label: "Figma / UI Design", pct: 97 },
 ];
 
 const FACTS = [
